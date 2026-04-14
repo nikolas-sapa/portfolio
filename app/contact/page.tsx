@@ -1,5 +1,5 @@
 import { FilingShell } from "@/components/filing-shell";
-import { Mail, Twitter, Github } from "lucide-react";
+import { Mail, X, ExternalLink } from "lucide-react";
 
 const LINKS = [
   {
@@ -12,13 +12,13 @@ const LINKS = [
     label: "X / Twitter",
     href: "https://x.com/nikolassap",
     value: "@nikolassap",
-    Icon: Twitter,
+    Icon: X,
   },
   {
     label: "GitHub",
     href: "https://github.com/nikolassap",
     value: "github.com/nikolassap",
-    Icon: Github,
+    Icon: ExternalLink,
   },
 ];
 
