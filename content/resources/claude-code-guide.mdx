@@ -1,0 +1,47 @@
+---
+title: Claude Code — Field Guide
+date: "2026-04-14"
+description: Practical patterns for daily Claude Code use. Skills, hooks, memory, agents.
+tags: [claude, guide]
+---
+
+## Skills worth knowing
+
+| Skill | When to use |
+|---|---|
+| `/plan` | Any task touching more than 1 file or with unclear scope |
+| `/wrap-up` | End of every session — saves context to memory |
+| `/mem-search` | Find past decisions, bugs fixed, context from earlier sessions |
+| `/commit` | Structured commits with co-author tag |
+| `/resume` | Start of session — loads recent context |
+
+## Hook patterns
+
+Hooks are shell commands that run on Claude Code events. Set them in `settings.json`.
+
+- **PreToolUse** — validate before risky commands (e.g., block `rm -rf`)
+- **PostToolUse** — auto-save session state after file edits
+- **Stop** — run `/wrap-up` automatically when Claude finishes
+
+## Agent routing
+
+Match complexity to delegation level:
+
+- **1 file** → inline (no agent)
+- **2–5 files** → `sonnet` agent via `Agent` tool
+- **Cross-domain** → `orchestrator` (delegates to specialists)
+
+## Memory system
+
+Session memory is stored in Pinecone via the `mcp__memory-system__` tools. Key operations:
+
+- `ingest_file` — index a file into memory
+- `search_pinecone` — semantic search across all past sessions
+- `search_wiki` — search structured knowledge base
+
+## CLAUDE.md tips
+
+Rules in `CLAUDE.md` are injected into every session. Keep them:
+- Specific and actionable (not "be careful")
+- Organized by domain (agents, MCP, design, etc.)
+- Short — Claude reads the whole file every session
