@@ -305,8 +305,43 @@ export function FinderWindow() {
 
   return (
     <>
-      {/* Tree panel — left sidebar */}
-      <div className="w-52 flex-none border-r border-[#DCDCDC] bg-[#F6F6F6] overflow-y-auto py-1.5 px-1">
+      {/* ── Mobile: horizontal strip showing top-level items ── */}
+      <div className="md:hidden flex items-center gap-1.5 px-3 py-2 overflow-x-auto border-b border-[#DCDCDC] bg-[#F6F6F6] flex-none">
+        <div className="flex items-center gap-1 flex-none pr-2 border-r border-[#DCDCDC]">
+          <FolderIcon className="w-3.5 h-3.5" />
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-[#86868b] whitespace-nowrap">
+            Web Dev
+          </span>
+        </div>
+        {ROOT.children.map((child) => {
+          const isActive = selected === child.id;
+          return (
+            <button
+              key={child.id}
+              onClick={() => {
+                handleSelect(child.id);
+                if (child.type === "folder") toggleFolder(child.id);
+              }}
+              className={[
+                "flex items-center gap-1 px-2 py-0.5 rounded text-[11px] whitespace-nowrap flex-none transition-colors",
+                isActive
+                  ? "bg-[#0064D2] text-white"
+                  : "text-[#1d1d1f] bg-black/[0.05] hover:bg-black/[0.10]",
+              ].join(" ")}
+            >
+              {child.type === "folder" ? (
+                <FolderIcon className="w-3 h-3 flex-none" />
+              ) : (
+                <FileIcon className="w-3 h-3 flex-none" />
+              )}
+              <span>{child.name}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ── Desktop: tree panel — left sidebar ── */}
+      <div className="hidden md:block md:w-52 md:flex-none border-r border-[#DCDCDC] bg-[#F6F6F6] overflow-y-auto py-1.5 px-1">
         <TreeItem
           node={ROOT}
           depth={0}
@@ -318,7 +353,7 @@ export function FinderWindow() {
       </div>
 
       {/* Content panel — right */}
-      <div className="flex-1 bg-white overflow-y-auto">
+      <div className="flex-1 bg-white overflow-y-auto min-h-0">
         {selectedFile ? (
           <div className="p-6">
             <div className="flex items-start gap-3 mb-5 pb-4 border-b border-[#EBEBEB]">

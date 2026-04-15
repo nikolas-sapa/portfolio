@@ -6,10 +6,10 @@ export default function ResourcesLayout({ children }: { children: ReactNode }) {
   const items = getItems("resources");
   return (
     <>
-      <aside className="w-52 flex-none border-r border-[#DCDCDC] bg-[#F6F6F6] overflow-y-auto">
+      <aside className="flex-none md:w-52 md:border-r border-[#DCDCDC] bg-[#F6F6F6] md:overflow-y-auto">
         <FinderSidebar items={items} section="resources" label="Resources" />
       </aside>
-      <main className="flex-1 bg-white overflow-y-auto">{children}</main>
+      <main className="flex-1 bg-white overflow-y-auto min-h-0">{children}</main>
     </>
   );
 }

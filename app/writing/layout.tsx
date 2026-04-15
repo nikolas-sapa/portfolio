@@ -6,10 +6,10 @@ export default function WritingLayout({ children }: { children: ReactNode }) {
   const items = getItems("writing");
   return (
     <>
-      <aside className="w-52 flex-none border-r border-[#DCDCDC] bg-[#F6F6F6] overflow-y-auto">
+      <aside className="flex-none md:w-52 md:border-r border-[#DCDCDC] bg-[#F6F6F6] md:overflow-y-auto">
         <FinderSidebar items={items} section="writing" label="Writing" />
       </aside>
-      <main className="flex-1 bg-white overflow-y-auto">{children}</main>
+      <main className="flex-1 bg-white overflow-y-auto min-h-0">{children}</main>
     </>
   );
 }

@@ -42,27 +42,16 @@ export function FinderSidebar({ items, section, label }: Props) {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="py-1.5 px-1">
-      {/* Root folder row */}
-      <div
-        className="flex items-center gap-1 py-[3px] pr-2 rounded cursor-pointer select-none text-[#1d1d1f] hover:bg-black/[0.06]"
-        style={{ paddingLeft: "6px" }}
-        onClick={() => setOpen(!open)}
-      >
-        <span className="w-3 h-3 flex-none flex items-center justify-center">
-          {open ? (
-            <ChevronDown size={9} className="text-[#86868b]" />
-          ) : (
-            <ChevronRight size={9} className="text-[#86868b]" />
-          )}
-        </span>
-        <FolderIcon className="w-4 h-4 flex-none" />
-        <span className="ml-1 text-[12px] truncate leading-none">{label}</span>
-      </div>
-
-      {/* File items */}
-      {open &&
-        items.map((item) => {
+    <>
+      {/* ── Mobile: horizontal scrollable file strip ── */}
+      <div className="md:hidden flex items-center gap-1.5 px-3 py-2 overflow-x-auto border-b border-[#DCDCDC]">
+        <div className="flex items-center gap-1 flex-none pr-2 border-r border-[#DCDCDC]">
+          <FolderIcon className="w-3.5 h-3.5 flex-none" />
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-[#86868b] whitespace-nowrap">
+            {label}
+          </span>
+        </div>
+        {items.map((item) => {
           const href = `/${section}/${item.slug}`;
           const active = pathname === href;
           return (
@@ -70,21 +59,64 @@ export function FinderSidebar({ items, section, label }: Props) {
               key={item.slug}
               href={href}
               className={[
-                "flex items-center gap-1 py-[3px] pr-2 rounded select-none",
+                "flex items-center gap-1 px-2 py-0.5 rounded text-[11px] whitespace-nowrap flex-none transition-colors",
                 active
                   ? "bg-[#0064D2] text-white"
-                  : "text-[#1d1d1f] hover:bg-black/[0.06]",
+                  : "text-[#1d1d1f] bg-black/[0.05] hover:bg-black/[0.10]",
               ].join(" ")}
-              style={{ paddingLeft: "20px" }}
             >
-              <span className="w-3 h-3 flex-none" />
-              <FileIcon className="w-4 h-4 flex-none" />
-              <span className="ml-1 text-[12px] truncate leading-none">
-                {item.title}
-              </span>
+              <FileIcon className="w-3 h-3 flex-none" />
+              <span>{item.title}</span>
             </Link>
           );
         })}
-    </div>
+      </div>
+
+      {/* ── Desktop: vertical tree ── */}
+      <div className="hidden md:block py-1.5 px-1">
+        {/* Root folder row */}
+        <div
+          className="flex items-center gap-1 py-[3px] pr-2 rounded cursor-pointer select-none text-[#1d1d1f] hover:bg-black/[0.06]"
+          style={{ paddingLeft: "6px" }}
+          onClick={() => setOpen(!open)}
+        >
+          <span className="w-3 h-3 flex-none flex items-center justify-center">
+            {open ? (
+              <ChevronDown size={9} className="text-[#86868b]" />
+            ) : (
+              <ChevronRight size={9} className="text-[#86868b]" />
+            )}
+          </span>
+          <FolderIcon className="w-4 h-4 flex-none" />
+          <span className="ml-1 text-[12px] truncate leading-none">{label}</span>
+        </div>
+
+        {/* File items */}
+        {open &&
+          items.map((item) => {
+            const href = `/${section}/${item.slug}`;
+            const active = pathname === href;
+            return (
+              <Link
+                key={item.slug}
+                href={href}
+                className={[
+                  "flex items-center gap-1 py-[3px] pr-2 rounded select-none",
+                  active
+                    ? "bg-[#0064D2] text-white"
+                    : "text-[#1d1d1f] hover:bg-black/[0.06]",
+                ].join(" ")}
+                style={{ paddingLeft: "20px" }}
+              >
+                <span className="w-3 h-3 flex-none" />
+                <FileIcon className="w-4 h-4 flex-none" />
+                <span className="ml-1 text-[12px] truncate leading-none">
+                  {item.title}
+                </span>
+              </Link>
+            );
+          })}
+      </div>
+    </>
   );
 }
