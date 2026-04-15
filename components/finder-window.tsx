@@ -178,7 +178,6 @@ function TreeItem({ node, depth, selected, openFolders, onSelect, onToggle }: Tr
           if (isFolder) onToggle(node.id);
         }}
       >
-        {/* Chevron slot */}
         <span className="w-3 h-3 flex-none flex items-center justify-center">
           {isFolder &&
             (isOpen ? (
@@ -187,19 +186,14 @@ function TreeItem({ node, depth, selected, openFolders, onSelect, onToggle }: Tr
               <ChevronRight size={9} className={isSelected ? "text-white" : "text-[#86868b]"} />
             ))}
         </span>
-
-        {/* Icon */}
         {isFolder ? (
           <FolderIcon className="w-4 h-4 flex-none" />
         ) : (
           <FileIcon className="w-4 h-4 flex-none" />
         )}
-
-        {/* Label */}
         <span className="ml-1 text-[12px] truncate leading-none">{node.name}</span>
       </div>
 
-      {/* Recursive children */}
       {isFolder && isOpen &&
         node.children.map((child) => (
           <TreeItem
@@ -240,147 +234,97 @@ export function FinderWindow() {
   const selectedFile: FileNode | null =
     selectedNode?.type === "file" ? selectedNode : null;
 
-  const itemCount =
-    selectedNode?.type === "folder" ? selectedNode.children.length : null;
-
   return (
-    <div
-      className="w-full max-w-3xl rounded-xl shadow-2xl overflow-hidden flex flex-col border border-black/[0.12]"
-      style={{
-        minHeight: 480,
-        fontFamily:
-          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif',
-      }}
-    >
-      {/* Title bar */}
-      <div className="flex items-center px-4 py-2.5 bg-[#EBEBEB] border-b border-[#CFCFCF] flex-none">
-        <div className="flex gap-1.5 flex-none">
-          <div className="w-[13px] h-[13px] rounded-full bg-[#FF5F57] border border-[#E0443E]" />
-          <div className="w-[13px] h-[13px] rounded-full bg-[#FFBD2E] border border-[#DEA123]" />
-          <div className="w-[13px] h-[13px] rounded-full bg-[#28C840] border border-[#1FAD2F]" />
-        </div>
-        <span className="flex-1 text-center text-[12px] font-semibold text-[#3d3d3d] select-none">
-          nikolas.sapa
-        </span>
-        {/* Balance spacer */}
-        <div className="w-[49px] flex-none" />
+    <>
+      {/* Tree panel — left sidebar */}
+      <div className="w-52 flex-none border-r border-[#DCDCDC] bg-[#F6F6F6] overflow-y-auto py-1.5 px-1">
+        <TreeItem
+          node={ROOT}
+          depth={0}
+          selected={selected}
+          openFolders={openFolders}
+          onSelect={handleSelect}
+          onToggle={toggleFolder}
+        />
       </div>
 
-      {/* Body */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Tree panel */}
-        <div className="w-52 flex-none border-r border-[#DCDCDC] bg-[#F6F6F6] overflow-y-auto py-1.5 px-1">
-          <TreeItem
-            node={ROOT}
-            depth={0}
-            selected={selected}
-            openFolders={openFolders}
-            onSelect={handleSelect}
-            onToggle={toggleFolder}
-          />
-        </div>
-
-        {/* Content panel */}
-        <div className="flex-1 bg-white overflow-y-auto">
-          {selectedFile ? (
-            // ── File preview ──
-            <div className="p-6">
-              <div className="flex items-start gap-3 mb-5 pb-4 border-b border-[#EBEBEB]">
-                <FileIcon className="w-9 h-9 flex-none mt-0.5" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-[13px] font-semibold text-[#1d1d1f] truncate">
-                    {selectedFile.name}
-                  </p>
-                  <p className="text-[11px] text-[#86868b] mt-0.5">
-                    {selectedFile.kind} · {selectedFile.modified}
-                  </p>
-                </div>
-                {selectedFile.url && (
-                  <a
-                    href={selectedFile.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-[11px] text-[#0064D2] hover:underline flex-none"
-                  >
-                    Open <ExternalLink size={10} />
-                  </a>
-                )}
+      {/* Content panel — right */}
+      <div className="flex-1 bg-white overflow-y-auto">
+        {selectedFile ? (
+          <div className="p-6">
+            <div className="flex items-start gap-3 mb-5 pb-4 border-b border-[#EBEBEB]">
+              <FileIcon className="w-9 h-9 flex-none mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <p className="text-[13px] font-semibold text-[#1d1d1f] truncate">
+                  {selectedFile.name}
+                </p>
+                <p className="text-[11px] text-[#86868b] mt-0.5">
+                  {selectedFile.kind} · {selectedFile.modified}
+                </p>
               </div>
-              <pre className="text-[12px] text-[#3d3d3d] leading-[1.6] whitespace-pre-wrap font-sans">
-                {selectedFile.preview}
-              </pre>
-            </div>
-          ) : (
-            // ── Folder list view ──
-            <div>
-              {/* Column headers */}
-              <div className="flex items-center gap-4 px-4 py-1.5 border-b border-[#E5E5E5] bg-[#FAFAFA] sticky top-0">
-                <span className="flex-1 text-[11px] font-medium text-[#86868b] select-none">
-                  Name
-                </span>
-                <span className="w-32 text-[11px] font-medium text-[#86868b] select-none">
-                  Date Modified
-                </span>
-                <span className="w-32 text-[11px] font-medium text-[#86868b] select-none">
-                  Kind
-                </span>
-              </div>
-
-              {rightItems.length === 0 ? (
-                <p className="p-6 text-[12px] text-[#86868b]">Empty folder</p>
-              ) : (
-                rightItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center gap-4 px-4 py-[5px] hover:bg-[#F0F0F0] cursor-pointer border-b border-[#F0F0F0] last:border-0"
-                    onClick={() => {
-                      handleSelect(item.id);
-                      if (item.type === "folder") toggleFolder(item.id);
-                    }}
-                  >
-                    <div className="flex-1 flex items-center gap-2 min-w-0">
-                      {item.type === "folder" ? (
-                        <FolderIcon className="w-4 h-4 flex-none" />
-                      ) : (
-                        <FileIcon className="w-4 h-4 flex-none" />
-                      )}
-                      <span className="text-[12px] text-[#1d1d1f] truncate">
-                        {item.name}
-                      </span>
-                      {item.type === "file" && item.url && (
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="text-[#0064D2] hover:opacity-70 flex-none"
-                        >
-                          <ExternalLink size={10} />
-                        </a>
-                      )}
-                    </div>
-                    <span className="w-32 text-[11px] text-[#86868b] flex-none">
-                      {item.modified}
-                    </span>
-                    <span className="w-32 text-[11px] text-[#86868b] flex-none">
-                      {item.type === "folder" ? "Folder" : item.kind}
-                    </span>
-                  </div>
-                ))
+              {selectedFile.url && (
+                <a
+                  href={selectedFile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[11px] text-[#0064D2] hover:underline flex-none"
+                >
+                  Open <ExternalLink size={10} />
+                </a>
               )}
             </div>
-          )}
-        </div>
+            <pre className="text-[12px] text-[#3d3d3d] leading-[1.6] whitespace-pre-wrap font-sans">
+              {selectedFile.preview}
+            </pre>
+          </div>
+        ) : (
+          <div>
+            <div className="flex items-center gap-4 px-4 py-1.5 border-b border-[#E5E5E5] bg-[#FAFAFA] sticky top-0">
+              <span className="flex-1 text-[11px] font-medium text-[#86868b] select-none">Name</span>
+              <span className="w-32 text-[11px] font-medium text-[#86868b] select-none">Date Modified</span>
+              <span className="w-32 text-[11px] font-medium text-[#86868b] select-none">Kind</span>
+            </div>
+            {rightItems.length === 0 ? (
+              <p className="p-6 text-[12px] text-[#86868b]">Empty folder</p>
+            ) : (
+              rightItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-4 px-4 py-[5px] hover:bg-[#F0F0F0] cursor-pointer border-b border-[#F0F0F0] last:border-0"
+                  onClick={() => {
+                    handleSelect(item.id);
+                    if (item.type === "folder") toggleFolder(item.id);
+                  }}
+                >
+                  <div className="flex-1 flex items-center gap-2 min-w-0">
+                    {item.type === "folder" ? (
+                      <FolderIcon className="w-4 h-4 flex-none" />
+                    ) : (
+                      <FileIcon className="w-4 h-4 flex-none" />
+                    )}
+                    <span className="text-[12px] text-[#1d1d1f] truncate">{item.name}</span>
+                    {item.type === "file" && item.url && (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[#0064D2] hover:opacity-70 flex-none"
+                      >
+                        <ExternalLink size={10} />
+                      </a>
+                    )}
+                  </div>
+                  <span className="w-32 text-[11px] text-[#86868b] flex-none">{item.modified}</span>
+                  <span className="w-32 text-[11px] text-[#86868b] flex-none">
+                    {item.type === "folder" ? "Folder" : item.kind}
+                  </span>
+                </div>
+              ))
+            )}
+          </div>
+        )}
       </div>
-
-      {/* Status bar */}
-      <div className="px-4 py-1 bg-[#EBEBEB] border-t border-[#CFCFCF] flex-none">
-        <span className="text-[11px] text-[#86868b]">
-          {itemCount !== null
-            ? `${itemCount} item${itemCount !== 1 ? "s" : ""}`
-            : selectedFile?.name ?? ""}
-        </span>
-      </div>
-    </div>
+    </>
   );
 }

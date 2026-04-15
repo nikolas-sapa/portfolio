@@ -1,23 +1,21 @@
-import { FilingShell } from "@/components/filing-shell";
-
 export const metadata = {
   title: "Nikolas Sapalidis",
 };
 
 export default function MePage() {
   return (
-    <FilingShell items={[]} section="me">
+    <main className="flex-1 bg-white overflow-y-auto">
       <div className="p-8 md:p-12 max-w-2xl">
-        <div className="mb-10 pb-6 border-b border-shell-border">
-          <p className="text-[11px] font-mono uppercase tracking-widest text-shell-muted mb-3">
+        <div className="mb-10 pb-6 border-b border-[#EBEBEB]">
+          <p className="text-[11px] font-mono uppercase tracking-widest text-[#86868b] mb-3">
             About
           </p>
-          <h1 className="text-2xl font-sans font-semibold text-shell-ink leading-tight">
+          <h1 className="text-2xl font-sans font-semibold text-[#1d1d1f] leading-tight">
             Nikolas Sapalidis
           </h1>
         </div>
 
-        <div className="space-y-6 text-sm text-shell-ink leading-relaxed">
+        <div className="space-y-6 text-sm text-[#1d1d1f] leading-relaxed">
           <p>
             Solo founder, indie hacker, developer, entrepreneur, creator.
             I build products from zero — idea to shipped — and wear every hat
@@ -48,11 +46,11 @@ export default function MePage() {
             timeline of what&apos;s actually happening.
           </p>
 
-          <div className="pt-4 border-t border-shell-border">
-            <p className="text-[11px] font-mono uppercase tracking-widest text-shell-muted mb-3">
+          <div className="pt-4 border-t border-[#EBEBEB]">
+            <p className="text-[11px] font-mono uppercase tracking-widest text-[#86868b] mb-3">
               Currently
             </p>
-            <ul className="space-y-2 font-mono text-xs text-shell-muted">
+            <ul className="space-y-2 font-mono text-xs text-[#86868b]">
               <li>→ Building Helpmarq — engagement intelligence for SaaS</li>
               <li>→ Building Padel AI Coach — video analysis for padel</li>
               <li>→ Shipping client web projects</li>
@@ -61,6 +59,6 @@ export default function MePage() {
           </div>
         </div>
       </div>
-    </FilingShell>
+    </main>
   );
 }

@@ -1,4 +1,3 @@
-import { FilingShell } from "@/components/filing-shell";
 import { X, ExternalLink } from "lucide-react";
 
 const LINKS = [
@@ -18,13 +17,13 @@ const LINKS = [
 
 export default function ContactPage() {
   return (
-    <FilingShell items={[]} section="contact">
+    <main className="flex-1 bg-white overflow-y-auto">
       <div className="p-8 md:p-12">
-        <div className="mb-8 pb-6 border-b border-shell-border">
-          <h1 className="text-2xl font-sans font-semibold text-shell-ink">
+        <div className="mb-8 pb-6 border-b border-[#EBEBEB]">
+          <h1 className="text-2xl font-sans font-semibold text-[#1d1d1f]">
             Contact
           </h1>
-          <p className="mt-2 text-sm font-mono text-shell-muted">
+          <p className="mt-2 text-sm font-mono text-[#86868b]">
             Building in public — reach out anytime.
           </p>
         </div>
@@ -40,12 +39,12 @@ export default function ContactPage() {
               >
                 <Icon
                   size={15}
-                  className="text-shell-muted group-hover:text-shell-ink transition-colors flex-none"
+                  className="text-[#86868b] group-hover:text-[#1d1d1f] transition-colors flex-none"
                 />
-                <span className="text-[11px] font-mono uppercase tracking-wider text-shell-muted w-24 flex-none">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[#86868b] w-24 flex-none">
                   {label}
                 </span>
-                <span className="text-sm text-shell-ink group-hover:underline underline-offset-2">
+                <span className="text-sm text-[#1d1d1f] group-hover:underline underline-offset-2">
                   {value}
                 </span>
               </a>
@@ -53,6 +52,6 @@ export default function ContactPage() {
           ))}
         </ul>
       </div>
-    </FilingShell>
+    </main>
   );
 }
