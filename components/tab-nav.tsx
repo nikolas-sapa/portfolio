@@ -17,7 +17,7 @@ export function TabNav() {
   const pathname = usePathname();
 
   return (
-    <div className="flex border-b border-shell-border bg-shell-bg">
+    <div className="flex items-center gap-1 px-3 py-1.5 bg-[#EBEBEB] border-b border-[#DCDCDC] flex-none overflow-x-auto">
       {TABS.map((tab) => {
         const active = pathname.startsWith(tab.href);
         return (
@@ -25,10 +25,10 @@ export function TabNav() {
             key={tab.href}
             href={tab.href}
             className={[
-              "px-5 py-2.5 text-xs font-mono tracking-wide border-r border-shell-border transition-colors",
+              "px-2.5 py-1 rounded text-[12px] whitespace-nowrap transition-colors select-none",
               active
-                ? "bg-shell-content text-shell-ink -mb-px border-b border-b-shell-content"
-                : "bg-shell-tab text-shell-muted hover:bg-shell-bg hover:text-shell-ink",
+                ? "bg-[#0064D2] text-white"
+                : "text-[#3d3d3d] hover:bg-black/[0.08]",
             ].join(" ")}
           >
             {tab.label}

@@ -3,17 +3,17 @@
 
 @theme {
   /* Fonts */
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 
-  /* Filing cabinet shell colors */
-  --color-shell-bg: #F7F6F3;
-  --color-shell-border: #E2E0DA;
-  --color-shell-sidebar: #F0EDE8;
+  /* macOS-mapped shell colors (used across pages) */
+  --color-shell-bg: #E5E5EA;
+  --color-shell-border: #DCDCDC;
+  --color-shell-sidebar: #F6F6F6;
   --color-shell-content: #FFFFFF;
-  --color-shell-ink: #1A1917;
-  --color-shell-muted: #767369;
-  --color-shell-tab: #E8E5DF;
+  --color-shell-ink: #1d1d1f;
+  --color-shell-muted: #86868b;
+  --color-shell-tab: #EBEBEB;
 }
 
 * {
@@ -25,11 +25,11 @@ html {
 }
 
 ::selection {
-  background-color: #1A1917;
-  color: #F7F6F3;
+  background-color: #0064D2;
+  color: #ffffff;
 }
 
 body {
-  background-color: var(--color-shell-bg);
+  background-color: #E5E5EA;
   font-family: var(--font-sans);
 }
