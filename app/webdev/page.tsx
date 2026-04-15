@@ -1,13 +1,9 @@
-import { redirect } from "next/navigation";
-import { getItems } from "@/lib/content";
+import { FinderWindow } from "@/components/finder-window";
 
-export default function WebDevIndex() {
-  const items = getItems("webdev");
-  if (items.length > 0) redirect(`/webdev/${items[0].slug}`);
+export const metadata = {
+  title: "Web Dev — Nikolas Sapalidis",
+};
 
-  return (
-    <div className="p-12 text-sm font-mono text-shell-muted">
-      No web dev projects yet. Add an MDX file to content/webdev/.
-    </div>
-  );
+export default function WebDevPage() {
+  return <FinderWindow />;
 }
