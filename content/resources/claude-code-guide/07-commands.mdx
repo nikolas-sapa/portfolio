@@ -47,7 +47,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 
 ### `/run-pipeline`
 **Description:** Runs the full Cogenly lead pipeline: scrape Instagram hashtags → score with Claude → push to Notion.  
-**What it does:** Executes `run.sh` in `/Users/nikolassapalidis/Projects/lead-pipeline` with the given stage argument, then summarizes scraped count, filter pass rate, score distribution, top 3 leads, and Notion push confirmation.  
+**What it does:** Executes `run.sh` in `~/Projects/lead-pipeline` with the given stage argument, then summarizes scraped count, filter pass rate, score distribution, top 3 leads, and Notion push confirmation.  
 **Key steps:** Detect stage argument → `cd lead-pipeline && ./run.sh <stage>` → Summarize results  
 **Use case:** Running the lead generation pipeline (all stages or individual stages: scrape/score/push/manual/summary).  
 **Arguments:** `all`, `scrape`, `score`, `push`, `manual`, `summary`.

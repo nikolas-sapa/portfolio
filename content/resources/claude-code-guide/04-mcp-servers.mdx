@@ -49,15 +49,15 @@ Claude Code loads MCP servers from two places:
 ## 1. memory-system (Custom Python MCP)
 
 **Type:** Custom Python MCP, self-hosted  
-**Location:** `/Users/nikolassapalidis/memory-system/`  
+**Location:** `~/memory-system/`  
 **Config entry in `~/.claude/mcp.json`:**
 ```json
 {
   "mcpServers": {
     "memory-system": {
-      "command": "/Users/nikolassapalidis/memory-system/.venv/bin/python",
-      "args": ["/Users/nikolassapalidis/memory-system/mcp/memory_server.py"],
-      "cwd": "/Users/nikolassapalidis/memory-system"
+      "command": "~/memory-system/.venv/bin/python",
+      "args": ["~/memory-system/mcp/memory_server.py"],
+      "cwd": "~/memory-system"
     }
   }
 }

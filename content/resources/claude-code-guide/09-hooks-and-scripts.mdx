@@ -147,7 +147,7 @@ process.stdin.on('end', () => {
 **What it does:**
 Reads the `file_path` from the incoming tool JSON. If the file extension matches `.tsx`, `.jsx`, `.css`, `.scss`, `.html`, `.svelte`, or `.vue`, it:
 1. Loads `~/.claude/rules/design-dna.md`
-2. Checks `~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences.md` for accumulated user feedback
+2. Checks `~/.claude/projects/-Users-<you>/memory/design_preferences.md` for accumulated user feedback
 3. Emits a context message: `"DESIGN DNA ACTIVE: Follow ~/.claude/rules/design-dna.md"` — with `"+ learned preferences in memory"` appended if preferences exist
 
 This ensures every frontend file write is preceded by design rule reminders injected into Claude's context.
@@ -164,7 +164,7 @@ filepath=$(echo "$input" | jq -r '.tool_input.file_path // ""')
 if echo "$filepath" | grep -qiE '\.(tsx|jsx|css|scss|html|svelte|vue)$'; then
   rules=$(cat ~/.claude/rules/design-dna.md 2>/dev/null)
   if [ -n "$rules" ]; then
-    prefs=$(cat ~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences.md 2>/dev/null \
+    prefs=$(cat ~/.claude/projects/-Users-<you>/memory/design_preferences.md 2>/dev/null \
       | grep -A999 "## Accumulated Feedback" | tail -n +2)
     msg="DESIGN DNA ACTIVE: Follow ~/.claude/rules/design-dna.md"
     if [ -n "$prefs" ] && [ "$(echo "$prefs" | grep -v '^$' | grep -v '^<!--')" ]; then

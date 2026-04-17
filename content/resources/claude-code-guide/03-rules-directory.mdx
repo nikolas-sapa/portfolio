@@ -68,9 +68,9 @@ Clean, polished, modern SaaS. Apple-level attention to detail. Liquid glass / gl
 - Micro-details: consistent border-radius, icon sizing, spacing rhythm
 
 ### Self-Improving Mechanism
-When user gives design feedback, update `~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences.md`.
+When user gives design feedback, update `~/.claude/projects/-Users-<you>/memory/design_preferences.md`.
 
-Also check `~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences.md` for accumulated preferences from past sessions.
+Also check `~/.claude/projects/-Users-<you>/memory/design_preferences.md` for accumulated preferences from past sessions.
 
 ---
 
@@ -121,7 +121,7 @@ Also check `~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences
 
 ## 4. `obsidian.md` — Obsidian Vault Rules
 
-**Vault path:** `/Users/nikolassapalidis/MyVault/`
+**Vault path:** `~/MyVault/`
 
 Use lean-ctx tools directly on the vault — NOT `mcp__obsidian__` tools.
 
@@ -129,10 +129,10 @@ Use lean-ctx tools directly on the vault — NOT `mcp__obsidian__` tools.
 
 | Task | Tool |
 |---|---|
-| Search vault by keyword | `ctx_search(pattern, "/Users/nikolassapalidis/MyVault")` |
-| Read a specific note | `ctx_read("/Users/nikolassapalidis/MyVault/path/to/note.md")` |
-| Map vault structure | `ctx_tree("/Users/nikolassapalidis/MyVault", depth)` |
-| List area or project files | `ctx_tree("/Users/nikolassapalidis/MyVault/01-Areas", 2)` |
+| Search vault by keyword | `ctx_search(pattern, "~/MyVault")` |
+| Read a specific note | `ctx_read("~/MyVault/path/to/note.md")` |
+| Map vault structure | `ctx_tree("~/MyVault", depth)` |
+| List area or project files | `ctx_tree("~/MyVault/01-Areas", 2)` |
 
 Never use `mcp__obsidian__` — lean-ctx reads the same markdown files faster and with compression.
 

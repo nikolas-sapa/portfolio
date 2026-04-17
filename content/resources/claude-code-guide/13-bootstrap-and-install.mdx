@@ -62,7 +62,7 @@ Verify:
 claude --version
 # Expected: 2.1.112 (Claude Code)
 which claude
-# Expected: /Users/<you>/.local/bin/claude
+# Expected: ~/.local/bin/claude
 ```
 
 Authenticate with your Anthropic account:
@@ -251,9 +251,9 @@ Create `~/.claude/mcp.json`:
 {
   "mcpServers": {
     "memory-system": {
-      "command": "/Users/<you>/memory-system/.venv/bin/python",
-      "args": ["/Users/<you>/memory-system/mcp/memory_server.py"],
-      "cwd": "/Users/<you>/memory-system"
+      "command": "~/memory-system/.venv/bin/python",
+      "args": ["~/memory-system/mcp/memory_server.py"],
+      "cwd": "~/memory-system"
     }
   }
 }
@@ -391,7 +391,7 @@ Add to `~/.claude/CLAUDE.md` or your project's `CLAUDE.md`:
 
 ```markdown
 ## Obsidian Vault
-Vault: `/Users/<you>/MyVault/` — access via lean-ctx tools directly on vault path.
+Vault: `~/MyVault/` — access via lean-ctx tools directly on vault path.
 ```
 
 ---
@@ -538,6 +538,3 @@ claude -p "say hello"
 | uv | latest | curl install script |
 | gcp-llm | custom script | `~/.local/bin/gcp-llm` |
 
----
-
-*Section 13 of the Ultimate Claude Code Setup Guide.*

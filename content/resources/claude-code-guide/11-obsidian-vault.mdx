@@ -12,7 +12,7 @@ tags: ["claude-code", "guide"]
 
 ---
 
-Vault root: `/Users/nikolassapalidis/MyVault/`
+Vault root: `~/MyVault/`
 
 ---
 
@@ -252,10 +252,10 @@ Reads `CLAUDE.md` + latest session handoff + active project indexes. Returns pre
 
 | Task | Use | Never Use |
 |---|---|---|
-| Search vault by keyword | `ctx_search(pattern, "/Users/nikolassapalidis/MyVault")` | `mcp__obsidian__` |
-| Read a vault note | `ctx_read("/Users/nikolassapalidis/MyVault/path/to/note.md")` | `mcp__obsidian__` |
-| Map vault structure | `ctx_tree("/Users/nikolassapalidis/MyVault", depth)` | `ls` / `find` |
-| List area/project files | `ctx_tree("/Users/nikolassapalidis/MyVault/01-Areas", 2)` | `mcp__obsidian__` |
+| Search vault by keyword | `ctx_search(pattern, "~/MyVault")` | `mcp__obsidian__` |
+| Read a vault note | `ctx_read("~/MyVault/path/to/note.md")` | `mcp__obsidian__` |
+| Map vault structure | `ctx_tree("~/MyVault", depth)` | `ls` / `find` |
+| List area/project files | `ctx_tree("~/MyVault/01-Areas", 2)` | `mcp__obsidian__` |
 
 **Why:** lean-ctx reads the same markdown files faster, with session caching and token compression. `mcp__obsidian__` is never used — lean-ctx is the mandatory tool for all vault access.
 

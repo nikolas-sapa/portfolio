@@ -133,9 +133,9 @@ bash start.sh
 {
   "mcpServers": {
     "memory-system": {
-      "command": "/Users/nikolassapalidis/memory-system/.venv/bin/python",
-      "args": ["/Users/nikolassapalidis/memory-system/mcp/memory_server.py"],
-      "cwd": "/Users/nikolassapalidis/memory-system"
+      "command": "~/memory-system/.venv/bin/python",
+      "args": ["~/memory-system/mcp/memory_server.py"],
+      "cwd": "~/memory-system"
     }
   }
 }
@@ -157,7 +157,7 @@ bash start.sh
 
 ---
 
-## Layer 2: Persistent Learned Feedback (`~/.claude/projects/-Users-nikolassapalidis/memory/`)
+## Layer 2: Persistent Learned Feedback (`~/.claude/projects/-Users-<you>/memory/`)
 
 A flat directory of markdown feedback files with YAML frontmatter, indexed by `MEMORY.md`. Loaded by Claude at session start for global behavioral rules.
 
@@ -218,7 +218,7 @@ NEVER fetch full details without filtering first. 10x token savings.
 ### Usage Patterns
 
 - **Prior session recall:** `search("padel app auth")` → `timeline(anchor=ID)` → `get_observations([ID1, ID2])`
-- **Code archaeology:** `smart_search("handleSave", path="/Users/nikolassapalidis/creator-roast")` → `smart_unfold(file, "handleSave")`
+- **Code archaeology:** `smart_search("handleSave", path="~/creator-roast")` → `smart_unfold(file, "handleSave")`
 - **Scoped by project:** all search tools accept `project` param to filter to a specific codebase
 
 ### Token Economics

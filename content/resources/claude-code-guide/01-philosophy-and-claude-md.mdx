@@ -277,16 +277,16 @@ Full reference: `~/.claude/rules/mcp.md`
 
 ## 11. Obsidian Vault Rules
 
-**Vault path:** `/Users/nikolassapalidis/MyVault/`
+**Vault path:** `~/MyVault/`
 
 **Access method:** Use lean-ctx tools directly on the vault path — NOT `mcp__obsidian__` tools.
 
 | Task | Tool |
 |---|---|
-| Search vault by keyword | `ctx_search(pattern, "/Users/nikolassapalidis/MyVault")` |
-| Read a specific note | `ctx_read("/Users/nikolassapalidis/MyVault/path/to/note.md")` |
-| Map vault structure | `ctx_tree("/Users/nikolassapalidis/MyVault", depth)` |
-| List area or project files | `ctx_tree("/Users/nikolassapalidis/MyVault/01-Areas", 2)` |
+| Search vault by keyword | `ctx_search(pattern, "~/MyVault")` |
+| Read a specific note | `ctx_read("~/MyVault/path/to/note.md")` |
+| Map vault structure | `ctx_tree("~/MyVault", depth)` |
+| List area or project files | `ctx_tree("~/MyVault/01-Areas", 2)` |
 
 ### Context Loading Order (before any project work)
 1. Check if the project's `CLAUDE.md` already has `@path` imports — if so, context is loaded.
@@ -379,7 +379,7 @@ Clean, polished, modern SaaS. Apple-level attention to detail. Liquid glass / gl
 `design-dna.md` is auto-injected via hook on frontend file writes.
 
 ### Design Feedback Protocol
-When user gives design feedback → update `~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences.md`.
+When user gives design feedback → update `~/.claude/projects/-Users-<you>/memory/design_preferences.md`.
 
 ### UI Components
 Check shadcn/ui then Magic UI before building custom:

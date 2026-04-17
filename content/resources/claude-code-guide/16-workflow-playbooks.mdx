@@ -267,7 +267,7 @@ enrich_emails.py  → AnyMailFinder email enrichment on sheet
 **Gotchas:**
 - Apify API token + Google credentials + AnyMailFinder key + Anthropic key all required in `.env`.
 - Instagram DM outreach is ToS-blocked; pipeline targets email outreach via Instantly.
-- `/run-pipeline` runs from a specific project directory (`/Users/nikolassapalidis/Projects/lead-pipeline`); it is not a global command.
+- `/run-pipeline` runs from a specific project directory (`~/Projects/lead-pipeline`); it is not a global command.
 - Large scrapes: always test 25 items first. &lt; 80% industry match = stop and refine keywords.
 
 ---
@@ -366,7 +366,7 @@ enrich_emails.py  → AnyMailFinder email enrichment on sheet
 **Expected outputs:** Strategy doc, pricing deck, live landing page, CRO recommendations, pre-ship report.
 
 **Gotchas:**
-- `frontend-design` skill fires automatically on new pages — check design preferences at `~/.claude/projects/-Users-nikolassapalidis/memory/design_preferences.md` first.
+- `frontend-design` skill fires automatically on new pages — check design preferences at `~/.claude/projects/-Users-<you>/memory/design_preferences.md` first.
 - Never skip `/pre-ship` before go-live; it catches HTTPS enforcement, DB user permissions, and staging gate.
 
 ---

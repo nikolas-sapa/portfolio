@@ -263,34 +263,6 @@ mcp__plugin_telegram_telegram__reply
 WebSearch
 ```
 
-### 3.23 Superpowers Plugin Scripts (Auto-Approved)
-```
-Bash(~/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.5/scripts/start-server.sh --project-dir /Users/nikolassapalidis/creator-roast 2>&1)
-Bash(/Users/nikolassapalidis/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh --project-dir /Users/nikolassapalidis/creator-roast 2>&1)
-```
-These were added automatically when the superpowers plugin was invoked in a session.
-
-### 3.24 Highly Specific One-Off Bash Entries (Accumulated from Past Sessions)
-These are path-specific commands that were allowed during debugging/dev sessions:
-
-```
-Bash(ls /Users/nikolassapalidis/creator-roast/app/\(auth\)/)
-Bash(ls /Users/nikolassapalidis/creator-roast/app/\(app\)/audit)
-Bash(grep -rn "text-green-400\|..." /Users/nikolassapalidis/creator-roast/...)
-Bash(grep -n "save.*card\|handleSave\|onClick" /Users/nikolassapalidis/creator-roast/...)
-Bash(grep -n "save\|Save\|card\|Card" /Users/nikolassapalidis/creator-roast/...)
-Bash(grep -n "download\|..." /Users/nikolassapalidis/creator-roast/...)
-Bash(sed -i '' -e 's/border-white\/6/border-border/g' ...)
-Bash(__NEW_LINE_e63ba46c595e9298__ for:*)
-Bash(do)
-Bash(done)
-Bash(LIAT="..." curl -s "https://www.linkedin.com/...")
-Bash(source .env.local)
-```
-> These are remnants of past one-off tasks and should be periodically pruned.
-
----
-
 ## 4. Permissions — `ask` Array (Destructive Operations)
 
 These operations require explicit user confirmation before execution:
@@ -392,7 +364,7 @@ Before any file-read or search tool is called natively, lean-ctx redirects it to
 ```json
 "statusLine": {
   "type": "command",
-  "command": "sh /Users/nikolassapalidis/.claude/statusline-command.sh"
+  "command": "sh ~/.claude/statusline-command.sh"
 }
 ```
 
@@ -470,7 +442,7 @@ This file adds permissions and MCP configuration specific to the local machine (
     "Bash(pip3 install:*)",
     "mcp__github__create_repository",
     "Bash(git clone:*)",
-    "Bash(git -C /Users/nikolassapalidis/helpmarq-landing-page remote -v)",
+    "Bash(git -C ~/helpmarq-landing-page remote -v)",
     "Bash(.venv/bin/pip install:*)",
     "Bash(.venv/bin/jupyter notebook:*)"
   ]
@@ -518,9 +490,9 @@ One custom MCP server is registered:
 
 ```json
 "memory-system": {
-  "command": "/Users/nikolassapalidis/memory-system/.venv/bin/python",
-  "args": ["/Users/nikolassapalidis/memory-system/mcp/memory_server.py"],
-  "cwd": "/Users/nikolassapalidis/memory-system"
+  "command": "~/memory-system/.venv/bin/python",
+  "args": ["~/memory-system/mcp/memory_server.py"],
+  "cwd": "~/memory-system"
 }
 ```
 
