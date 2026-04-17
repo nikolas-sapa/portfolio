@@ -51,16 +51,16 @@ Earlier sections cover individual components. This section shows how agents, ski
   → outputs: "Wrap-up complete. Next session: start with /resume."
 
 [Stop hook — fires automatically on session end]
-  → auto-session-save.sh writes ~/.claude/session-data/YYYY-MM-DD-<id>-session.tmp
-  → handoff also appears in MyVault/02-Projects/Claude Sessions/
+  → auto-session-save.sh writes a session file wherever you keep session notes
+  → handoff also appears in your vault's Projects/Claude Sessions folder
 ```
 
-**Expected outputs:** Status report on start. Handoff note + updated vault `CLAUDE.md` on end. Session file in `~/.claude/session-data/`.
+**Expected outputs:** Status report on start. Handoff note + updated vault `CLAUDE.md` on end. Session file in your session notes location.
 
 **Gotchas:**
-- `/resume` uses `mcp__obsidian__` to read the vault — do NOT use native Read on vault files.
+- `/resume` reads the vault via lean-ctx (`ctx_read`) — do NOT use `mcp__obsidian__` tools or native Read on vault files.
 - The stop hook runs `auto-session-save.sh` automatically; `/wrap-up` is the richer manual version that also updates the backlog.
-- `/resume-session [path]` loads `~/.claude/session-data/` files, not vault handoffs — these are two distinct systems.
+- `/resume-session [path]` loads session files, not vault handoffs — these are two distinct systems.
 - Context budget warning fires after 20+ exchanges; run `/compact` before switching to an unrelated task.
 
 ---
@@ -217,8 +217,7 @@ Earlier sections cover individual components. This section shows how agents, ski
 
   /crosspost  → distributes approved carousel across platforms
 
-State files: /tmp/carousel-analysis-[date].json → /tmp/carousel-ideas-selected.json
-             → /tmp/carousel-script-[slug].json → /tmp/carousel-export/ (PNGs)
+State files: temp JSON per phase → /tmp/carousel-export/ (PNGs)
 ```
 
 **Quick modes:** `/carousel "topic"` skips analysis+ideation. `/carousel build` jumps to creation.
@@ -243,31 +242,30 @@ State files: /tmp/carousel-analysis-[date].json → /tmp/carousel-ideas-selected
 ```
 /scrape-leads  (or /gmaps-leads for Google Maps, /lead-scraper for general)
   → test scrape: 25 items, verify 80%+ industry match
-  → full scrape: scrape_apify.py (< 1000) or scrape_apify_parallel.py (1000+)
-      geographic partitioning: US/EU/UK/Canada/Australia 4-way split
-  → deliverable: Google Sheet URL (local .tmp/ JSON is temp only)
+  → full scrape: run scraper (< 1000 sequential, 1000+ parallel)
+      geographic partitioning as needed
+  → deliverable: structured output (Google Sheet, CSV, or your data store)
 
 /classify-leads  (optional, for complex niches)
-  → classify_leads_llm.py: strong / moderate / weak / disqualify
-  → top 3 leads with score, pain signal, opening angle
+  → LLM classification: strong / moderate / weak / disqualify
+  → top leads with score, pain signal, opening angle
 
 /casualize-names  → normalizes name formatting for outreach copy
 
-enrich_emails.py  → AnyMailFinder email enrichment on sheet
+[email enrichment]  → enrich with your email-finding provider of choice
 
-/instantly-campaigns  → pushes leads to Instantly.ai outreach sequence
+[outreach push]  → push enriched leads to your outreach tool
 
-/run-pipeline [stage]  → orchestrates full pipeline from project directory:
-  ./run.sh all | scrape | score | push | manual | summary
-  → reports: profiles scraped, passed pre-filter, scoring breakdown, Notion push confirmation
+/run-pipeline [stage]  → orchestrates full pipeline:
+  all | scrape | score | push | manual | summary
+  → reports: profiles scraped, passed pre-filter, scoring breakdown, push confirmation
 ```
 
-**Expected outputs:** Google Sheet with classified + email-enriched leads. Instantly campaign with leads loaded.
+**Expected outputs:** Classified + email-enriched leads pushed to your outreach tool.
 
 **Gotchas:**
-- Apify API token, Google credentials, AnyMailFinder key, and Anthropic key all required in `.env`.
-- Instagram DM outreach is ToS-blocked — pipeline targets email outreach via Instantly.
-- `/run-pipeline` runs from a specific project directory (`~/Projects/lead-pipeline`) — not a global command.
+- API tokens for your scraper, enrichment provider, and outreach tool all required in `.env`.
+- Instagram DM outreach is ToS-blocked — target email outreach instead.
 - Always test with 25 items first. Below 80% industry match: stop and refine keywords.
 
 ---
@@ -426,7 +424,7 @@ enrich_emails.py  → AnyMailFinder email enrichment on sheet
 - Background tasks require `timeout: 600000` — the default 30s causes premature timeout.
 - If a wait times out, use `AskUserQuestion` — never kill the background process directly.
 - `/multi-plan` ends at plan delivery; it does not auto-execute. Run `/multi-execute` explicitly.
-- `codeagent-wrapper` must be at `~/.claude/bin/` — verify before using multi-model commands.
+- `codeagent-wrapper` is a personal wrapper script at `~/.claude/bin/` — verify it is present before using multi-model commands.
 
 ---
 

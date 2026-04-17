@@ -12,7 +12,6 @@ tags: ["claude-code", "guide"]
 
 ---
 
-> **Version:** lean-ctx 3.1.1 | 42 MCP tools | 90+ compression patterns  
 > **Install path:** `/opt/homebrew/bin/lean-ctx`  
 > **Config:** `~/.lean-ctx/config.toml` | **Tee logs:** `~/.lean-ctx/tee/`
 
@@ -27,7 +26,7 @@ Every file read and shell command output costs tokens. lean-ctx intercepts those
 - **File ID system** — every file gets a short ID (`F1`, `F2`, ...) that persists for the session. References replace full content on re-reads.
 - **Autonomous background work** — lean-ctx auto-runs `ctx_overview`, `ctx_preload`, and `ctx_dedup` behind the scenes; auto-checkpoints every 15 calls.
 
-Across a long session: hundreds of thousands of tokens saved at ~99% compression rates. The current session (v356) has saved **341,516 tokens** over 626 calls.
+Across a long session: hundreds of thousands of tokens saved at ~99% compression rates. lean-ctx tracks call counts and cumulative tokens saved per session — check `ctx_metrics` or `lean-ctx gain` for your own numbers.
 
 ---
 
@@ -327,9 +326,9 @@ lean-ctx auto-checkpoints every 15 tool calls. Each checkpoint includes:
 
 **Session state example:**
 ```
-SESSION v356 | 61h 38m | 626 calls | 341516 tok saved
+SESSION v<N> | <duration> | <calls> calls | <tokens> tok saved
 Root: ~
-Files (50): [F3 CLAUDE.md full] [F5 settings.json full] ...
+Files (<N>): [F3 CLAUDE.md full] [F5 settings.json full] ...
 ```
 
 Manual checkpoint: `ctx_compress()` — use proactively in long sessions.

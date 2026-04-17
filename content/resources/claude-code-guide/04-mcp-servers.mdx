@@ -55,9 +55,9 @@ Claude Code loads MCP servers from two places:
 {
   "mcpServers": {
     "memory-system": {
-      "command": "~/memory-system/.venv/bin/python",
-      "args": ["~/memory-system/mcp/memory_server.py"],
-      "cwd": "~/memory-system"
+      "command": "path/to/memory-system/.venv/bin/python",
+      "args": ["path/to/memory-system/mcp/memory_server.py"],
+      "cwd": "path/to/memory-system"
     }
   }
 }
@@ -106,12 +106,9 @@ memory-system/
 - **Embedding model:** `multilingual-e5-large` (via Pinecone integrated inference)
 - **Chunk size:** 512 tokens, overlap 50
 - **Watched paths** (auto-ingested by daemon):
-  - `~/MyVault/01-Areas/`
-  - `~/MyVault/02-Projects/creator-roast/`
-  - `~/MyVault/02-Projects/swipefile-automation/`
-  - `~/MyVault/02-Projects/marketmyapp/`
-  - `~/MyVault/02-Projects/helpmarq-landing-page/`
-  - `~/MyVault/03-Resources/`
+  - `~/my-vault/01-Areas/`
+  - `~/my-vault/02-Projects/` (your active project folders)
+  - `~/my-vault/03-Resources/`
   - `~/memory-system/obsidian/raw/`
 
 ### Obsidian Wiki Integration
@@ -314,7 +311,7 @@ tqdm, mcp[cli], plyer, python-dotenv, tiktoken, pypdf2, python-docx, rich
 **Type:** Plugin-bundled / mcpjson (`enabledMcpjsonServers`)  
 **Prefix:** `mcp__notion__`
 
-**What it does:** Full Notion workspace access — read/write pages and databases, search, create, update, manage comments, teams, and users. Primary task log and knowledge base for me.
+**What it does:** Full Notion workspace access — read/write pages and databases, search, create, update, manage comments, teams, and users. Primary task log and knowledge base.
 
 ### Tool List
 

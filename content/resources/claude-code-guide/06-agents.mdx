@@ -56,7 +56,7 @@ All agents live in `~/.claude/agents/`. Each is a Markdown file with YAML frontm
 - **Trigger:** Improving agent harness reliability, cost, or throughput
 - **Capabilities:**
   - Runs `/harness-audit` and collects baseline score
-  - Identifies top-3 leverage areas: hooks, evals, routing, context, safety
+  - Identifies top-3 focus areas: hooks, evals, routing, context, safety
   - Proposes minimal reversible config changes and measures before/after deltas
 - **Limitations:** Targets harness config only, not product code; preserves cross-platform behavior
 - **Typical inputs:** Current harness state; identified pain points
@@ -101,7 +101,7 @@ All agents live in `~/.claude/agents/`. Each is a Markdown file with YAML frontm
   - Reads 2-3 existing components to mirror naming, export, and prop patterns
   - Enforces Server Component defaults in Next.js App Router; avoids unnecessary `"use client"`
   - Applies design-dna rules: no emojis, no gradient backgrounds, physics-based animations, Apple-level polish
-  - Checks `~/.claude/projects/-Users-<you>/memory/design_preferences.md` for accumulated design preferences
+  - Checks `~/.claude/projects/<your-project-key>/memory/design_preferences.md` for accumulated design preferences
 - **Limitations:** Can edit files; does not review its own output (use reviewer or design-review after)
 - **Typical inputs:** Feature description; relevant component/page file paths; design system reference
 
@@ -433,15 +433,16 @@ All agents live in `~/.claude/agents/`. Each is a Markdown file with YAML frontm
 ### chief-of-staff
 - **Model:** opus | **Color:** purple
 - **Tools:** Read, Grep, Glob, Bash, Edit, Write
-- **Trigger:** Managing multi-channel communication workflows (email, Slack, LINE, Messenger, calendar)
+- **Trigger:** Managing multi-channel communication workflows (email, Slack, calendar)
+- **Note:** Personal setup — not part of a public distribution. The channel bridges (LINE via Matrix, Messenger via Playwright) and relationship context files are personal infrastructure not included here.
 - **Capabilities:**
   - 4-tier classification: skip → info_only → meeting_info → action_required
   - Fetches all channels in parallel; cross-references meeting URLs with calendar
-  - Generates draft replies matching sender relationship tone from `private/relationships.md` and `SOUL.md`
+  - Generates draft replies matched to sender relationship tone (driven by a local relationship context file)
   - Post-send follow-through checklist: calendar events, relationship notes, todo updates, git commit of knowledge files
   - Uses `PostToolUse` hook to enforce checklist at tool level (LLM cannot skip it)
   - Calendar math (free-slot calculation) done via `calendar-suggest.js`, not the LLM
-- **Limitations:** Requires Gmail CLI, Node.js 18+; optional Slack MCP, Matrix bridge (LINE), Playwright (Messenger)
+- **Limitations:** Requires Gmail CLI, Node.js 18+; optional Slack MCP; additional channel bridges require personal setup
 - **Typical inputs:** Invocations via `/mail`, `/slack`, `/today`, `/schedule-reply`
 
 ---
@@ -450,6 +451,7 @@ All agents live in `~/.claude/agents/`. Each is a Markdown file with YAML frontm
 - **Model:** sonnet | **Color:** orange
 - **Tools:** Read, Write
 - **Trigger:** Called by the `gmail-label` skill to classify email chunks in parallel
+- **Note:** Personal setup — relies on a private Gmail relay. Adapt the chunk format and classification rules to your own email pipeline.
 - **Capabilities:**
   - Reads a JSON chunk file (id, subject, from, date, snippet per email)
   - Classifies each into exactly one of three categories: Action Required / Waiting On / Reference
@@ -466,10 +468,10 @@ All agents live in `~/.claude/agents/`. Each is a Markdown file with YAML frontm
 - **Trigger:** Offloading bulk/repetitive code generation to save Claude tokens
 - **Capabilities:**
   - Relay agent: receives a prompt from Claude, sends it to Ollama, returns raw output
-  - Endpoint priority: GCP Ollama → local Ollama; model priority: qwen3.5:27b → gemma4:31b → qwen3:8b → qwen3:4b
+  - Endpoint priority: remote Ollama → local Ollama (requires your own Ollama endpoint); model priority: qwen3.5:27b → gemma4:31b → qwen3:8b → qwen3:4b
   - Selects `think: false` for boilerplate/stubs; `think: true` for complex logic
   - Does NOT review, modify, or improve output — pure relay
-- **Limitations:** Only as good as the available Ollama model; no codebase context
+- **Limitations:** Only as good as the available Ollama model; no codebase context; requires a running Ollama instance
 - **Typical inputs:** Complete, self-contained code generation prompt from the parent agent
 
 ---

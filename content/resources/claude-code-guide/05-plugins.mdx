@@ -12,7 +12,7 @@ tags: ["claude-code", "guide"]
 
 ---
 
-All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versions and dates sourced from `installed_plugins.json`.
+All plugins are installed at **user scope** (`~/.claude/plugins/cache/`).
 
 ---
 
@@ -21,7 +21,6 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 
 ### superpowers
 - **Version:** 5.0.7
-- **Installed:** 2026-03-15 | **Updated:** 2026-04-17
 - **Provides — Skills (13):**
   - `brainstorming` — structured ideation for new products/features
   - `writing-plans` — multi-file implementation planning
@@ -41,18 +40,12 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 - **Note:** Most critical plugin in the setup. Gates brainstorm/plan/debug/verify workflows via CLAUDE.md rules.
 
 ### frontend-design
-- **Version:** unknown (SHA: d5c15b8)
-- **Installed:** 2026-03-15 | **Updated:** 2026-04-17
 - **Provides — Skills:** `frontend-design` — full UI design-to-code pipeline
 
 ### code-review
-- **Version:** unknown (SHA: d5c15b8)
-- **Installed:** 2026-03-15 | **Updated:** 2026-04-17
 - **Provides — Commands:** `/code-review`
 
 ### hookify
-- **Version:** unknown (SHA: d5c15b8)
-- **Installed:** 2026-03-15 | **Updated:** 2026-04-17
 - **Provides — Skills:** `writing-rules`
 - **Provides — Commands:** `/hookify`, `/hookify:help`, `/hookify:list`, `/hookify:configure`
 - **Provides — Agents:** `conversation-analyzer`
@@ -60,48 +53,36 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 - **Note:** Hook management system — write and enforce custom behavioral rules.
 
 ### context7
-- **Version:** unknown (SHA: d5c15b8)
-- **Installed:** 2026-03-15 | **Updated:** 2026-04-17
 - **Status:** DISABLED (`"context7@claude-plugins-official": false` in settings.json)
 - **Note:** Replaced by the native `mcp__context7__` MCP server.
 
 ### code-simplifier
 - **Version:** 1.0.0
-- **Installed:** 2026-03-16 | **Updated:** 2026-04-17
 - **Provides — Commands:** simplify/refactor code
 
 ### commit-commands
-- **Version:** unknown (SHA: b10b583)
-- **Installed:** 2026-03-25 | **Updated:** 2026-04-17
 - **Provides — Commands:** `/commit`, `/commit-push-pr`, `/clean_gone`
 
 ### pr-review-toolkit
-- **Version:** unknown (SHA: b10b583)
-- **Installed:** 2026-03-25 | **Updated:** 2026-04-17
 - **Provides — Commands:** `/review-pr`
 - **Provides — Agents:** `code-reviewer`, `code-simplifier`, `comment-analyzer`, `pr-test-analyzer`, `silent-failure-hunter`, `type-design-analyzer`
 
 ### feature-dev
-- **Version:** unknown (SHA: b10b583)
-- **Installed:** 2026-03-25 | **Updated:** 2026-04-17
 - **Provides — Commands:** `/feature-dev`
 - **Provides — Agents:** `code-architect`, `code-explorer`, `code-reviewer`
 
 ### telegram
 - **Version:** 0.0.6
-- **Installed:** 2026-03-24 | **Updated:** 2026-04-17
 - **Source:** `anthropics/claude-plugins-official` (external_plugins/telegram)
 - **Provides — MCP:** `mcp__plugin_telegram_telegram__*` — Telegram bot integration
 - **Provides — Commands:** `/telegram:configure`, `/telegram:access`
 
 ### swift-lsp
 - **Version:** 1.0.0
-- **Installed:** 2026-04-07 | **Updated:** 2026-04-17
 - **Provides:** Swift Language Server Protocol integration
 
 ### figma
 - **Version:** 2.1.7
-- **Installed:** 2026-04-14 | **Updated:** 2026-04-17
 - **Provides — Skills (7):**
   - `figma-use` — query and read Figma designs
   - `figma-implement-design` — convert Figma frames to code
@@ -115,14 +96,12 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 
 ### slack
 - **Version:** 1.0.0
-- **Installed:** 2026-04-16 | **Updated:** 2026-04-17
 - **Provides — Skills:** `slack-messaging`, `slack-search`
 - **Provides — Commands:** `/standup`, `/find-discussions`, `/summarize-channel`, `/channel-digest`, `/draft-announcement`
 - **Provides — MCP:** `mcp__plugin_slack_slack__*` (auth-gated)
 
 ### vercel
 - **Version:** 0.40.0
-- **Installed:** 2026-04-17 | **Updated:** 2026-04-17
 - **Provides — Skills (25):**
   - Core: `nextjs`, `react-best-practices`, `vercel-cli`, `vercel-agent`, `vercel-functions`, `vercel-storage`, `vercel-sandbox`
   - Deploy: `deployments-cicd`, `workflow`, `verification`, `bootstrap`
@@ -140,37 +119,31 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 
 ### agent-alchemy-claude-tools
 - **Version:** 0.2.5
-- **Installed:** 2026-03-28 | **Updated:** 2026-04-17
 - **Provides — Skills:** `claude-code-tasks`, `claude-code-teams` — multi-agent task management and team orchestration
 
 ### agent-alchemy-core-tools
 - **Version:** 0.2.3
-- **Installed:** 2026-03-28 | **Updated:** 2026-04-17
 - **Provides — Skills:** `codebase-analysis`, `deep-analysis`, `language-patterns`, `project-conventions`, `technical-diagrams`
 - **Provides — Agents:** `code-architect`, `code-explorer`, `code-synthesizer`
 - **Provides — Hooks:** `auto-approve-da-session.sh`
 
 ### agent-alchemy-dev-tools
 - **Version:** 0.3.4
-- **Installed:** 2026-03-28 | **Updated:** 2026-04-17
 - **Provides — Skills:** `feature-dev`, `bug-killer`, `code-quality`, `architecture-patterns`, `changelog-format`, `docs-manager`, `document-changes`, `project-learnings`, `release-python-package`
 - **Provides — Agents:** `bug-investigator`, `changelog-manager`, `code-reviewer`, `docs-writer`
 
 ### agent-alchemy-git-tools
 - **Version:** 0.1.0
-- **Installed:** 2026-03-28 | **Updated:** 2026-04-17
 - **Provides — Skills:** `git-commit`
 
 ### agent-alchemy-sdd-tools
 - **Version:** 0.2.11
-- **Installed:** 2026-03-28 | **Updated:** 2026-04-17
 - **Provides — Skills (5):** `create-spec`, `analyze-spec`, `create-tasks`, `run-tasks`, `execute-tasks`
 - **Provides — Agents:** `codebase-explorer`, `context-manager`, `researcher`, `spec-analyzer`, `task-executor`, `wave-lead`
 - **Note:** Full Spec-Driven Development (SDD) pipeline.
 
 ### agent-alchemy-tdd-tools
 - **Version:** 0.2.1
-- **Installed:** 2026-03-28 | **Updated:** 2026-04-17
 - **Provides — Skills (5):** `tdd-cycle`, `generate-tests`, `create-tdd-tasks`, `execute-tdd-tasks`, `analyze-coverage`
 - **Provides — Agents:** `tdd-executor`, `test-reviewer`, `test-writer`
 
@@ -181,7 +154,6 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 
 ### claude-mem
 - **Version:** 10.5.5
-- **Installed:** 2026-03-15 | **Updated:** 2026-04-17
 - **Provides — Skills (4):** `mem-search`, `make-plan`, `do`, `smart-explore`
 - **Provides — MCP:** `mcp__plugin_claude-mem_mcp-search__*` — persistent memory search across sessions
 - **Provides — Modes (35):** localized code modes (ar, bn, chill, cs, de, es, fr, ja, ko, zh, etc.) + `email-investigation`, `law-study`
@@ -194,8 +166,6 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 **Source repo:** `muratcankoylan/agent-skills-for-context-engineering`
 
 ### context-engineering
-- **Version:** 3ab8c9488989
-- **Installed:** 2026-04-06 | **Updated:** 2026-04-17
 - **Provides — Skills (13):**
   - `context-fundamentals`, `context-compression`, `context-optimization`, `context-degradation`
   - `memory-systems`, `filesystem-context`
@@ -221,7 +191,6 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 
 ### marketing-skills
 - **Version:** 1.0.0
-- **Installed:** 2026-03-28 | **Updated:** 2026-03-28
 - **Provides — Skills (34):**
   - SEO/Content: `seo-audit`, `ai-seo`, `schema-markup`, `content-strategy`, `site-architecture`, `programmatic-seo`
   - CRO: `page-cro`, `form-cro`, `popup-cro`, `onboarding-cro`, `signup-flow-cro`, `paywall-upgrade-cro`
@@ -240,16 +209,3 @@ All plugins are installed at **user scope** (`~/.claude/plugins/cache/`). Versio
 | `interface-design` | `Dammyjay93/interface-design` | Registered, no plugins installed |
 | `spec-kit` | `github/spec-kit` | Enabled in `enabledPlugins` (`spec-kit@spec-kit: true`) but no cache entry |
 
----
-
-## Summary Statistics
-
-| Stat | Value |
-|---|---|
-| Total installed plugins | 23 |
-| Enabled | 22 (context7 disabled) |
-| Marketplaces with installs | 5 |
-| Registered marketplaces (total) | 9 |
-| Total skills contributed | ~120+ |
-| Total agents contributed | ~25+ |
-| Scope | All user-level |

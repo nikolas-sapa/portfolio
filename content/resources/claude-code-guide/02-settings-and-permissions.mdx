@@ -442,7 +442,7 @@ Permissions and MCP config specific to the local machine — not committed to an
     "Bash(pip3 install:*)",
     "mcp__github__create_repository",
     "Bash(git clone:*)",
-    "Bash(git -C ~/helpmarq-landing-page remote -v)",
+    "Bash(git -C ~/my-project remote -v)",
     "Bash(.venv/bin/pip install:*)",
     "Bash(.venv/bin/jupyter notebook:*)"
   ]
@@ -457,7 +457,7 @@ Permissions and MCP config specific to the local machine — not committed to an
 | `Bash(pip3 install:*)` | Install pip packages |
 | `mcp__github__create_repository` | Create GitHub repositories via MCP |
 | `Bash(git clone:*)` | Clone git repositories |
-| `Bash(git -C /Users/.../helpmarq-landing-page remote -v)` | Check remotes in the helpmarq project specifically |
+| `Bash(git -C ~/my-project remote -v)` | Check remotes in a specific project directory |
 | `Bash(.venv/bin/pip install:*)` | Install into local virtualenv |
 | `Bash(.venv/bin/jupyter notebook:*)` | Launch Jupyter notebooks from local venv |
 
@@ -490,17 +490,17 @@ One custom MCP server is defined:
 
 ```json
 "memory-system": {
-  "command": "~/memory-system/.venv/bin/python",
-  "args": ["~/memory-system/mcp/memory_server.py"],
-  "cwd": "~/memory-system"
+  "command": "path/to/memory-system/.venv/bin/python",
+  "args": ["path/to/memory-system/mcp/memory_server.py"],
+  "cwd": "path/to/memory-system"
 }
 ```
 
 | Field | Value |
 |-------|-------|
-| Runtime | Python via local virtualenv at `~/memory-system/.venv` |
-| Entry point | `~/memory-system/mcp/memory_server.py` |
-| Working directory | `~/memory-system` |
+| Runtime | Python via local virtualenv inside your `memory-system` directory |
+| Entry point | `memory-system/mcp/memory_server.py` |
+| Working directory | your `memory-system` directory |
 | Purpose | Exposes `search_pinecone`, `search_wiki`, `update_wiki_page`, `ingest_file`, `ingest_url`, `get_log`, `run_health_check` |
 
 Locally-hosted Python server backed by Pinecone (vector search) and a wiki system.
@@ -515,6 +515,6 @@ Locally-hosted Python server backed by Pinecone (vector search) and a wiki syste
 | Agent model | Sonnet for subagents via env var; Opus reserved for `advisor()` calls |
 | Auto-memory | Disabled — manual memory via claude-mem, knowledge graph, Obsidian vault |
 | Hooks | Glass/Ping/Basso sounds for Stop/Notification/StopFailure; 2 PreToolUse hooks enforcing lean-ctx at the harness level |
-| Plugins | 23 enabled across 5 marketplaces; context7 plugin disabled (MCP used directly) |
+| Plugins | A handful enabled across multiple marketplaces; context7 plugin disabled (MCP used directly) |
 | Custom MCPs | 1 local Python memory-system server (Pinecone + wiki backend) |
 | Status line | Custom shell script at `~/.claude/statusline-command.sh` |

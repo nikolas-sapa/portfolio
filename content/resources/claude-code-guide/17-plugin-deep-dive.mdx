@@ -234,9 +234,9 @@ Multi-condition rules use a `conditions:` YAML array instead of `pattern:`, with
 
 **No restart needed:** Rules take effect on the next tool use after file creation.
 
-### Active Rules for This User
+### Active Rules
 
-No hookify rules are currently active. No `hookify.*.local.md` files exist in `~/.claude/` and no project-level `.claude/` hookify files were found.
+Hookify rules are only active when `hookify.*.local.md` files exist — in `~/.claude/` for global rules or in a project's `.claude/` directory for project-scoped rules. A fresh install has none; you create them on demand via `/hookify`.
 
 ### Commands
 
@@ -635,7 +635,7 @@ After PR feedback:     /pr-review-toolkit:review-pr <targeted-aspects>
 |-------|---------|-------------|
 | `frontend-design:frontend-design` | Frontend UI work, new pages, major components from scratch, visual/design feedback | Bold aesthetic choices, distinctive typography and color palettes, high-impact animations, context-aware implementation. Created by Prithvi Rajasekaran and Alexander Bricken at Anthropic. Reference: [Frontend Aesthetics Cookbook](https://github.com/anthropics/claude-cookbooks/blob/main/coding/prompting_for_frontend_aesthetics.ipynb). |
 
-**Note:** My personal `design-dna.md` rules override this skill's defaults: no gradient backgrounds, no emojis (use icons), no Inter/Roboto/Arial as primary font, physics-based easing (spring/ease-out-expo), glassmorphism where appropriate, restrained color palette.
+**Note:** A project's `design-dna.md` file can override this skill's defaults — common overrides include: no gradient backgrounds, no emojis (use icons), non-default font choices, physics-based easing (spring/ease-out-expo), glassmorphism where appropriate, restrained color palette.
 
 ---
 

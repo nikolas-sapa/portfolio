@@ -1,18 +1,18 @@
 ---
 title: "08 — Skills"
 date: "2026-04-16"
-description: "200+ skills, how gating works, and the small set that pays for itself daily."
+description: "A large catalog of skills, how gating works, and the small set that pays for itself daily."
 order: 8
 group: "Automation"
 groupSlug: "04-automation"
 tags: ["claude-code", "guide"]
 ---
 
-> Skills are Claude's internal how-tos — concrete procedures for recurring tasks (debugging, writing plans, shipping PRs). Claude triggers them automatically when a matching situation appears. The value is the small set you actually use, not the 200 you installed.
+> Skills are Claude's internal how-tos — concrete procedures for recurring tasks (debugging, writing plans, shipping PRs). Claude triggers them automatically when a matching situation appears. The value is the small set you actually use, not the full catalog you installed.
 
 ---
 
-`~/.claude/skills/` contains **209 entries** (skills + a few standalone `.md` helpers).
+`~/.claude/skills/` contains a large catalog of skills plus a few standalone `.md` helpers.
 Skills are invoked via `/skill-name` in any Claude Code session.
 Many belong to the **gstack** suite — preamble-based, auto-suggested on matching phrases.
 
@@ -77,7 +77,6 @@ Skills for growing products, running ads, acquiring leads, and optimizing conver
 | `meta-ads-extractor` | Extract/download Meta Ads Library images and videos | Building swipe files, downloading competitor creatives |
 | `cold-email` | Write B2B cold email + follow-up sequences that get replies | Cold outreach, SDR emails, prospecting |
 | `email-sequence` | Create multi-email drip/nurture campaigns and lifecycle flows | Onboarding emails, welcome series, re-engagement |
-| `welcome-email` | Send welcome email sequences to new clients | Post-signup/onboarding email triggers |
 | `instantly-campaigns` | Create cold email campaigns in Instantly with A/B testing | Instantly.ai campaign setup |
 | `instantly-autoreply` | Auto-generate intelligent replies to Instantly email threads using knowledge bases | Automated email responses in Instantly |
 | `page-cro` | Optimize marketing pages for conversions | "This page isn't converting", low conversion rate |
@@ -93,7 +92,7 @@ Skills for growing products, running ads, acquiring leads, and optimizing conver
 | `lead-research-assistant` | Identify high-quality leads by analyzing your business and searching target companies | B2B lead research, prospect identification |
 | `classify-leads` | Classify leads with LLM (e.g. product SaaS vs agency) | "Filter leads by type", lead categorization |
 | `casualize-names` | Convert formal names to casual first names/company names for cold email | Cold email personalization, lead data prep |
-| `scrape-leads` | Scrape and verify leads via Apify, classify with LLM, enrich emails, save to Sheets | "Find leads", "generate prospect lists" |
+| `lead-pipeline` | Scrape and verify leads via Apify, classify with LLM, enrich emails, save to Sheets | "Find leads", "generate prospect lists" |
 | `gmaps-leads` | Scrape Google Maps for B2B leads with website enrichment and contact extraction | Local business lead lists, contractor databases |
 | `instagram-lead-scorer` | Score Instagram followers as leads, enrich profiles, score qualification, generate outreach DMs | "Score leads", "find leads in followers" |
 | `upwork-apply` | Scrape Upwork jobs and generate personalized proposals/cover letters | Finding and applying to Upwork listings |
@@ -113,7 +112,6 @@ Skills for growing products, running ads, acquiring leads, and optimizing conver
 | `sales-enablement` | Sales collateral, pitch decks, one-pagers, objection handling, demo scripts | "Sales materials", "pitch deck", "help my sales team" |
 | `site-architecture` | Plan/map website page hierarchy, navigation, URL structure, internal linking | "What pages do I need", sitemap, information architecture |
 | `product-marketing-context` | Create `.agents/product-marketing-context.md` — single source of truth for positioning/ICP | Session setup before any marketing task |
-| `onboarding-kickoff` | Automated client onboarding — generate leads, create email campaigns, auto-reply setup | Post-kickoff call client automation |
 | `create-proposal` | Generate PandaDoc proposals from client info or call transcripts | "Create a proposal", "generate a quote" |
 | `investor-outreach` | Draft cold emails, warm intro blurbs, follow-ups for fundraising | VC/angel outreach, "write an investor email" |
 | `investor-materials` | Create pitch decks, one-pagers, investor memos, financial models, accelerator applications | Investor-facing documents, fundraising materials |
@@ -187,7 +185,7 @@ Skills for YouTube competitive intelligence, video production, and distribution.
 | `video-downloader` | Download YouTube videos in customizable quality/format, audio-only MP3 option | "Download this YouTube video" |
 | `video-edit` | Edit talking-head videos — remove silences with neural VAD, add 3D swivel transitions | "Edit video", "remove silences", "add jump cuts" |
 | `video-editor` | TikTok/Reels/Shorts editor — captions, overlays, music, talking-head, clip modes | Modular short-form video editing |
-| `video-scheduling` | Schedule Instagram Reels via Zernio API | "Schedule to Instagram", "post reels", "check IG schedule" |
+| `video-scheduling` | Schedule Instagram Reels via a scheduling API | "Schedule to Instagram", "post reels", "check IG schedule" |
 | `transcribe` | Transcribe video from any URL (YouTube, Instagram, X, TikTok, 1000+ sites) | "Transcribe this video", paste any video URL |
 | `pan-3d-transition` | 3D pan/swivel transition effects using Remotion | Video transition effects |
 
@@ -285,9 +283,6 @@ Skills for managing specific platforms and third-party services.
 
 | Skill | What it does | When to use |
 |---|---|---|
-| `skool` | Manage Skool courses — create/update content, upload pages, add resources, notifications | Skool course/community management |
-| `skool-monitor` | Monitor Skool communities — read posts, create posts, reply, like, search | "Check Skool", "read community posts" |
-| `skool-rag` | Query Skool community content via RAG pipeline with vector search | "Search Skool knowledge", "find community answers" |
 | `gmail-inbox` | Manage emails across multiple Gmail accounts — read, label, archive | "Check email", "manage Gmail" |
 | `gmail-label` | Auto-label Gmail emails — Action Required, Waiting On, Reference | "Label emails", "triage inbox" |
 | `slack-gif-creator` | Create animated GIFs optimized for Slack (constraints, validation, animation concepts) | "Make me a GIF for Slack" |

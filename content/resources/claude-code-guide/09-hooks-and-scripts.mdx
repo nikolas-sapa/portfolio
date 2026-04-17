@@ -12,7 +12,7 @@ tags: ["claude-code", "guide"]
 
 ---
 
-Every hook, utility script, and the status line command in my Claude Code setup. Hooks fire automatically on Claude Code events; scripts are manual or scheduled; the status line runs continuously in the terminal UI.
+Every hook, utility script, and the status line command in this Claude Code setup. Hooks fire automatically on Claude Code events; scripts are manual or scheduled; the status line runs continuously in the terminal UI.
 
 ---
 
@@ -147,7 +147,7 @@ process.stdin.on('end', () => {
 **What it does:**
 Reads the `file_path` from the incoming tool JSON. If the extension matches `.tsx`, `.jsx`, `.css`, `.scss`, `.html`, `.svelte`, or `.vue`, it:
 1. Loads `~/.claude/rules/design-dna.md`
-2. Checks `~/.claude/projects/-Users-<you>/memory/design_preferences.md` for accumulated user feedback
+2. Checks `~/.claude/projects/<your-project>/memory/design_preferences.md` for accumulated user feedback
 3. Emits a context message: `"DESIGN DNA ACTIVE: Follow ~/.claude/rules/design-dna.md"` — with `"+ learned preferences in memory"` appended if preferences exist
 
 This ensures every frontend file write is preceded by design rule reminders.
@@ -164,7 +164,7 @@ filepath=$(echo "$input" | jq -r '.tool_input.file_path // ""')
 if echo "$filepath" | grep -qiE '\.(tsx|jsx|css|scss|html|svelte|vue)$'; then
   rules=$(cat ~/.claude/rules/design-dna.md 2>/dev/null)
   if [ -n "$rules" ]; then
-    prefs=$(cat ~/.claude/projects/-Users-<you>/memory/design_preferences.md 2>/dev/null \
+    prefs=$(cat ~/.claude/projects/<your-project>/memory/design_preferences.md 2>/dev/null \
       | grep -A999 "## Accumulated Feedback" | tail -n +2)
     msg="DESIGN DNA ACTIVE: Follow ~/.claude/rules/design-dna.md"
     if [ -n "$prefs" ] && [ "$(echo "$prefs" | grep -v '^$' | grep -v '^<!--')" ]; then
@@ -322,7 +322,7 @@ Scripts live in `~/.claude/scripts/`. Invoked manually, called from within Claud
 **Language:** Bash + embedded Python 3
 
 **What it does:**
-Automatically generates a session handoff Markdown file in `~/MyVault/02-Projects/Claude Sessions/`. On session end:
+Automatically generates a session handoff Markdown file in a configured vault directory (e.g. `~/my-vault/sessions/`). On session end:
 1. Reads `session_id` from hook stdin JSON
 2. Finds the corresponding `.jsonl` transcript in `~/.claude/projects/`
 3. Parses the JSONL with Python to extract: up to 8 distinct user requests (deduplicated), all file paths passed to `Edit` or `Write` tools, up to 6 key decision/action summaries from assistant text blocks
@@ -349,7 +349,7 @@ _(fill in at /wrap-up)_
 ```
 
 **Input:** stdin JSON with `{ "session_id": "..." }`
-**Output:** Writes Markdown to `~/MyVault/02-Projects/Claude Sessions/`; prints path to stdout
+**Output:** Writes Markdown to the configured vault sessions directory; prints path to stdout
 **Dependencies:** `jq`, `python3`, `find`
 
 ---
@@ -446,7 +446,7 @@ fi
 **Language:** Bash
 
 **What it does:**
-Enforces that PRs are always created through the `/create-pr` skill rather than raw `gh pr create`. Checks for a sentinel file at `/tmp/create_pr_ok_<session_id>` (written by the `/create-pr` skill when running). If the sentinel exists, allows through. If not, blocks with a JSON `permissionDecision: "block"` and a message explaining to use `/create-pr` instead.
+Enforces that PRs are always created through a dedicated PR skill rather than raw `gh pr create`. (The example references a personal `/create-pr` skill — adapt to whatever PR workflow skill you use.) Checks for a sentinel file at `/tmp/create_pr_ok_<session_id>` (written by the skill when running). If the sentinel exists, allows through. If not, blocks with a JSON `permissionDecision: "block"` and a message explaining to use the skill instead.
 
 **Input:** stdin JSON with `{ "session_id": "..." }`
 **Output:** JSON block response or `exit 0`
@@ -464,7 +464,7 @@ jq -n '{
   "hookSpecificOutput": {
     "hookEventName": "PreToolUse",
     "permissionDecision": "block",
-    "permissionDecisionReason": "Use /create-pr instead of raw `gh pr create`. It captures business intent, runs code review, and starts CI monitoring."
+    "permissionDecisionReason": "Use your PR skill instead of raw `gh pr create`. It captures business intent, runs code review, and starts CI monitoring."
   }
 }'
 ```

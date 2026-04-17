@@ -60,7 +60,7 @@ Verify:
 
 ```bash
 claude --version
-# Expected: 2.1.112 (Claude Code)
+# Expected: <version> (Claude Code)
 which claude
 # Expected: ~/.local/bin/claude
 ```
@@ -76,7 +76,7 @@ claude
 
 ## 3. lean-ctx Install + Hook Wiring
 
-lean-ctx is a context-engineering runtime that sits between Claude Code and file/shell operations. It compresses outputs, caches reads, and provides 42 MCP tools.
+lean-ctx is a context-engineering runtime that sits between Claude Code and file/shell operations. It compresses outputs, caches reads, and provides dozens of MCP tools.
 
 ### Install
 
@@ -88,7 +88,7 @@ Verify:
 
 ```bash
 lean-ctx --version
-# Expected: 3.1.1
+# Expected: current version
 which lean-ctx
 # Expected: /opt/homebrew/bin/lean-ctx
 ```
@@ -160,8 +160,8 @@ Claude Code plugins are installed via the CLI. Marketplaces must be added before
 ```bash
 claude plugins marketplace add github:sequenzia/agent-alchemy
 claude plugins marketplace add github:thedotmack/claude-mem
-claude plugins marketplace add github:coreyhaines31/marketing-skills
 claude plugins marketplace add github:context-engineering-marketplace/context-engineering
+# Add any other third-party marketplaces you use here
 ```
 
 The following marketplaces are built-in and do not need to be added:
@@ -186,9 +186,8 @@ claude plugins install slack@claude-plugins-official
 claude plugins install vercel@claude-plugins-official
 claude plugins install swift-lsp@claude-plugins-official
 
-# Third-party marketplace plugins
+# Third-party marketplace plugins (install only what you've added above)
 claude plugins install claude-mem@thedotmack
-claude plugins install marketing-skills@coreyhaines31
 claude plugins install agent-alchemy-claude-tools@sequenzia
 claude plugins install agent-alchemy-core-tools@sequenzia
 claude plugins install agent-alchemy-dev-tools@sequenzia
@@ -196,6 +195,7 @@ claude plugins install agent-alchemy-git-tools@sequenzia
 claude plugins install agent-alchemy-sdd-tools@sequenzia
 claude plugins install agent-alchemy-tdd-tools@sequenzia
 claude plugins install context-engineering@context-engineering-marketplace
+# claude plugins install <your-skill>@<your-marketplace>  ← add your own skills here
 ```
 
 > **Install order matters:** marketplaces first, then plugins. Installing a plugin from an unregistered marketplace will fail.
@@ -209,6 +209,7 @@ The memory-system provides persistent knowledge management via Pinecone vector s
 ### Clone the repo
 
 ```bash
+# Point this at your own memory-system repo if you have one
 git clone <your-memory-system-repo> ~/memory-system
 cd ~/memory-system
 ```
@@ -306,7 +307,7 @@ echo 'export GROQ_API_KEY="gsk_<your-key>"' > ~/.config/groq/.env
 
 ### Tier 3 — GCP Ollama (spot instance, $0.28/hr)
 
-The `gcp-llm` CLI manages a GCP spot VM running Ollama. It is installed as a shell script at `~/.local/bin/gcp-llm`.
+The `gcp-llm` CLI manages a GCP spot VM running Ollama. It is a personal helper script installed at `~/.local/bin/gcp-llm` — not a public package. Write your own or adapt the pattern below.
 
 Setup requires:
 1. Google Cloud SDK (`gcloud` CLI) installed and authenticated
@@ -521,17 +522,17 @@ claude -p "say hello"
 
 ---
 
-## Quick Reference — Installed Versions (April 2026)
+## Quick Reference — Install Commands
 
-| Tool | Version | Install method |
-|------|---------|----------------|
-| claude | 2.1.112 | `npm install -g @anthropic-ai/claude-code` |
-| lean-ctx | 3.1.1 | `npm install -g lean-ctx-bin` |
-| node | via brew | `brew install node` |
-| python | 3.12/3.13/3.14 | `brew install python@3.12` |
-| ollama | via brew | `brew install ollama` |
-| gh | via brew | `brew install gh` |
-| vercel | 50.4.5 | `npm install -g vercel` |
-| fly | via brew | `brew install flyctl` |
-| uv | latest | curl install script |
-| gcp-llm | custom script | `~/.local/bin/gcp-llm` |
+| Tool | Install method |
+|------|----------------|
+| claude | `npm install -g @anthropic-ai/claude-code` (always latest) |
+| lean-ctx | `npm install -g lean-ctx-bin` (always latest) |
+| node | `brew install node` |
+| python | `brew install python@3.12` |
+| ollama | `brew install ollama` |
+| gh | `brew install gh` |
+| vercel | `npm install -g vercel` (always latest) |
+| fly | `brew install flyctl` |
+| uv | curl install script (see astral.sh/uv) |
+| gcp-llm | personal helper — `~/.local/bin/gcp-llm` |

@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# internal working docs (contains private names / audit data — repo is public)
+/AUDIT_FINDINGS.md
+
 # production
 /build
 

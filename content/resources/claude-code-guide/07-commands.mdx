@@ -46,10 +46,10 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 ---
 
 ### `/run-pipeline`
-**Description:** Runs the full Cogenly lead pipeline: scrape Instagram hashtags → score with Claude → push to Notion.
-**What it does:** Executes `run.sh` in `~/Projects/lead-pipeline` with the given stage argument, then summarizes scraped count, filter pass rate, score distribution, top 3 leads, and Notion push confirmation.
-**Key steps:** Detect stage argument → `cd lead-pipeline && ./run.sh <stage>` → Summarize results
-**Use case:** Running the lead generation pipeline (all stages or individual stages: scrape/score/push/manual/summary).
+**Description:** Runs a multi-stage data pipeline: scrape → score → push results to a destination.
+**What it does:** Executes `run.sh` in the configured pipeline directory with the given stage argument, then summarizes item count, filter pass rate, score distribution, top results, and push confirmation. Adapt the pipeline path and stages to your own project.
+**Key steps:** Detect stage argument → `cd <pipeline-dir> && ./run.sh <stage>` → Summarize results
+**Use case:** Running a staged data pipeline (all stages or individual stages: scrape/score/push/manual/summary).
 **Arguments:** `all`, `scrape`, `score`, `push`, `manual`, `summary`.
 
 ---
@@ -68,7 +68,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 **What it does:** Uses the DevFleet MCP server to plan a project from natural language into a mission DAG, dispatch agents in isolated git worktrees (with auto-merge and auto-dispatch on dependency completion), and read structured reports per mission.
 **Key steps:** `plan_project(prompt)` → Show plan → Get approval → `dispatch_mission()` → Poll `get_mission_status()` → `get_report()`
 **Use case:** Long-running parallel work that needs isolated git state (e.g., simultaneous frontend and backend feature tracks).
-**Dependencies:** DevFleet MCP server (`http://localhost:18801/mcp`); tools: `plan_project`, `dispatch_mission`, `get_dashboard`, `get_report`, etc.
+**Dependencies:** DevFleet MCP server (personal setup — run locally, e.g. `http://localhost:18801/mcp`); tools: `plan_project`, `dispatch_mission`, `get_dashboard`, `get_report`, etc.
 
 ---
 
@@ -95,6 +95,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 **What it does:** Injects live `git status`, `git diff --name-only`, `git log`, and full `git diff --merge-base` into the prompt, then invokes the `pragmatic-code-review` agent as Principal Engineer AI Reviewer. Balances engineering rigour with development speed.
 **Key steps:** Collect git context → Feed to review agent → Return markdown report only
 **Use case:** Full PR-style review for branches at a lean startup pace.
+**Note:** Requires a `pragmatic-code-review` agent file — not included in the standard agent set. Create your own or substitute the `reviewer` agent.
 **Allowed tools:** Full toolset including Playwright, Context7.
 
 ---
@@ -184,7 +185,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 **Description:** Multi-model collaborative planning using Codex (backend) and Gemini (frontend) in parallel.
 **What it does:** Phase 1: enhances prompt via ace-tool MCP and retrieves project context. Phase 2: calls Codex and Gemini in parallel for analysis (using `run_in_background: true`). Phase 3 (optional): gets plan drafts from both models. Synthesizes into a step-by-step implementation plan saved to `.claude/plan/<feature>.md`. Hands off SESSION_IDs for `/multi-execute` to reuse. **Does not write code.**
 **Use case:** Complex fullstack features requiring architectural analysis from both frontend and backend perspectives.
-**Dependencies:** `codeagent-wrapper` binary, ace-tool MCP (optional), Codex/Gemini backends.
+**Dependencies:** `codeagent-wrapper` binary (personal setup — not publicly distributed), ace-tool MCP (optional, personal setup), Codex/Gemini backends.
 
 ---
 
@@ -193,7 +194,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 **What it does:** Reads plan file → retrieves context → routes to Codex (backend) or Gemini (frontend) or both in parallel → gets Unified Diff Patch as prototype → Claude refactors to production-grade code → applies changes → dual Codex+Gemini audit → delivery report. External models have **zero filesystem write access**.
 **Key steps:** Read plan → Route to model(s) → Get diff prototype → Refactor and apply → Audit → Deliver
 **Use case:** Executing a plan from `/multi-plan` with model-specialized code generation and review.
-**Dependencies:** `codeagent-wrapper`, plan file from `/multi-plan`, SESSION_IDs for context resume.
+**Dependencies:** `codeagent-wrapper` (personal setup — not publicly distributed), plan file from `/multi-plan`, SESSION_IDs for context resume.
 
 ---
 
@@ -245,7 +246,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 
 ### `/sessions`
 **Description:** Manage Claude Code session history — list, load, alias, and inspect sessions.
-**What it does:** Uses `scripts/lib/session-manager.js` and `session-aliases.js` to list sessions with metadata (date, time, branch, worktree, alias), load session content, create/remove aliases, and show session statistics (line count, items, completion rate). Sessions from `~/.claude/session-data/` with legacy reads from `~/.claude/sessions/`.
+**What it does:** Uses `scripts/lib/session-manager.js` and `session-aliases.js` (personal scripts — adapt paths to your own setup) to list sessions with metadata (date, time, branch, worktree, alias), load session content, create/remove aliases, and show session statistics (line count, items, completion rate). Sessions from `~/.claude/session-data/` with legacy reads from `~/.claude/sessions/`.
 **Use case:** Browsing session history, finding a specific past session, creating memorable aliases.
 **Arguments:** `list [--limit N] [--date] [--search]`, `load <id|alias>`, `alias <id> <name>`, `alias --remove <name>`, `info <id>`, `aliases`.
 
@@ -288,7 +289,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 
 ### `/skill-create`
 **Description:** Analyze local git history to extract coding patterns and generate `SKILL.md` files.
-**What it does:** Parses git history (default: 200 commits), detects patterns (commit conventions, file co-changes, workflow sequences, architecture, testing), and generates a `SKILL.md` with repo-specific practices. Optionally generates instincts for the continuous-learning-v2 system.
+**What it does:** Parses git history (default: 200 commits), detects patterns (commit conventions, file co-changes, workflow sequences, architecture, testing), and generates a `SKILL.md` with repo-specific practices. Optionally generates instincts for a local continuous-learning system (requires personal instinct infrastructure).
 **Use case:** Bootstrapping skills from an existing codebase's patterns without a GitHub App.
 **Arguments:** `--commits N`, `--output ./dir`, `--instincts`.
 
@@ -318,8 +319,9 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 ---
 
 ### `/promote`
-**Description:** Promote project-scoped instincts to global scope in continuous-learning-v2.
-**What it does:** Runs `instinct-cli.py promote` to find cross-project candidates (appearing in 2+ projects with sufficient confidence) and write them to `~/.claude/homunculus/instincts/personal/` with `scope: global`. Can promote a specific instinct by ID.
+**Description:** Promote project-scoped instincts to global scope in a continuous-learning system.
+**What it does:** Runs `instinct-cli.py promote` to find cross-project candidates (appearing in 2+ projects with sufficient confidence) and write them to a global instincts directory with `scope: global`. Can promote a specific instinct by ID.
+**Note:** Requires `instinct-cli.py` and a local homunculus/continuous-learning setup — personal infrastructure, not publicly distributed.
 **Use case:** Graduating useful project-specific learned behaviors to global scope.
 **Arguments:** `[instinct-id]`, `--dry-run`, `--force`.
 
@@ -328,6 +330,7 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 ### `/prune`
 **Description:** Delete pending instincts older than 30 days that were never promoted.
 **What it does:** Runs `instinct-cli.py prune` to remove expired auto-generated pending instincts that were never reviewed or promoted.
+**Note:** Requires `instinct-cli.py` — personal infrastructure, not publicly distributed.
 **Use case:** Periodic cleanup to prevent stale instinct accumulation.
 **Arguments:** `--max-age <days>`, `--dry-run`.
 
@@ -335,7 +338,8 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 
 ### `/evolve`
 **Description:** Analyze instincts and suggest or generate evolved structures (commands, skills, agents).
-**What it does:** Reads project and global instincts, groups by trigger/domain, and identifies clusters that should become Commands (user-invoked), Skills (auto-triggered), or Agents (complex multi-step). With `--generate`, writes files to `~/.claude/homunculus/projects/<id>/evolved/`.
+**What it does:** Reads project and global instincts, groups by trigger/domain, and identifies clusters that should become Commands (user-invoked), Skills (auto-triggered), or Agents (complex multi-step). With `--generate`, writes files to an evolved output directory.
+**Note:** Requires a local continuous-learning/instinct system — personal infrastructure, not publicly distributed.
 **Use case:** After accumulating enough instincts, crystallizing them into reusable automation structures.
 **Arguments:** `--generate`.
 
@@ -413,8 +417,9 @@ All commands live in `~/.claude/commands/`. Each `.md` file defines a slash comm
 ---
 
 ### `/projects`
-**Description:** List known projects and their instinct statistics from continuous-learning-v2.
-**What it does:** Runs `instinct-cli.py projects` to read `~/.claude/homunculus/projects.json` and display each project's name, ID, root path, remote, personal/inherited instinct counts, observation event count, and last-seen timestamp. Also shows global instinct totals.
+**Description:** List known projects and their instinct statistics from a local continuous-learning system.
+**What it does:** Runs `instinct-cli.py projects` to read a projects manifest and display each project's name, ID, root path, remote, personal/inherited instinct counts, observation event count, and last-seen timestamp. Also shows global instinct totals.
+**Note:** Requires `instinct-cli.py` and a local continuous-learning setup — personal infrastructure, not publicly distributed.
 **Use case:** Overview of what the continuous-learning system knows about each project.
 
 ---
