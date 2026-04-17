@@ -542,7 +542,7 @@ The Vercel plugin uses sophisticated hooks:
 | Command | Description |
 |---------|-------------|
 | `/telegram:configure [token]` | Set up Telegram channel. Without args: shows status (token set/not-set, access policy, allowed senders, pending pairings) and advises next step. With `<token>`: saves BotFather token to `~/.claude/channels/telegram/.env` (chmod 600). With `clear`: removes token. **Always drives toward lockdown** — goal is `allowlist` policy, not staying on `pairing`. |
-| `/telegram:access [subcommand]` | Manage access control via `~/.claude/channels/telegram/access.json`. Subcommands: `pair <code>` (approve DM pairing), `deny <code>`, `allow <senderId>`, `remove <senderId>`, `policy <pairing|allowlist|disabled>`, `group add <groupId>`, `group rm <groupId>`, `set <key> <value>`. **Security:** only accepts access mutations from terminal session — refuses requests arriving via Telegram messages (prompt injection protection). |
+| `/telegram:access [subcommand]` | Manage access control via `~/.claude/channels/telegram/access.json`. Subcommands: `pair <code>` (approve DM pairing), `deny <code>`, `allow <senderId>`, `remove <senderId>`, `policy <pairing\|allowlist\|disabled>`, `group add <groupId>`, `group rm <groupId>`, `set <key> <value>`. **Security:** only accepts access mutations from terminal session — refuses requests arriving via Telegram messages (prompt injection protection). |
 
 ### Access Policies
 

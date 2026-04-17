@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { CopyCode } from "./copy-code";
 
 type Props = {
@@ -54,7 +55,11 @@ export function MdxContent({ source, title, date, status, children }: Props) {
 
       {/* Body */}
       <div className="prose prose-stone max-w-none text-[14px] text-[#1d1d1f]">
-        <MDXRemote source={source} components={{ pre: CopyCode }} />
+        <MDXRemote
+          source={source}
+          components={{ pre: CopyCode }}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
       </div>
 
       {children}
