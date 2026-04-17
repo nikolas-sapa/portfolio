@@ -86,3 +86,16 @@ A skill that works well has three properties:
 **A clear gate.** When should this skill fire? When should it not? Write that explicitly. A skill without a gate is an instruction that runs everywhere, which usually means it gets ignored everywhere.
 
 Start with the thing you've explained to Claude three or more times. Write down how you actually want it handled, step by step. That's your first skill.
+
+---
+
+## Skills Worth Installing
+
+The `superpowers` plugin bundles most of the highest-ROI skills. Install it, then pick which to wire into your workflow.
+
+- **brainstorming** (superpowers) — fires when you're starting something new without a defined shape. Stops Claude from jumping to implementation before the problem is clear.
+- **writing-plans** (superpowers) — produces a structured plan doc before any code gets written. Invoke explicitly when a task spans multiple files and the path is unclear.
+- **systematic-debugging** (superpowers) — forces hypothesis-driven debugging. Fires when a bug is non-obvious or a fix has already failed once. Blocks the "try random things" loop.
+- **verification-before-completion** (superpowers) — verifies actual production behavior before Claude claims done. The difference between "tests pass" and "the thing works."
+- **tdd-cycle** (superpowers) — enforces RED / GREEN / REFACTOR discipline if you do TDD. Worth adding if you find Claude skipping the red phase.
+- **frontend-design** — design-review skill for UI work. Fires when building a new page or when you give visual feedback on existing UI.

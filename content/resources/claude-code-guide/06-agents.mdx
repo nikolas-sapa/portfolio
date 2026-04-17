@@ -104,6 +104,19 @@ Total wall time drops. Each agent works with only the context it needs. The main
 
 ---
 
+## A Starter Roster
+
+A starter set worth having. Add specialists as your work patterns emerge.
+
+- **Explore** — built-in. Maps files, finds patterns, understands structure. Always haiku; it's read-only work.
+- **Plan** — built-in. Designs implementation strategy before any code gets written. Feed it output from Explore, then hand its plan to an implementation agent.
+- **general-purpose** — built-in. Open-ended research, multi-step lookups, anything that doesn't fit a specialist. Last resort, not first.
+- **reviewer** — spawn after implementation. Reads the diff, checks for security issues, wrong types, missed edge cases. Give it no write tools — read-only by design.
+- **debugger** — diagnoses failing tests and applies the minimal fix. Useful because it forces a hypothesis before touching code.
+- **frontend / backend / database** — domain specialists worth separating so each gets the right tool scope and model. A frontend agent with database write tools is an accident waiting to happen.
+
+---
+
 ## Building Your Own
 
 Start with one specialist for your most repeated task — the thing you ask Claude to do the same way every session. Write a tight system prompt, give it only the tools it needs, pick the cheapest model that can do the job well.

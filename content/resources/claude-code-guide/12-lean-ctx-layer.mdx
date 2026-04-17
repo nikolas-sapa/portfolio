@@ -28,7 +28,7 @@ A context engineering layer replaces four common operations:
 
 | Instead of | Use | Why |
 |---|---|---|
-| Read / cat | `ctx_read` | Session-cached; re-reads cost ~13 tokens |
+| Read / cat | `ctx_read` | Session-cached; re-reads are near-free |
 | Shell / bash | `ctx_shell` | Pattern compression strips tool output noise |
 | Grep / rg | `ctx_search` | Compact, token-efficient results |
 | ls / find | `ctx_tree` | Compact directory maps |
@@ -55,7 +55,7 @@ A `git diff` with 300 lines of unified output might compress to 40 lines of actu
 
 ## lean-ctx specifically
 
-[lean-ctx](https://github.com/nicholasgasior/lean-ctx) is one implementation of this pattern — an MCP server that wraps the four operations above with caching and compression.
+`lean-ctx` is one implementation of this pattern — an MCP server that wraps the four operations above with caching and compression. Search for it on GitHub if you want to try it, or treat it as a spec for a layer you build yourself.
 
 You expose it to Claude via `CLAUDE.md` with a directive to prefer `ctx_read` over native Read, and so on. Claude follows it; the layer handles the rest.
 

@@ -121,6 +121,24 @@ Gmail, Slack, Google Calendar — careful here. Scope permissions tightly and ne
 
 ---
 
+## MCPs worth trying
+
+A short launching-pad. Pick what maps to your work, skip the rest.
+
+| MCP | What it gives you | Reach for it when |
+|---|---|---|
+| **context7** | Up-to-date library docs pulled on demand | You're working with any library and don't want hallucinated API signatures |
+| **Playwright** | A real browser Claude can drive | You need E2E checks, scraping, or form automation |
+| **GitHub** (`@modelcontextprotocol/server-github`) | Repos, issues, PRs from inside Claude Code | You want Claude to read a ticket or open a PR without leaving the terminal |
+| **Filesystem** (`@modelcontextprotocol/server-filesystem`) | Scoped file access beyond the current project | You need Claude to read or write files outside the working directory |
+| **Notion** | Read and write your Notion workspace | You already run tasks or docs in Notion and want Claude to query them directly |
+| **Figma** | Read design files and export images | You're doing frontend work and want Claude to reference the source design |
+| **Apify** | Web scraping and data extraction via Apify Actors | You need structured data from a site with no public API |
+
+All of these are publicly installable — no private infra required. Start with context7 if you're unsure; it pays off on day one.
+
+---
+
 ## Keeping it lean
 
 Don't install MCPs speculatively. Every server you add is a process that starts with Claude Code and a surface Claude might hallucinate calling. Start with one or two, validate they're useful, then expand. A focused set of MCPs you understand beats a bloated list you don't.

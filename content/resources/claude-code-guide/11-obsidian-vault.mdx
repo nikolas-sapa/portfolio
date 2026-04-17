@@ -23,7 +23,7 @@ The vault becomes the single source of truth for your business context, project 
 ## Vault structure (PARA-style)
 
 ```
-MyVault/
+vault/
 ├── CLAUDE.md                    ← Claude's working memory (updated each /wrap-up)
 ├── 01-Areas/                    ← Ongoing responsibilities, never "done"
 │   ├── _context/                ← Canonical business docs — load before any content work
@@ -73,9 +73,9 @@ When Claude reads these before writing copy, the output sounds like you. Without
 The cleanest way to auto-load vault context at session start is to declare `@`-import paths at the top of your project's `CLAUDE.md`:
 
 ```markdown
-@~/MyVault/01-Areas/_context/brand-voice.md
-@~/MyVault/01-Areas/_context/icp.md
-@~/MyVault/02-Projects/my-product/index.md
+@~/vault/01-Areas/_context/brand-voice.md
+@~/vault/01-Areas/_context/icp.md
+@~/vault/02-Projects/my-product/index.md
 ```
 
 Claude Code evaluates these on startup. The files are injected into context before the first message. No manual loading, no re-explaining.

@@ -56,18 +56,19 @@ A plugin can contain any combination of:
 
 ---
 
-## Three plugins worth knowing about
+## Plugins worth trying
 
-These aren't recommendations for your setup — they're concrete examples of what a plugin looks like in practice.
+Pick 1-2 to start; evaluate before adding more.
 
-**superpowers**
-Anthropic's flagship plugin. Adds skills for planning, debugging, TDD, brainstorming, and spec-driven development. Each skill is a structured prompt sequence with clear inputs and outputs. Install it to see how a well-designed plugin feels.
+**superpowers** (by Obra) — battle-tested skills for planning, TDD, brainstorming, systematic debugging, and spec-driven development. The highest-ROI plugin available: each skill is a structured prompt sequence with clear inputs and outputs. Start here.
 
-**claude-mem**
-Adds session memory — stores context from previous sessions so Claude can pick up where it left off. Useful if you find yourself re-explaining your project setup every session. Exposes a `mem-search` skill and a `/resume` command.
+**claude-mem** — persists context across sessions so Claude picks up where it left off, not from a cold start. Exposes a `mem-search` skill and a `/resume` command. Worth it if you find yourself re-explaining your stack every session.
 
-**lean-ctx**
-Context engineering layer. Replaces standard file reads with cached, compressed equivalents. Saves tokens on large codebases. Lower-level than the others — good to understand if you care about context budget.
+**hookify** — turns natural-language feedback ("stop doing X") into a saved hook automatically. Faster than writing hooks by hand.
+
+**frontend-design** — design-review skills and UI pattern guidance. Useful if you're building UI and want a structured design pass alongside code generation.
+
+All four are publicly distributed via `claude install <name>`. No private infra, no keys needed beyond what the plugin itself documents.
 
 ---
 
