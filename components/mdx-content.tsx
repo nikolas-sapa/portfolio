@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
 import { CopyCode } from "./copy-code";
 
 type Props = {
@@ -58,7 +59,7 @@ export function MdxContent({ source, title, date, status, children }: Props) {
         <MDXRemote
           source={source}
           components={{ pre: CopyCode }}
-          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }}
         />
       </div>
 
