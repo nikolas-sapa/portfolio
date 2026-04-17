@@ -40,7 +40,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "16. Athens, Greece.\n\nSolo founder, developer, builder. I make products from zero to shipped — and take on client web work for businesses that want something that actually looks and works great.\n\nNo templates. Everything custom. Always from scratch.",
+        "16. Athens, Greece. Solo founder and developer.\n\nI build products and take on client work — sometimes both at once. Right now I'm shipping three SaaS products while doing web projects on the side.\n\nI care a lot about how things look and how they work. Most freelancers either design well or develop well. I do both, and I do them together — so you don't end up with a beautiful mockup that falls apart in the browser, or a solid app that looks like it was built in 2014.\n\nEverything I build is custom. No templates, no page builders, no shortcuts that come back to bite you later.",
     },
     {
       id: "services",
@@ -55,7 +55,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "Marketing sites, portfolios, and brand presences.\n\nClean, fast, SEO-optimized. Built to represent your brand well and load instantly. Fully custom — no templates.",
+            "Marketing sites, brand presences, portfolios.\n\nThe kind of site that makes someone think \"these people are legit\" the moment they land on it. Strong visual hierarchy, fast load times, optimized for search. Designed from scratch — not adapted from a template.\n\nGood for: local businesses, studios, agencies, personal brands, anyone who needs a serious web presence without the Squarespace ceiling.",
         },
         {
           id: "web-apps",
@@ -64,7 +64,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "Full-stack web applications.\n\nFrom MVPs to production-grade apps. Next.js, React, TypeScript, Supabase. Auth, databases, APIs, payments — the whole stack. Built to scale.",
+            "Full-stack web applications — MVPs to production.\n\nAuth, databases, APIs, payments, real-time features — the whole stack. Built with Next.js, TypeScript, and Supabase. Deployed on Vercel.\n\nI've shipped my own SaaS products, so I know what it takes to go from idea to something real people actually use. If you have a product idea and need someone who can design it, build it, and get it live — that's exactly what I do.",
         },
         {
           id: "landing-pages",
@@ -73,7 +73,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "High-converting, design-led landing pages.\n\nBuilt to rank and to convert. Clear hierarchy, strong copy structure, fast load times. Designed to turn visitors into customers.",
+            "High-converting, design-led landing pages.\n\nA landing page has one job: turn visitors into customers. That means getting the hierarchy right, the copy structure right, the visual flow right — and making it load fast enough that no one bounces before they've read anything.\n\nI build landing pages that look sharp and are built to rank. Not just pretty — purposeful.",
         },
         {
           id: "custom-systems",
@@ -82,7 +82,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "Bespoke backend systems and automations.\n\nSupabase databases, booking systems, custom ecommerce, internal tools, API integrations. If your business has a specific workflow that off-the-shelf software can't handle — this is where I come in.",
+            "Bespoke backend systems and internal tools.\n\nBooking systems, custom ecommerce, inventory management, API integrations, admin dashboards, automation workflows. If your business has a specific problem that off-the-shelf software can't solve cleanly — or you're paying for five different tools that should be one thing — I build the one thing.\n\nExamples: custom booking + jewelry ecommerce for a piercing studio, full clothing store built from scratch instead of Shopify.",
         },
       ],
     },
@@ -100,7 +100,7 @@ const ROOT: FolderNode = {
           modified: "Mar 2026",
           url: "https://nr40athens.com",
           preview:
-            "Tattoo studio website — Athens, Greece.\n\nClean, dark, atmospheric site for a tattoo studio. Custom design, fast load, built to rank locally.",
+            "Tattoo studio — Athens, Greece.\n\nDark, atmospheric site designed to match the studio's aesthetic. Strong local SEO, fast load, custom design. Built to help them rank in Athens searches and convert visitors into bookings.",
         },
         {
           id: "allcity",
@@ -110,7 +110,7 @@ const ROOT: FolderNode = {
           modified: "Mar 2026",
           url: "https://allcity-clothing.vercel.app/",
           preview:
-            "Full custom ecommerce store — clothing brand.\n\nCompletely custom-built online store. Product pages, cart, checkout, inventory — everything. No Shopify template. Built from scratch with Next.js.",
+            "Custom ecommerce — clothing brand.\n\nFull online store built from the ground up. Product pages, cart, checkout flow, inventory — no Shopify, no templates. Next.js all the way through. The client needed something that felt like the brand, not like a generic storefront.",
         },
         {
           id: "hustlemedia",
@@ -120,7 +120,7 @@ const ROOT: FolderNode = {
           modified: "Feb 2026",
           url: "https://hustle-media-rouge.vercel.app/",
           preview:
-            "Agency website — SMMA.\n\nSharp, conversion-focused site for a social media marketing agency. Built to attract and convert leads.",
+            "Agency website — social media marketing.\n\nConversion-focused site for an SMMA. Sharp design, clear service breakdown, built to get prospects to reach out. Fast, clean, no fluff.",
         },
         {
           id: "tsvc",
@@ -130,7 +130,7 @@ const ROOT: FolderNode = {
           modified: "Feb 2026",
           url: "https://www.tsvcstudio.com/",
           preview:
-            "Agency website — SMMA.\n\nProfessional digital agency presence. Clean layout, strong hierarchy, optimized to build trust quickly.",
+            "Agency website — digital studio.\n\nProfessional presence for a digital agency. The brief was: look established, look trustworthy, look like you know what you're doing. Clean layout, strong typography, clear hierarchy.",
         },
         {
           id: "521",
@@ -140,7 +140,7 @@ const ROOT: FolderNode = {
           modified: "Apr 2026",
           url: "https://521.is/",
           preview:
-            "Course landing page — geo-free location course.\n\nLanding page for a course teaching location independence. Clear value prop, direct copy, built to convert.",
+            "Course landing page — location independence.\n\nSales page for a course on going geo-free. Direct copy, tight structure, built to convert. Nothing on the page that doesn't earn its place.",
         },
         {
           id: "storm",
@@ -150,7 +150,7 @@ const ROOT: FolderNode = {
           modified: "Apr 2026",
           url: "https://storm-piercing.com/en",
           preview:
-            "Custom ecommerce + booking — piercing studio.\n\nFull custom store for a piercing studio: jewelry ecom, appointment booking, product pages. Everything built from scratch.",
+            "Custom ecommerce + booking — piercing studio.\n\nOne of the more complex builds: jewelry store, appointment booking, product catalogue, multilingual. All custom, all built from scratch. The client had outgrown off-the-shelf options and needed something that actually fit how they work.",
         },
         {
           id: "portfolio",
@@ -160,7 +160,7 @@ const ROOT: FolderNode = {
           modified: "Apr 2026",
           url: "https://nikolassapa.vercel.app",
           preview:
-            "Web dev portfolio — demos, rates, and contact.\n\nFull showcase of web development work, service details, and pricing. The place to go if you want to work together.",
+            "This site.\n\nBuilt as a macOS Finder clone — because a standard portfolio page felt boring. Everything custom: the window chrome, the sidebar tree, the file preview panel. Next.js, Tailwind, deployed on Vercel.",
         },
       ],
     },
@@ -171,7 +171,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "Next.js · React · TypeScript · Tailwind CSS\nSupabase · Vercel · Figma · React Native\n\nFast, reliable, modern. I pick boring tech that ships — and then push it to its limits. Everything goes on Vercel. Everything is designed in Figma first.",
+        "Next.js · React · TypeScript · Tailwind CSS\nSupabase · Vercel · Figma · React Native · Python / FastAPI\n\nI don't chase new frameworks. I use tools I know deeply, that have strong ecosystems, and that don't surprise you in production.\n\nNext.js for everything web. Supabase for auth and databases — it's fast to work with and scales without drama. Vercel for deployment, because zero-config deploys matter when you're moving fast. Figma before any line of code, always.\n\nFor mobile: React Native. For AI features and backend services: Python and FastAPI. For styling: Tailwind — consistent, responsive, no fighting the cascade.",
     },
     {
       id: "process",
@@ -180,7 +180,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "How a project typically goes:\n\n1. Discovery call — 20–30 min. You tell me what you need, I ask questions, we figure out scope.\n2. Proposal — I send a clear brief: what I'll build, timeline, price. No surprises.\n3. Build — I design and develop. You get progress updates. Fast iteration.\n4. Launch — I handle deployment. You get the keys.\n\nMost projects take 1–3 weeks from kickoff to live.",
+        "Simple process. No unnecessary back-and-forth.\n\n1. Discovery — 20–30 min call or a few messages. You explain what you need, I ask the right questions. I want to understand the business, not just the brief.\n\n2. Proposal — clear doc: what I'll build, what's not included, timeline, price. You know exactly what you're getting before anything starts.\n\n3. Design — Figma first. You see it before a single line of code is written. Feedback here is fast and cheap.\n\n4. Build — I develop against the approved design. Regular updates. No disappearing for two weeks and coming back with something you didn't expect.\n\n5. Launch — I handle deployment, domain setup, and any final checks. You get the repo, the keys, and a working product.\n\nMost projects: 1–3 weeks from kickoff to live.",
     },
     {
       id: "rates",
@@ -189,7 +189,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "Project-based pricing. No hourly ambiguity.\n\nLanding page — from €400\nMarketing site — from €800\nFull web app (MVP) — from €1,500\nCustom ecommerce — from €1,200\nCustom system / automation — quote on scope\n\nAll projects include: design, development, deployment, and one round of revisions. Ongoing support available.",
+        "Project-based. You know the number before work starts.\n\nLanding page         from €400\nMarketing site       from €800\nCustom ecommerce     from €1,200\nFull web app (MVP)   from €1,500\nCustom system        scoped individually\n\nEvery project includes design, development, deployment, and one round of revisions after delivery. The price reflects the full thing — not a starting point that quietly grows.\n\nOngoing support and maintenance available as a separate arrangement.\n\nNot sure what your project fits into? Just describe it — I'll give you an honest estimate.",
     },
     {
       id: "contact",
@@ -197,9 +197,9 @@ const ROOT: FolderNode = {
       type: "file",
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
-      url: "mailto:nikolas.sapalidis@gmail.com",
+      url: "mailto:nikolas@helpmarq.com",
       preview:
-        "Best way to reach me: nikolas.sapalidis@gmail.com\n\nTell me what you're building or what you need. I'll reply within 24 hours.\n\nBased in Athens, Greece. Work with clients remotely worldwide.",
+        "nikolas@helpmarq.com\n\nTell me what you're working on. Even a rough idea is enough to start a conversation — I'll ask whatever I need to understand the scope.\n\nI reply within 24 hours, usually faster.\n\nBased in Athens, Greece. Work with clients remotely, no location restrictions.",
     },
   ],
 };
