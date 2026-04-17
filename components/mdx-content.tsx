@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { CopyCode } from "./copy-code";
 
 type Props = {
   source: string;
@@ -51,7 +52,7 @@ export function MdxContent({ source, title, date, status }: Props) {
 
       {/* Body */}
       <div className="prose prose-stone max-w-none text-[14px] text-[#1d1d1f]">
-        <MDXRemote source={source} />
+        <MDXRemote source={source} components={{ pre: CopyCode }} />
       </div>
     </article>
   );

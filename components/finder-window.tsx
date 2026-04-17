@@ -40,7 +40,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "16. Athens, Greece. Solo founder and developer.\n\nI build products and take on client work — sometimes both at once. Right now I'm shipping three SaaS products while doing web projects on the side.\n\nI care a lot about how things look and how they work. Most freelancers either design well or develop well. I do both, and I do them together — so you don't end up with a beautiful mockup that falls apart in the browser, or a solid app that looks like it was built in 2014.\n\nEverything I build is custom. No templates, no page builders, no shortcuts that come back to bite you later.",
+        "16. Athens, Greece. Solo founder and developer.\n\nI build products and take on client work — sometimes both at once. Right now I'm shipping three SaaS products (MarketMyApp, Creator Roast, Padel Up) while doing client web projects on the side.\n\nI care a lot about how things look and how they work. Most freelancers either design well or develop well. I do both — together. You don't end up with a beautiful mockup that falls apart in the browser, or a technically solid app that looks like it was built in 2014.\n\nI'm fast. Clients usually have something live within 1–2 weeks of starting. I communicate clearly, I don't disappear mid-project, and I tell you when something you want is a bad idea instead of just building it and charging you for it.\n\nEverything I build is custom. No templates, no page builders, no shortcuts that come back to bite you six months later when you want to change something.",
     },
     {
       id: "services",
@@ -55,7 +55,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "Marketing sites, brand presences, portfolios.\n\nThe kind of site that makes someone think \"these people are legit\" the moment they land on it. Strong visual hierarchy, fast load times, optimized for search. Designed from scratch — not adapted from a template.\n\nGood for: local businesses, studios, agencies, personal brands, anyone who needs a serious web presence without the Squarespace ceiling.",
+            "Marketing sites, brand presences, portfolios.\n\nThe kind of site that makes someone think \"these people are legit\" the moment they land on it. Strong visual hierarchy, fast load times, clean copy structure, mobile-perfect. Designed from scratch — not adapted from a template.\n\nMost businesses are losing potential customers because their website looks like it was made in 2019 and runs like it. A well-built site isn't just an aesthetic thing — it's a trust signal. People decide within seconds whether to stay or leave, and most of that decision is visual.\n\nWhat's included: full custom design in Figma, development, SEO setup (meta tags, sitemap, structured data), Vercel deployment, and one round of revisions after delivery.\n\nGood for: local businesses, studios, agencies, consultants, personal brands — anyone who needs a serious web presence without the Squarespace ceiling.",
         },
         {
           id: "web-apps",
@@ -64,7 +64,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "Full-stack web applications — MVPs to production.\n\nAuth, databases, APIs, payments, real-time features — the whole stack. Built with Next.js, TypeScript, and Supabase. Deployed on Vercel.\n\nI've shipped my own SaaS products, so I know what it takes to go from idea to something real people actually use. If you have a product idea and need someone who can design it, build it, and get it live — that's exactly what I do.",
+            "Full-stack web applications — MVPs to production.\n\nAuth, databases, APIs, payments, real-time features — the whole stack. Built with Next.js, TypeScript, and Supabase. Deployed on Vercel.\n\nI've shipped my own SaaS products from scratch, so I understand product thinking, not just implementation. I know what corners are safe to cut in an MVP and which ones will cost you later. I know what to build first, what to defer, and what to skip entirely.\n\nTypical MVP stack: Next.js App Router + TypeScript + Supabase (auth + database) + Stripe for payments + Resend for emails + Vercel for deployment. This combination moves fast and has no real ceiling.\n\nWhat I can build: SaaS products, internal tools, dashboards, booking systems, marketplaces, AI-powered apps, anything that needs a real backend.\n\nIf you have a product idea and need someone who can design it, build it, and get it in front of users — that's exactly what I do.",
         },
         {
           id: "landing-pages",
@@ -73,7 +73,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "High-converting, design-led landing pages.\n\nA landing page has one job: turn visitors into customers. That means getting the hierarchy right, the copy structure right, the visual flow right — and making it load fast enough that no one bounces before they've read anything.\n\nI build landing pages that look sharp and are built to rank. Not just pretty — purposeful.",
+            "High-converting, design-led landing pages.\n\nA landing page has one job: turn visitors into customers. That means getting the hierarchy right, the copy structure right, the visual flow right — and making it load fast enough that no one leaves before they've read anything.\n\nMost landing pages fail because they're built by someone who either cares about design or cares about conversion — rarely both. I care about both. The visual decisions and the copy structure are made together, not bolted on after.\n\nWhat I get right every time: above-the-fold clarity (visitors understand what you do in under 5 seconds), trust signals placed where they actually matter, a CTA that isn't just a button at the bottom, and performance scores that don't embarrass you in PageSpeed.\n\nAlso built to rank — semantic HTML, proper meta setup, clean structured data, fast load.\n\nGood for: product launches, service businesses, course sales, anything where one page needs to do serious work.",
         },
         {
           id: "custom-systems",
@@ -82,7 +82,7 @@ const ROOT: FolderNode = {
           kind: "Markdown Document",
           modified: "Apr 15, 2026",
           preview:
-            "Bespoke backend systems and internal tools.\n\nBooking systems, custom ecommerce, inventory management, API integrations, admin dashboards, automation workflows. If your business has a specific problem that off-the-shelf software can't solve cleanly — or you're paying for five different tools that should be one thing — I build the one thing.\n\nExamples: custom booking + jewelry ecommerce for a piercing studio, full clothing store built from scratch instead of Shopify.",
+            "Bespoke backend systems and internal tools.\n\nBooking systems, custom ecommerce, inventory management, API integrations, admin dashboards, automation workflows. If your business has a specific problem that off-the-shelf software can't solve cleanly — or you're paying for five different tools that should be one thing — I build the one thing.\n\nThe conversation usually starts with \"we've been doing this manually\" or \"we're using [tool] but it doesn't quite fit.\" That's the signal. When a process is manual or the tool is constantly fighting you, a custom system pays for itself fast.\n\nI build these on Supabase + Next.js, which means they're fast to build, easy to extend, and you're not locked into a proprietary platform. You own the database, you own the code.\n\nRecent examples:\n— Custom booking + jewelry ecommerce for a piercing studio (replaced three separate systems)\n— Full clothing store built from scratch with inventory management (replaced Shopify)\n— Internal admin tools for managing user accounts and billing",
         },
       ],
     },
@@ -100,7 +100,7 @@ const ROOT: FolderNode = {
           modified: "Mar 2026",
           url: "https://nr40athens.com",
           preview:
-            "Tattoo studio — Athens, Greece.\n\nDark, atmospheric site designed to match the studio's aesthetic. Strong local SEO, fast load, custom design. Built to help them rank in Athens searches and convert visitors into bookings.",
+            "Tattoo studio — Athens, Greece.\n\nThe brief was clear: dark, atmospheric, no stock photos, nothing generic. The site needed to feel like the studio — not like a template a tattooist happened to fill in.\n\nBuilt with strong local SEO so they rank when people in Athens search for tattoo studios. Fast load, clean booking flow, custom design throughout. The kind of site that makes someone send a DM instead of scrolling past.",
         },
         {
           id: "allcity",
@@ -110,7 +110,7 @@ const ROOT: FolderNode = {
           modified: "Mar 2026",
           url: "https://allcity-clothing.vercel.app/",
           preview:
-            "Custom ecommerce — clothing brand.\n\nFull online store built from the ground up. Product pages, cart, checkout flow, inventory — no Shopify, no templates. Next.js all the way through. The client needed something that felt like the brand, not like a generic storefront.",
+            "Custom ecommerce — clothing brand.\n\nFull online store built from the ground up. Product pages, cart, checkout flow, order management — no Shopify, no templates, no monthly platform fees eating into margins.\n\nThe client had been on Shopify and kept hitting walls: couldn't customise the checkout the way they wanted, the theme felt generic, and the costs were adding up. The new store looks and works exactly how they want it to, and they own it outright.\n\nBuilt with Next.js, Supabase for inventory and orders, Stripe for payments.",
         },
         {
           id: "hustlemedia",
@@ -120,7 +120,7 @@ const ROOT: FolderNode = {
           modified: "Feb 2026",
           url: "https://hustle-media-rouge.vercel.app/",
           preview:
-            "Agency website — social media marketing.\n\nConversion-focused site for an SMMA. Sharp design, clear service breakdown, built to get prospects to reach out. Fast, clean, no fluff.",
+            "Agency website — social media marketing.\n\nSMMA agencies live or die on their first impression. If your site doesn't look as good as the results you claim to deliver, no one's hiring you.\n\nSharp design, clear service breakdown, proof sections that actually build trust rather than just listing logos. Built to get the right prospects to reach out and filter out the wrong ones. Fast, clean, nothing that doesn't earn its place on the page.",
         },
         {
           id: "tsvc",
@@ -130,7 +130,7 @@ const ROOT: FolderNode = {
           modified: "Feb 2026",
           url: "https://www.tsvcstudio.com/",
           preview:
-            "Agency website — digital studio.\n\nProfessional presence for a digital agency. The brief was: look established, look trustworthy, look like you know what you're doing. Clean layout, strong typography, clear hierarchy.",
+            "Agency website — digital studio.\n\nThe brief: look established, look like you've done this before, build immediate trust. Clean layout, strong typography, clear hierarchy — the kind of site that makes a prospect think \"these people clearly know what they're doing\" before reading a single word of copy.\n\nDelivered fast. Client went from placeholder site to live in under two weeks.",
         },
         {
           id: "521",
@@ -140,7 +140,7 @@ const ROOT: FolderNode = {
           modified: "Apr 2026",
           url: "https://521.is/",
           preview:
-            "Course landing page — location independence.\n\nSales page for a course on going geo-free. Direct copy, tight structure, built to convert. Nothing on the page that doesn't earn its place.",
+            "Course landing page — location independence.\n\nSales page for a course on building a location-independent income. The audience is skeptical — they've seen a lot of grifty course landing pages — so the design and copy had to earn trust, not just sell hard.\n\nTight structure: strong above-the-fold, clear value prop, objection handling baked into the flow, single focused CTA. Nothing on the page that doesn't earn its place. Loads fast, looks clean on every device.",
         },
         {
           id: "storm",
@@ -150,7 +150,7 @@ const ROOT: FolderNode = {
           modified: "Apr 2026",
           url: "https://storm-piercing.com/en",
           preview:
-            "Custom ecommerce + booking — piercing studio.\n\nOne of the more complex builds: jewelry store, appointment booking, product catalogue, multilingual. All custom, all built from scratch. The client had outgrown off-the-shelf options and needed something that actually fit how they work.",
+            "Custom ecommerce + booking — piercing studio.\n\nOne of the more complex builds. The studio needed two things in one: a jewelry store (product pages, cart, checkout) and an appointment booking system. Off-the-shelf tools either did one or the other — and stitching two platforms together would have been a mess.\n\nBuilt everything from scratch: jewelry catalogue with variants, cart, Stripe checkout, appointment booking with availability management, multilingual (EN/GR). All in one codebase, one database, one admin interface.\n\nThe client went from managing three separate systems to one that actually fits how they work.",
         },
         {
           id: "portfolio",
