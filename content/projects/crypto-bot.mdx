@@ -1,0 +1,43 @@
+---
+title: Crypto Bot
+date: "2026-03-01"
+description: Autonomous Solana portfolio manager with an LLM brain. Trades SOL, xStock tokens, and USDC based on market data, news, and Fear & Greed index.
+status: building
+tags: [python, ai, crypto, solana, automation]
+---
+
+## What it is
+
+An autonomous portfolio manager running on Solana. Every cycle it reads market data, fetches news, checks the Fear & Greed index, and hands everything to an LLM which decides whether to hold, swap, or derisk into USDC.
+
+No manual intervention. It runs, reasons, and acts on its own.
+
+## What it trades
+
+- **SOL** — core Solana position
+- **xStock tokens** — synthetic equity exposure on-chain: AAPLx, TSLAx, NVDAx, MSFTx, SPYx, QQQx
+- **USDC** — reserve currency and defensive position
+
+xStock tokens track US equities, not crypto. The bot factors in earnings calendars, SPO/FPO dilution events, Nasdaq correlation (holding NVDAx + QQQx = double NVDA exposure), and equity-specific catalysts — not just crypto sentiment.
+
+## How decisions work
+
+Each cycle the LLM receives: current allocations, live prices, 24h momentum, news headlines, Fear & Greed index, and any pending events. It returns a structured decision: hold, swap X for Y, or move to USDC floor.
+
+Fear & Greed thresholds are hardcoded as guardrails — Extreme Fear (0–25) forces defensive positioning regardless of what the LLM decides.
+
+## Risk controls
+
+- USDC floor — always keeps a minimum % in stable
+- Stop-loss — triggers on drawdown threshold
+- Volatile mode — activated by sudden market moves, restricts entries
+- Max swaps per day — prevents overtrading in choppy markets
+- Correlated exposure warnings — flags double positions (e.g. NVDAx + QQQx)
+
+## What's next
+
+The bot is ready. What I want to build next is a **self-improvement harness** — a loop where the bot reviews its own past decisions against outcomes, identifies patterns in where it was wrong, and updates its reasoning guidelines over time. Effectively giving it memory and the ability to learn from its own trades.
+
+## Stack
+
+Python, Claude API (LLM brain, with Groq/OpenRouter fallback), Solana, APScheduler, Fly.io, PM2.
