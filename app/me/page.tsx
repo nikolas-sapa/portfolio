@@ -40,9 +40,8 @@ export default function MePage() {
             >
               Helpmarq
             </a>{" "}
-            — a feedback marketplace where you upload a project and get
-            structured, multi-perspective feedback from real users. It&apos;s
-            live. Now I&apos;m building{" "}
+            — a feedback marketplace for structured, multi-perspective feedback
+            on real projects. It&apos;s live. Since then I&apos;ve shipped{" "}
             <a
               href="https://www.trypadelup.com"
               target="_blank"
@@ -51,18 +50,36 @@ export default function MePage() {
             >
               Padel Up
             </a>{" "}
-            (an all-in-one iOS app for padel players),{" "}
-            <span className="font-medium">MarketMyApp</span> (AI-driven weekly
-            marketing actions for indie founders), and{" "}
-            <span className="font-medium">Creator Roast</span> (AI that
-            diagnoses exactly what&apos;s broken in your creator profile).
+            (iOS padel coaching app),{" "}
+            <span className="font-medium">MarketMyApp</span>,{" "}
+            <span className="font-medium">Creator Roast</span>,{" "}
+            <a
+              href="https://www.npmjs.com/package/branch-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline underline-offset-2"
+            >
+              Branch AI
+            </a>{" "}
+            (500+ npm downloads),{" "}
+            <span className="font-medium">NeuroPulse</span>, and more. I also
+            work at{" "}
+            <a
+              href="https://automatesphereai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline underline-offset-2"
+            >
+              AutomateSphere AI
+            </a>{" "}
+            building custom AI automation for businesses.
           </p>
 
           <p>
             Since April 2026 I&apos;ve been on Claude Code Max. It changed how
-            I work. I&apos;m shipping faster, building more things in parallel,
-            and actually enjoying the process. I write about it too — real
-            patterns, not hype.
+            I work. I run a homelab (self-hosted Supabase + n8n), ship multiple
+            products in parallel, and build client apps on the side. I write
+            about the patterns that actually work — not the hype.
           </p>
 
           <div className="pt-5 border-t border-[#EBEBEB]">
@@ -70,11 +87,12 @@ export default function MePage() {
               Currently
             </p>
             <ul className="space-y-1.5 font-mono text-xs text-[#86868b]">
-              <li>→ Padel Up — waiting on App Store approval</li>
-              <li>→ MarketMyApp — building</li>
-              <li>→ Creator Roast — building</li>
-              <li>→ Client web work — websites, apps, custom systems</li>
-              <li>→ Writing about building with Claude Code</li>
+              <li>→ Padel Up — pre-launch, App Store submission</li>
+              <li>→ Noctiq — building (iOS sleep app)</li>
+              <li>→ MarketMyApp — deploying</li>
+              <li>→ AutomateSphere AI — building client automations</li>
+              <li>→ Client apps — custom iOS + web work</li>
+              <li>→ Always exploring new opportunities</li>
             </ul>
           </div>
         </div>

@@ -7,31 +7,50 @@ tags: [tools, productivity]
 
 ## Development
 
-**Claude Code Max** — the main one. Not autocomplete. A real coding partner. I use it for architecture, debugging, implementation, content — all of it. Worth every cent at Max tier.
+**Claude Code Max** — the main one. Not autocomplete. A real coding partner. I use it for architecture, debugging, implementation, content — all of it. Worth every cent at Max tier. The biggest productivity shift I've made.
 
 **Warp** — the only terminal worth using. AI command lookup, smart completion, clean UI. Going back feels broken.
 
-**VS Code** — still the editor. Claude Code handles most of the heavy lifting so the editor matters less than it used to, but VS Code with the right extensions is solid.
+**VS Code** — still the editor. Claude Code handles most of the heavy lifting so the editor matters less, but VS Code with the right extensions is solid.
 
 **GitHub** — version control and CI. Nothing exotic.
 
 ## Backend & Data
 
-**Supabase** — database, auth, storage, realtime, edge functions. One platform that covers the whole backend. Free tier is generous, paid tier is fair. My default for everything.
+**Supabase** — database, auth, storage, realtime, edge functions. One platform that covers the whole backend. I also self-host it on my homelab for personal projects.
 
 **Vercel** — deployment for all Next.js projects. Preview URLs for every branch, instant deploys, zero config. Non-negotiable.
 
-## Design
+**n8n (self-hosted)** — automation runtime. Runs on my homelab, exposed via Cloudflare tunnel. Handles scheduled jobs, webhook workflows, and bridges between services that don't talk to each other.
 
-**Figma** — everything starts here. I design before I build. Clients get a Figma file before they get a line of code.
+**Cloudflare Tunnels** — secure public exposure for self-hosted services without opening ports. How my n8n instance is reachable from anywhere.
 
-## Product
+## Mobile
 
-**Linear** — project management. Clean, fast, keyboard-driven. Better than Notion for tracking actual work.
+**Swift / SwiftUI** — for iOS apps. Native performance, native feel.
+
+**RevenueCat** — in-app subscriptions and paywalls for iOS. Handles the App Store billing layer so I don't have to.
+
+**PostHog** — product analytics. Open-source, works everywhere.
+
+## Homelab
+
+Two repurposed laptops running production infrastructure:
+
+- **Toshiba** (Intel i5) — self-hosted Supabase (13 services), Syncthing, Netdata
+- **Dell** (Core 2 Duo) — n8n + Cloudflare tunnel, Netdata
+
+Nightly backups rotated daily/weekly/monthly. Off-site sync to Mac via Syncthing. Built because I wanted to understand the infrastructure, not just use it.
+
+## Design & Knowledge
+
+**Figma** — everything starts here. I design before I build. Clients get a Figma file before a line of code.
+
+**Obsidian** — where everything non-code lives. All project notes, decisions, session handoffs, reference material. Synced across devices via Syncthing.
 
 ## What I don't use
 
-- Shopify (build custom ecom instead)
+- Shopify (build custom instead)
 - Webflow / Framer (build custom instead)
 - Cursor (Claude Code does everything I need)
 - ChatGPT (Claude is significantly better for coding)
