@@ -1,0 +1,28 @@
+---
+title: NeuroPulse
+date: "2026-04-23"
+description: Open-source brain-response analyzer for marketing content. Drop in any ad and get scored across 8 brain regions.
+status: building
+tags: [open-source, ai, marketing, analytics]
+---
+
+## What it is
+
+NeuroPulse is an open-source tool that scores marketing content against simulated brain-region responses. Drop in a video, image, text, or YouTube/TikTok URL and you get an 8-dimension analysis with actionable recommendations and creator-style tactical overlays.
+
+The idea: most marketers optimize for clicks, not for how content actually lands cognitively. NeuroPulse gives you a different lens.
+
+## How it works
+
+- Paste any ad, video URL, or image
+- CLIP + Whisper process the content
+- Get scored across 8 brain regions (attention, emotion, memory encoding, etc.)
+- Recommendations come with a creator-style overlay — concrete, tactical, not generic
+
+## Current status
+
+Live at [neurolens-nine.vercel.app](https://neurolens-nine.vercel.app). Open-source on GitHub. Backend runs on Hugging Face Spaces (FastAPI + CLIP ViT-L/14 + Whisper), frontend on Vercel.
+
+## Stack
+
+Python 3.11, FastAPI, CLIP ViT-L/14, Whisper, yt-dlp, SQLite, Next.js, shadcn/ui, Tailwind, Recharts.

@@ -1,0 +1,30 @@
+---
+title: ClientCast
+date: "2026-04-25"
+description: AI-drafted client updates from your Git commits. Hosted approval. Scope-creep alerts with cost estimates.
+status: building
+tags: [developer-tools, ai, freelance, claude]
+---
+
+## What it is
+
+ClientCast is a CLI tool for freelancers and agencies. It reads your recent commits, drafts a plain-English client update using Claude, and gives you a no-login link your client can open to read, comment, and approve.
+
+When the client replies, Claude classifies it: approval, feedback, concern, or scope creep — with hours and dollars attached if it's new work.
+
+## The problem
+
+Freelancers bleed hours on status updates and "can you also..." emails that quietly become unpaid work. ClientCast handles the communication loop and flags scope creep before it eats your margin.
+
+## How it works
+
+1. Run `clientcast` in your project
+2. Claude reads recent commits and drafts a client-facing update
+3. You get a hosted approval link (Vercel Blob) — no login required for the client
+4. Client comments → Claude classifies the reply and estimates scope if it's new work
+
+Comes with an MCP server (`clientcast-mcp`) so Claude Code agents can drive the whole loop from inside any session.
+
+## Stack
+
+Node.js, Claude Code CLI, Vercel Blob, TypeScript.
