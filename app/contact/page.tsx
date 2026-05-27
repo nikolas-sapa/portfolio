@@ -21,8 +21,8 @@ const LINKS = [
   },
   {
     label: "GitHub",
-    href: "https://github.com/84yk8btb9f-prog",
-    value: "84yk8btb9f-prog",
+    href: "https://github.com/nikolas-sapa",
+    value: "nikolas-sapa",
     Icon: ExternalLink,
   },
   {
