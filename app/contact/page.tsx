@@ -25,6 +25,12 @@ const LINKS = [
     value: "84yk8btb9f-prog",
     Icon: ExternalLink,
   },
+  {
+    label: "npm",
+    href: "https://www.npmjs.com/~nikolas.sapa",
+    value: "~nikolas.sapa",
+    Icon: ExternalLink,
+  },
 ];
 
 export default function ContactPage() {
