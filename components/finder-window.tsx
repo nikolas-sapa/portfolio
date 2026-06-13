@@ -162,6 +162,182 @@ const ROOT: FolderNode = {
           preview:
             "This site.\n\nBuilt as a macOS Finder clone — because a standard portfolio page felt boring. Everything custom: the window chrome, the sidebar tree, the file preview panel. Next.js, Tailwind, deployed on Vercel.",
         },
+        {
+          id: "helpmarq",
+          name: "helpmarq.com",
+          type: "file",
+          kind: "URL",
+          modified: "Jan 2026",
+          url: "https://helpmarq.com",
+          preview:
+            "Review marketplace — Athens, Greece.\n\nFull-stack SaaS product built from scratch. Helpmarq lets founders and creators submit their work and get structured, expert feedback from real reviewers — not generic AI output.\n\nBuilt the entire stack: Next.js App Router, Supabase (auth + database), Stripe payments, Resend for email, Vercel deployment. Designed and developed solo.\n\nOne of my own products — not a client project. Built it because the feedback tools that existed were either too vague or too slow.",
+        },
+        {
+          id: "dailycar",
+          name: "dailycargreece.com",
+          type: "file",
+          kind: "URL",
+          modified: "May 2026",
+          url: "https://www.dailycargreece.com",
+          preview:
+            "Car rental — Athens, Greece.\n\nBilingual (EN/GR) car rental site for a local fleet operator. Fleet showcase, quick-book strip, transparent pricing, WhatsApp booking integration.\n\nStrong local SEO setup, structured data for rental schema, mobile-first layout. Client went from zero online presence to ranking in Athens car rental searches.",
+        },
+        {
+          id: "trypadelup",
+          name: "trypadelup.com",
+          type: "file",
+          kind: "URL",
+          modified: "Jun 2026",
+          url: "https://www.trypadelup.com",
+          preview:
+            "Padel AI coach — iOS app marketing site.\n\nMarketing site for Padel Up, an AI-powered padel coaching iOS app. Handles onboarding, feature explanation, and App Store conversion.\n\nClean, sport-forward design. Bilingual EN/GR. Mobile-optimised — most visitors come from phones. Built to support App Store submission and pre-launch email capture.",
+        },
+        {
+          id: "demos",
+          name: "Demos",
+          type: "folder",
+          modified: "May 2026",
+          children: [
+            {
+              id: "demo-restaurant",
+              name: "olive-and-thyme",
+              type: "file",
+              kind: "URL",
+              modified: "May 2026",
+              url: "https://demo-1-bice.vercel.app",
+              preview:
+                "Demo — Mediterranean restaurant.\n\nFull demo site: menu showcase, instant online reservation flow, warm visual design. Built to show restaurant clients exactly what their site could look like before committing.",
+            },
+            {
+              id: "demo-carrental",
+              name: "athens-car-rental-demo",
+              type: "file",
+              kind: "URL",
+              modified: "May 2026",
+              url: "https://car-rental-beta-taupe.vercel.app",
+              preview:
+                "Demo — car rental.\n\nFleet showcase with real-time availability feel, quick-book strip, bilingual EN/GR, WhatsApp booking integration. Reference for car rental businesses considering a new site.",
+            },
+            {
+              id: "demo-ecommerce",
+              name: "luxewear-fashion",
+              type: "file",
+              kind: "URL",
+              modified: "May 2026",
+              url: "https://e-commerce-plum-eight-76.vercel.app",
+              preview:
+                "Demo — fashion e-commerce.\n\nFull shopping cart, product filtering, seamless checkout. Shows what a clean, conversion-focused fashion store looks like without Shopify's template ceiling.",
+            },
+            {
+              id: "demo-barbershop",
+              name: "barberhaus",
+              type: "file",
+              kind: "URL",
+              modified: "May 2026",
+              url: "https://barbershop-demo-eosin.vercel.app",
+              preview:
+                "Demo — premium barbershop.\n\nOnline booking, team showcase, dark gold aesthetic. For barbershops that want to look premium and convert Instagram followers into booked appointments.",
+            },
+            {
+              id: "demo-saas",
+              name: "flowspace-saas",
+              type: "file",
+              kind: "URL",
+              modified: "May 2026",
+              url: "https://saas-three-pi-67.vercel.app",
+              preview:
+                "Demo — SaaS project management.\n\nSubscription pricing, feature pages, conversion-focused design. Shows SaaS founders what a clean, professional marketing site looks like before they build the product.",
+            },
+            {
+              id: "demo-gym",
+              name: "fitzone-gym",
+              type: "file",
+              kind: "URL",
+              modified: "May 2026",
+              url: "https://demo-4-mu.vercel.app",
+              preview:
+                "Demo — gym / fitness.\n\nHigh-energy design, class schedules, trainer profiles, pricing built for conversions. For gyms and fitness studios that want a site that drives sign-ups, not just looks.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "testimonials",
+      name: "Testimonials",
+      type: "folder",
+      modified: "Jun 2026",
+      children: [
+        {
+          id: "t-nr40",
+          name: "nr40athens.com",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Mar 2026",
+          url: "https://nr40athens.com",
+          preview:
+            "NR40 Urban Arts — Tattoo Studio, Athens\n\nDelivered: full custom site, bilingual EN/GR, dark atmospheric design, booking flow, local SEO.\n\n\"Site looks exactly like the studio feels. Inbound inquiries started coming through within the first week of going live.\"\n\nResult: strong ranking for Athens tattoo studio searches. Consistent inbound from the site.",
+        },
+        {
+          id: "t-allcity",
+          name: "allcity-clothing",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Mar 2026",
+          url: "https://allcity-clothing.vercel.app/",
+          preview:
+            "All City Clothing — Streetwear Brand\n\nDelivered: full custom e-commerce store. Product pages, cart, checkout, order management. Replaced Shopify.\n\n\"No more platform fees, no more fighting the theme editor. We own it now and it does exactly what we need.\"\n\nResult: client owns the codebase outright, full control over the checkout experience.",
+        },
+        {
+          id: "t-tsvc",
+          name: "tsvcstudio.com",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Feb 2026",
+          url: "https://www.tsvcstudio.com/",
+          preview:
+            "TSVC Studio — Digital Agency\n\nDelivered: agency website. Clean layout, strong typography, clear hierarchy.\n\n\"Went from placeholder to live in under two weeks. Exactly what we needed — looks like we've been doing this for years.\"\n\nResult: positioned as an established, credible studio from day one.",
+        },
+        {
+          id: "t-hustle",
+          name: "hustle-media",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Feb 2026",
+          url: "https://hustle-media-rouge.vercel.app/",
+          preview:
+            "Hustle Media — Social Media Agency\n\nDelivered: SMMA agency website. Sharp design, clear service breakdown, trust-building proof sections.\n\nResult: site filters wrong-fit clients and converts the right ones. Built to reflect the results they claim to deliver.",
+        },
+        {
+          id: "t-521",
+          name: "521.is",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Apr 2026",
+          url: "https://521.is/",
+          preview:
+            "521 — Course / Location Independence\n\nDelivered: sales landing page. Tight structure, objection handling in the flow, single focused CTA, fast load.\n\nResult: above-the-fold clarity in under 5 seconds, clean on every device, consistent PageSpeed scores.",
+        },
+        {
+          id: "t-storm",
+          name: "storm-piercing.com",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Apr 2026",
+          url: "https://storm-piercing.com/en",
+          preview:
+            "Storm Piercing — Piercing Studio & Jewelry\n\nDelivered: custom e-commerce + booking system in one. Jewelry catalogue, cart, Stripe checkout, appointment booking with availability management. Multilingual EN/GR. Replaced three separate systems.\n\n\"We went from juggling three tools to one thing that actually works. Build time was faster than I expected.\"\n\nResult: one codebase, one database, one admin interface.",
+        },
+        {
+          id: "t-dailycar",
+          name: "dailycargreece.com",
+          type: "file",
+          kind: "Client Reference",
+          modified: "May 2026",
+          url: "https://www.dailycargreece.com",
+          preview:
+            "Daily Car Greece — Car Rental, Athens\n\nDelivered: bilingual (EN/GR) car rental site. Fleet showcase, WhatsApp booking, strong local SEO, structured data.\n\nResult: went from zero online presence to ranking for Athens car rental searches within weeks of launch.",
+        },
       ],
     },
     {
