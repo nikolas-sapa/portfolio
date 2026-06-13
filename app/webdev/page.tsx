@@ -1,7 +1,7 @@
 import { FinderWindow } from "@/components/finder-window";
 
 export const metadata = {
-  title: "Web Dev — Nikolas Sapalidis",
+  title: "Dev Work — Nikolas Sapalidis",
 };
 
 export default function WebDevPage() {

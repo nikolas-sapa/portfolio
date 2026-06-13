@@ -24,14 +24,15 @@ export default function MePage() {
           </p>
 
           <p>
-            Then I learned to code. Started building websites for businesses,
-            got my first paying client in February 2026, and realized this was
-            actually working. No templates — everything I build is custom, from
-            scratch, exactly what the client needs.
+            Then I learned to code. Got my first paying client in February 2026
+            and realized it was actually working. Since then I&apos;ve built
+            across the full stack — websites, web apps, iOS apps, AI
+            automations, custom pipelines, admin dashboards, internal tools. No
+            templates, no page builders. Everything custom.
           </p>
 
           <p>
-            Alongside the client work, I started building products. First was{" "}
+            Alongside client work I build products. First was{" "}
             <a
               href="https://helpmarq.com"
               target="_blank"
@@ -40,8 +41,8 @@ export default function MePage() {
             >
               Helpmarq
             </a>{" "}
-            — a feedback marketplace for structured, multi-perspective feedback
-            on real projects. It&apos;s live. Since then I&apos;ve shipped{" "}
+            — a feedback marketplace for structured, expert feedback on real
+            projects. Since then:{" "}
             <a
               href="https://www.trypadelup.com"
               target="_blank"
@@ -50,7 +51,7 @@ export default function MePage() {
             >
               Padel Up
             </a>{" "}
-            (iOS padel coaching app),{" "}
+            (iOS AI padel coach),{" "}
             <span className="font-medium">MarketMyApp</span>,{" "}
             <span className="font-medium">Creator Roast</span>,{" "}
             <a
@@ -61,9 +62,8 @@ export default function MePage() {
             >
               Branch AI
             </a>{" "}
-            (500+ npm downloads),{" "}
-            <span className="font-medium">NeuroPulse</span>, and more. I also
-            work at{" "}
+            (500+ npm downloads), <span className="font-medium">NeuroPulse</span>,
+            and more. I also work at{" "}
             <a
               href="https://automatesphereai.com"
               target="_blank"
@@ -78,7 +78,7 @@ export default function MePage() {
           <p>
             Since April 2026 I&apos;ve been on Claude Code Max. It changed how
             I work. I run a homelab (self-hosted Supabase + n8n), ship multiple
-            products in parallel, and build client apps on the side. I write
+            products in parallel, and build client work on the side. I write
             about the patterns that actually work — not the hype.
           </p>
 
@@ -87,12 +87,12 @@ export default function MePage() {
               Currently
             </p>
             <ul className="space-y-1.5 font-mono text-xs text-[#86868b]">
-              <li>→ Padel Up — pre-launch, App Store submission</li>
+              <li>→ Padel Up — App Store submission in progress</li>
               <li>→ Noctiq — building (iOS sleep app)</li>
               <li>→ MarketMyApp — deploying</li>
-              <li>→ AutomateSphere AI — building client automations</li>
-              <li>→ Client apps — custom iOS + web work</li>
-              <li>→ Always exploring new opportunities</li>
+              <li>→ AutomateSphere AI — client automations</li>
+              <li>→ Client dev work — web, iOS, automations</li>
+              <li>→ Always open to interesting problems</li>
             </ul>
           </div>
         </div>

@@ -40,7 +40,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "16. Athens, Greece. Solo founder and developer.\n\nI build products and take on client work — sometimes both at once. Right now I'm shipping three SaaS products (MarketMyApp, Creator Roast, Padel Up) while doing client web projects on the side.\n\nI care a lot about how things look and how they work. Most freelancers either design well or develop well. I do both — together. You don't end up with a beautiful mockup that falls apart in the browser, or a technically solid app that looks like it was built in 2014.\n\nI'm fast. Clients usually have something live within 1–2 weeks of starting. I communicate clearly, I don't disappear mid-project, and I tell you when something you want is a bad idea instead of just building it and charging you for it.\n\nEverything I build is custom. No templates, no page builders, no shortcuts that come back to bite you six months later when you want to change something.",
+        "16. Athens, Greece. Solo founder and developer.\n\nI build things across the stack — websites, web apps, iOS apps, AI automations, custom pipelines, admin dashboards, internal tools. If it's a technical problem, I'll solve it. No templates, no page builders.\n\nI care a lot about how things look and how they work. Most freelancers either design well or develop well. I do both — together. You don't end up with a beautiful mockup that falls apart in the browser, or a technically solid app that looks like it was built in 2014.\n\nI'm fast. Clients usually have something live within 1–2 weeks of starting. I communicate clearly, I don't disappear mid-project, and I tell you when something you want is a bad idea instead of just building it and charging you for it.\n\nEverything I build is custom. If you have a problem, I find the most direct path to solving it — no unnecessary complexity, no tools you don't need.",
     },
     {
       id: "services",
@@ -83,6 +83,24 @@ const ROOT: FolderNode = {
           modified: "Apr 15, 2026",
           preview:
             "Bespoke backend systems and internal tools.\n\nBooking systems, custom ecommerce, inventory management, API integrations, admin dashboards, automation workflows. If your business has a specific problem that off-the-shelf software can't solve cleanly — or you're paying for five different tools that should be one thing — I build the one thing.\n\nThe conversation usually starts with \"we've been doing this manually\" or \"we're using [tool] but it doesn't quite fit.\" That's the signal. When a process is manual or the tool is constantly fighting you, a custom system pays for itself fast.\n\nI build these on Supabase + Next.js, which means they're fast to build, easy to extend, and you're not locked into a proprietary platform. You own the database, you own the code.\n\nRecent examples:\n— Custom booking + jewelry ecommerce for a piercing studio (replaced three separate systems)\n— Full clothing store built from scratch with inventory management (replaced Shopify)\n— Internal admin tools for managing user accounts and billing",
+        },
+        {
+          id: "automations",
+          name: "Automations.md",
+          type: "file",
+          kind: "Markdown Document",
+          modified: "Jun 15, 2026",
+          preview:
+            "AI agents, n8n workflows, custom automation pipelines.\n\nIf your team is doing something manually that a machine should be doing, I build the machine. Lead routing, client onboarding sequences, content pipelines, data sync between tools, AI-powered workflows — whatever the manual process is, there's usually a cleaner automated version of it.\n\nI work with n8n (self-hosted and cloud), Make, and custom code where platforms can't reach. For AI-powered flows, I build with Claude (Anthropic) and integrate with whatever data sources you're working with.\n\nThe conversation usually starts with \"we're copying and pasting X into Y every day\" or \"we need to check this and then trigger that.\" That's the signal.\n\nAlso what I do at AutomateSphere AI — custom AI automation for businesses. This isn't theoretical. I've built and deployed these for actual clients.",
+        },
+        {
+          id: "dashboards",
+          name: "Dashboards.md",
+          type: "file",
+          kind: "Markdown Document",
+          modified: "Jun 15, 2026",
+          preview:
+            "Admin panels, analytics dashboards, internal tools.\n\nThe kind of thing that never ships because it's \"internal\" — so it stays as a spreadsheet forever, or a mess of different tools stitched together with copy-paste. I build the actual thing.\n\nOperations dashboards, user management panels, analytics views, CRM-light tools, reporting interfaces. Built on Next.js + Supabase — fast, real-time where it matters, not locked into a vendor you'll want to leave in 18 months.\n\nGood for: companies who have data but can't see it clearly, teams who live in spreadsheets and shouldn't have to, founders who need to monitor their product without logging into five different tools.",
         },
       ],
     },
@@ -514,7 +532,7 @@ export function FinderWindow() {
         <div className="flex items-center gap-1 flex-none pr-2 border-r border-[#DCDCDC]">
           <FolderIcon className="w-3.5 h-3.5" />
           <span className="text-[10px] font-semibold uppercase tracking-wider text-[#86868b] whitespace-nowrap">
-            Web Dev
+            Dev Work
           </span>
         </div>
         {ROOT.children.map((child) => {
