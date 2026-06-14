@@ -41,7 +41,7 @@ const ROOT: FolderNode = {
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
       preview:
-        "16. Athens, Greece. Solo founder and developer.\n\nI build things across the stack — websites, web apps, iOS apps, AI automations, custom pipelines, admin dashboards, internal tools. If it's a technical problem, I'll solve it. No templates, no page builders.\n\nI care a lot about how things look and how they work. Most freelancers either design well or develop well. I do both — together. You don't end up with a beautiful mockup that falls apart in the browser, or a technically solid app that looks like it was built in 2014.\n\nI'm fast. Clients usually have something live within 1–2 weeks of starting. I communicate clearly, I don't disappear mid-project, and I tell you when something you want is a bad idea instead of just building it and charging you for it.\n\nEverything I build is custom. If you have a problem, I find the most direct path to solving it — no unnecessary complexity, no tools you don't need.",
+        "Athens, Greece. Solo founder and developer.\n\nI build across the full stack — web apps, iOS apps, AI tools, CLI tools, automation systems, e-commerce. Client work and my own products, in parallel.\n\nI care about how things look and how they work. Most freelancers do one or the other. I do both — together. You don't get a beautiful mockup that breaks in the browser, or a technically solid app that looks like 2014.\n\nI'm fast. Clients usually have something live within 1–2 weeks. I communicate clearly, don't disappear mid-project, and tell you when something is a bad idea instead of building it and charging you anyway.\n\nOn the product side, I've shipped CLI tools, iOS apps, browser SDKs, AI agents, and SaaS — all solo. Some are live, some in review, some in development.",
     },
     {
       id: "services",
@@ -278,6 +278,108 @@ const ROOT: FolderNode = {
                 "Demo — gym / fitness.\n\nHigh-energy design, class schedules, trainer profiles, pricing built for conversions. For gyms and fitness studios that want a site that drives sign-ups, not just looks.",
             },
           ],
+        },
+      ],
+    },
+    {
+      id: "products",
+      name: "Products",
+      type: "folder",
+      modified: "Jun 2026",
+      children: [
+        {
+          id: "padelup",
+          name: "PadelUp",
+          type: "file",
+          kind: "iOS App · In Review",
+          modified: "Jun 2026",
+          url: "https://www.trypadelup.com",
+          preview:
+            "AI padel coaching app for iOS.\n\nPersonalized training plans, AI video technique analysis, an in-app AI coach, court finder, and progression stats. Built for players who take their game seriously — not a generic fitness tracker with a padel skin.\n\nNative SwiftUI, Supabase backend, Superwall for subscriptions. Currently in TestFlight review.\n\ntrypadelup.com",
+        },
+        {
+          id: "branch-ai",
+          name: "Branch AI",
+          type: "file",
+          kind: "CLI Tool · npm",
+          modified: "Jun 2026",
+          url: "https://branchai-fawn.vercel.app",
+          preview:
+            "Reasoning canvas for AI CLIs.\n\nWhen an AI works through a hard problem, the reasoning disappears the moment you see the answer. Branch captures every step as a navigable, forkable tree — rewind to any point, explore alternative paths, inject new facts mid-thought.\n\nWorks with Claude Code, Codex, Gemini CLI, and Factory Droid. Ships as a CLI, an MCP server, and a hosted web viewer.\n\nnpm install -g branch-ai",
+        },
+        {
+          id: "clientcast",
+          name: "Clientcast",
+          type: "file",
+          kind: "CLI Tool · npm",
+          modified: "Jun 2026",
+          preview:
+            "Git commits → client update emails, automatically.\n\nReads your recent commits, drafts a plain-English update for the client, delivers it, and classifies the reply — approval, feedback, or scope creep (with hours and dollars attached). Stripe invoicing built in for flagged additional work.\n\nBuilt for freelancers and agencies who bleed hours on status updates and unpaid 'can you also...' requests.\n\nnpm install -g clientcast",
+        },
+        {
+          id: "grip",
+          name: "Grip",
+          type: "file",
+          kind: "Python SDK · PyPI",
+          modified: "Jun 2026",
+          preview:
+            "Token-efficient browser SDK for AI agents.\n\nBuilt directly on Chrome DevTools Protocol — no Playwright, no Puppeteer overhead. Instead of dumping raw HTML (12,000 tokens per page) or screenshots (3,000 tokens), Grip gives agents a semantic summary of interactive elements and visible text.\n\nFor any agent that needs to browse the web without burning through its context window.\n\npip install grip-browser",
+        },
+        {
+          id: "neurolens",
+          name: "NeuroPulse",
+          type: "file",
+          kind: "Open Source · Live",
+          modified: "Apr 2026",
+          url: "https://neurolens-nine.vercel.app",
+          preview:
+            "Brain-response analysis for marketing content.\n\nDrop in any ad — video, image, text, or a YouTube/TikTok URL — and get scored across 8 brain regions: visual cortex, face/social processing, amygdala, hippocampus, language, reward, prefrontal, motor action. Actionable recommendations, creator-persona overlays, A/B comparison.\n\nOpen source. Self-host for full privacy, or use the hosted demo.\n\nneurolens-nine.vercel.app",
+        },
+        {
+          id: "skillswitch",
+          name: "Skillswitch",
+          type: "file",
+          kind: "CLI Tool · npm",
+          modified: "Jun 2026",
+          preview:
+            "Skill manager for AI CLIs.\n\nRunning 100+ Claude Code skills? Every installed skill gets injected into your context window — thousands of tokens burned before your first message. Skillswitch lets you create profiles, enable/disable skills per context, and manage installs across Claude Code, Gemini CLI, Codex, Aider, Amp, and Factory Droid.\n\nnpm install -g skillswitch",
+        },
+        {
+          id: "pulse",
+          name: "Pulse",
+          type: "file",
+          kind: "iOS App · In Development",
+          modified: "Jun 2026",
+          preview:
+            "Approve Claude Code tool calls from your phone.\n\nA Claude Code PreToolUse hook posts every tool call to a relay, which pushes a notification to your iPhone. You approve or deny from the app — Claude continues or stops.\n\nFull auditability over what your AI coding agent does, without sitting at your laptop. iOS + Supabase + Next.js relay.",
+        },
+        {
+          id: "sac-capital",
+          name: "SAC Capital",
+          type: "file",
+          kind: "Live · Mantle",
+          modified: "Jun 2026",
+          url: "https://sapa-fund.vercel.app",
+          preview:
+            "Verifiable AI trading agent.\n\nAn autonomous agent making decisions across US equities and prediction markets. Every decision — the reasoning, confidence, and risk parameters — is hashed and anchored on Mantle as a bytes32 commitment before execution. A public verifier frontend lets anyone confirm the on-chain record matches the agent's actual reasoning.\n\nAI trading decisions shouldn't be black boxes.\n\nsapa-fund.vercel.app",
+        },
+        {
+          id: "creator-roast",
+          name: "Creator Roast",
+          type: "file",
+          kind: "SaaS · In Development",
+          modified: "Jun 2026",
+          preview:
+            "AI audit for content creators.\n\nSubmit your social profile — LinkedIn, TikTok, Instagram, X — and get an honest, AI-generated breakdown of what's working, what's broken, and what to fix. Shareable audit card included.\n\nBuilt for creators who want real feedback instead of engagement metrics that mean nothing.",
+        },
+        {
+          id: "marketmyapp",
+          name: "MarketMyApp",
+          type: "file",
+          kind: "SaaS · In Development",
+          modified: "Jun 2026",
+          preview:
+            "Marketing score for indie founders.\n\nMost apps fail at marketing, not at building. MarketMyApp surfaces exactly what's broken in your marketing before your launch does — positioning, copy, channels, conversion. Outputs a scored breakdown and a weekly action plan.\n\nBuilt for founders who build well and market poorly.",
         },
       ],
     },
