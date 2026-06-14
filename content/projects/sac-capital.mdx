@@ -1,0 +1,33 @@
+---
+title: SAC Capital
+date: "2026-06-01"
+description: Verifiable AI trading agent. Every decision anchored on Mantle as a bytes32 commitment — anyone can prove the agent did what it said it did.
+status: live
+tags: [ai, trading, blockchain, python, mantle]
+---
+
+## What it is
+
+An autonomous AI agent that trades US equities and prediction markets on paper, then anchors every decision on the Mantle blockchain as a deterministic bytes32 commitment before execution.
+
+Anyone can open the verifier frontend and confirm: the on-chain hash matches the agent's actual reasoning, confidence score, and risk parameters. No black box.
+
+## Why it exists
+
+AI trading agents make decisions nobody can verify. The reasoning is hidden, the process is opaque, and you have to take the operator's word for it. SAC Capital inverts that — every decision is hashed and committed on-chain before it executes, creating an immutable audit trail.
+
+## How it works
+
+The agent runs a multi-stage pipeline: an event screener (Haiku) filters candidates, a bull-thesis analyst and a challenger (Sonnet) argue it out, an auditor scores the debate, and a risk kernel sizes the position using fractional Kelly. The canonical decision JSON is then SHA-256 hashed and submitted to the AgentDecisionRegistry contract on Mantle Sepolia. The Alpaca paper order fires after.
+
+A public Vercel frontend shows every commitment hash, the original reasoning, and the verified match status.
+
+## Current status
+
+Live. Contract deployed at `0x1d1fFbC1b5F5E0471f8e8E28eAf007dd24EB4887` on Mantle. Frontend at [sapa-fund.vercel.app](https://sapa-fund.vercel.app). Running paper trades on Alpaca. Submitted to the Turing Test Hackathon 2026 (AI Alpha & Data track, Mirana Ventures sponsor).
+
+Paper-only until ≥100 resolved forward trades with positive ROI and Brier scores beating market-implied.
+
+## Stack
+
+Python 3.12, Claude API (Haiku + Sonnet), Alpaca Markets, Mantle (Solidity/Foundry), Vercel, React/Vite verifier frontend.
