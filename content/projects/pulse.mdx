@@ -1,21 +1,30 @@
 ---
 title: Pulse
 date: "2026-04-20"
-description: iOS health and wellness app with a Next.js relay backend.
+description: Push notifications for every Claude Code tool call. Tap Allow or Block from your iPhone. Your agent waits.
 status: building
-tags: [ios, health, swiftui, saas]
+tags: [ios, developer-tools, swiftui, claude, ai-agents]
+url: https://pulse-seven-rho.vercel.app
 ---
 
 ## What it is
 
-Pulse is an iOS health and wellness app. It pairs a native SwiftUI client with a Next.js + Supabase relay backend that handles data persistence, sync, and any server-side logic.
+Pulse is a push-notification approval system for Claude Code agents. Every time Claude wants to run a tool call — edit a file, run a bash command, push to git — it sends a notification to your iPhone. You tap Allow or Block. The agent continues or stops.
 
-Bundle ID: `app.pulse.ios`
+The problem it solves: background agents are powerful but opaque. You kick off a task, walk away, and come back to find Claude edited files you didn't expect or pushed commits you weren't ready for. Pulse puts you back in the loop without being at your desk.
+
+## How it works
+
+1. Install the PreToolUse hook into Claude Code (one command)
+2. Every tool call routes through the Pulse relay (Next.js + Supabase)
+3. You get a push notification with exactly what Claude wants to do
+4. Tap Allow or Block — Claude continues or stops instantly
+5. Full audit log of every decision
 
 ## Current status
 
-Active development.
+Active development. iOS beta coming soon — waitlist open.
 
 ## Stack
 
-SwiftUI (iOS), Next.js, Supabase.
+SwiftUI (iOS), Next.js 16, Supabase, Claude Code hooks.

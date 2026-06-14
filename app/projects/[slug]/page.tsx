@@ -25,6 +25,7 @@ export default async function ProjectPage({ params }: Props) {
       title={item.title}
       date={item.date}
       status={item.status}
+      url={item.url}
     />
   );
 }

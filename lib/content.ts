@@ -10,6 +10,7 @@ export type ContentItem = {
   description: string;
   status?: string;
   tags?: string[];
+  url?: string;
   order?: number;
   group?: string;        // visual topic group inside a folder
   groupSlug?: string;    // sortable slug for groups (e.g. "01-fundamentals")
@@ -42,6 +43,7 @@ function readMdx(filePath: string, slugParts: string[]): ContentItem {
     description: data.description ?? "",
     status: data.status,
     tags: data.tags ?? [],
+    url: typeof data.url === "string" ? data.url : undefined,
     order: typeof data.order === "number" ? data.order : undefined,
     group: typeof data.group === "string" ? data.group : undefined,
     groupSlug: typeof data.groupSlug === "string" ? data.groupSlug : undefined,

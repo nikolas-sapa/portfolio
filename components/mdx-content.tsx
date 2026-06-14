@@ -9,10 +9,11 @@ type Props = {
   title: string;
   date?: string;
   status?: string;
+  url?: string;
   children?: ReactNode;
 };
 
-export function MdxContent({ source, title, date, status, children }: Props) {
+export function MdxContent({ source, title, date, status, url, children }: Props) {
   return (
     <article
       className="p-8 md:p-12"
@@ -49,9 +50,21 @@ export function MdxContent({ source, title, date, status, children }: Props) {
             </span>
           )}
         </div>
-        <h1 className="text-[22px] font-semibold text-[#1d1d1f] leading-tight">
-          {title}
-        </h1>
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <h1 className="text-[22px] font-semibold text-[#1d1d1f] leading-tight">
+            {title}
+          </h1>
+          {url && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-1.5 text-[11px] font-medium px-3 py-1.5 rounded border border-[#DCDCDC] text-[#1d1d1f] hover:border-[#1d1d1f] transition-colors"
+            >
+              View live ↗
+            </a>
+          )}
+        </div>
       </div>
 
       {/* Body */}
