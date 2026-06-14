@@ -324,6 +324,7 @@ const ROOT: FolderNode = {
           kind: "Client Reference · Video",
           modified: "Feb 2026",
           url: "https://hustle-media-rouge.vercel.app/",
+          videoUrl: "https://www.youtube.com/embed/oqYyvhVvtgg",
           preview:
             "Hustle Media — Social Media Agency\n\nDelivered: SMMA agency website. Sharp design, clear service breakdown, trust-building proof sections.\n\nResult: site filters wrong-fit clients and converts the right ones. Built to reflect the results they claim to deliver.\n\n▶ Video testimonial below.",
         },
