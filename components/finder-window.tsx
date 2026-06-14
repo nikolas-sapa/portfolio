@@ -601,8 +601,11 @@ export function FinderWindow() {
                 </a>
               )}
             </div>
+            <pre className="text-[12px] text-[#3d3d3d] leading-[1.6] whitespace-pre-wrap font-sans">
+              {selectedFile.preview}
+            </pre>
             {selectedFile.videoUrl && (
-              <div className="mb-5">
+              <div className="mt-5">
                 <iframe
                   src={selectedFile.videoUrl}
                   className="w-full rounded-lg aspect-video"
@@ -612,9 +615,6 @@ export function FinderWindow() {
                 />
               </div>
             )}
-            <pre className="text-[12px] text-[#3d3d3d] leading-[1.6] whitespace-pre-wrap font-sans">
-              {selectedFile.preview}
-            </pre>
           </div>
         ) : (
           <div>
