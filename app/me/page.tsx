@@ -87,7 +87,7 @@ export default function MePage() {
               Currently
             </p>
             <ul className="space-y-1.5 font-mono text-xs text-[#86868b]">
-              <li>→ Padel Up — App Store submission in progress</li>
+              <li>→ Padel Up — in TestFlight review</li>
               <li>→ Noctiq — building (iOS sleep app)</li>
               <li>→ MarketMyApp — deploying</li>
               <li>→ AutomateSphere AI — client automations</li>
