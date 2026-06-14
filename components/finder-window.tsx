@@ -12,6 +12,7 @@ type FileNode = {
   kind: string;
   modified: string;
   url?: string;
+  videoUrl?: string;
   preview: string;
 };
 
@@ -320,11 +321,11 @@ const ROOT: FolderNode = {
           id: "t-hustle",
           name: "hustle-media",
           type: "file",
-          kind: "Client Reference",
+          kind: "Client Reference · Video",
           modified: "Feb 2026",
           url: "https://hustle-media-rouge.vercel.app/",
           preview:
-            "Hustle Media — Social Media Agency\n\nDelivered: SMMA agency website. Sharp design, clear service breakdown, trust-building proof sections.\n\nResult: site filters wrong-fit clients and converts the right ones. Built to reflect the results they claim to deliver.",
+            "Hustle Media — Social Media Agency\n\nDelivered: SMMA agency website. Sharp design, clear service breakdown, trust-building proof sections.\n\nResult: site filters wrong-fit clients and converts the right ones. Built to reflect the results they claim to deliver.\n\n▶ Video testimonial below.",
         },
         {
           id: "t-521",
@@ -391,9 +392,9 @@ const ROOT: FolderNode = {
       type: "file",
       kind: "Markdown Document",
       modified: "Apr 15, 2026",
-      url: "mailto:nikolas@helpmarq.com",
+      url: "https://cal.com/nikolas-sapa/business-meeting",
       preview:
-        "nikolas@helpmarq.com\n\nTell me what you're working on. Even a rough idea is enough to start a conversation — I'll ask whatever I need to understand the scope.\n\nI reply within 24 hours, usually faster.\n\nBased in Athens, Greece. Work with clients remotely, no location restrictions.",
+        "Book a call — cal.com/nikolas-sapa/business-meeting\nEmail — nikolas@helpmarq.com\n\nTell me what you're working on. Even a rough idea is enough to start a conversation — I'll ask whatever I need to understand the scope.\n\nBook directly via cal.com or drop an email. I reply within 24 hours, usually faster.\n\nBased in Athens, Greece. Work with clients remotely, no location restrictions.",
     },
   ],
 };
@@ -599,6 +600,17 @@ export function FinderWindow() {
                 </a>
               )}
             </div>
+            {selectedFile.videoUrl && (
+              <div className="mb-5">
+                <iframe
+                  src={selectedFile.videoUrl}
+                  className="w-full rounded-lg aspect-video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            )}
             <pre className="text-[12px] text-[#3d3d3d] leading-[1.6] whitespace-pre-wrap font-sans">
               {selectedFile.preview}
             </pre>

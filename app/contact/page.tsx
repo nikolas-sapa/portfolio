@@ -1,6 +1,12 @@
-import { X, AtSign, Link, ExternalLink } from "lucide-react";
+import { X, AtSign, Link, ExternalLink, Calendar } from "lucide-react";
 
 const LINKS = [
+  {
+    label: "Book a call",
+    href: "https://cal.com/nikolas-sapa/business-meeting",
+    value: "cal.com/nikolas-sapa",
+    Icon: Calendar,
+  },
   {
     label: "X / Twitter",
     href: "https://x.com/nikolassapa",
