@@ -38,7 +38,7 @@ export function MdxContent({ source, title, date, status, url, children }: Props
             <span
               className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border"
               style={
-                status === "active"
+                status === "active" || status === "live"
                   ? { background: "#f0fdf4", borderColor: "#bbf7d0", color: "#15803d" }
                   : status === "building"
                   ? { background: "#fffbeb", borderColor: "#fde68a", color: "#b45309" }
