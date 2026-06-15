@@ -98,7 +98,7 @@ export default function MePage() {
 
           <div className="pt-5 border-t border-[#EBEBEB] grid grid-cols-2 gap-3">
             <a
-              href="https://cal.com/nikolas-sapalidis/blueprint"
+              href="https://cal.com/nikolas-sapa/blueprint"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 border border-[#EBEBEB] rounded-lg hover:border-[#1d1d1f] transition-colors"
