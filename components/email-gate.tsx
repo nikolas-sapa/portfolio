@@ -1,14 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 type Props = {
   tag: string;
   resourceName: string;
   downloadUrl?: string;
+  children?: ReactNode;
 };
 
-export function EmailGate({ tag, downloadUrl, resourceName }: Props) {
+export function EmailGate({ tag, downloadUrl, resourceName, children }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,25 +37,28 @@ export function EmailGate({ tag, downloadUrl, resourceName }: Props) {
 
   if (status === "success") {
     return (
-      <div className="my-8 p-6 border border-[#EBEBEB] rounded-lg">
-        <p className="text-[11px] font-mono uppercase tracking-widest text-[#86868b] mb-3">
-          You&apos;re in
-        </p>
-        <p className="text-sm text-[#1d1d1f] mb-4">
-          {downloadUrl
-            ? "Download starts below. Check your inbox — you'll also get the weekly build log."
-            : "The full breakdown is below. Check your inbox — you'll also get the weekly build log."}
-        </p>
-        {downloadUrl && (
-          <a
-            href={downloadUrl}
-            download
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 bg-[#1d1d1f] text-white rounded-md hover:bg-[#333] transition-colors"
-          >
-            Download {resourceName} ↓
-          </a>
-        )}
-      </div>
+      <>
+        <div className="my-8 p-6 border border-[#EBEBEB] rounded-lg">
+          <p className="text-[11px] font-mono uppercase tracking-widest text-[#86868b] mb-3">
+            You&apos;re in
+          </p>
+          <p className="text-sm text-[#1d1d1f] mb-4">
+            {downloadUrl
+              ? "Download starts below. Check your inbox — you'll also get the weekly build log."
+              : "Unlocked. Check your inbox — you'll also get the weekly build log."}
+          </p>
+          {downloadUrl && (
+            <a
+              href={downloadUrl}
+              download
+              className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 bg-[#1d1d1f] text-white rounded-md hover:bg-[#333] transition-colors"
+            >
+              Download {resourceName} ↓
+            </a>
+          )}
+        </div>
+        {children}
+      </>
     );
   }
 
