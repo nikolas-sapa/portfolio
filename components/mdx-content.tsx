@@ -3,6 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import { CopyCode } from "./copy-code";
+import { EmailGate } from "./email-gate";
 
 type Props = {
   source: string;
@@ -71,7 +72,7 @@ export function MdxContent({ source, title, date, status, url, children }: Props
       <div className="prose prose-stone max-w-none text-[14px] text-[#1d1d1f]">
         <MDXRemote
           source={source}
-          components={{ pre: CopyCode }}
+          components={{ pre: CopyCode, EmailGate }}
           options={{ mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }}
         />
       </div>

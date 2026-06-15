@@ -1,0 +1,37 @@
+---
+title: Claude Code Starter Pack
+date: "2026-06-15"
+description: Skills, hooks, CLAUDE.md template, and MCP recommendations. Everything to set up Claude Code properly from day one.
+tags: [claude-code, tools, skills]
+---
+
+The files I actually use. Not a PDF, not a list of tips — actual `.md` skill files you can drop into `~/.claude/skills/` and use immediately.
+
+## What's inside
+
+**CLAUDE.md template** — project instructions that make Claude Code follow your rules, not its defaults. Copy into any project root and edit the Stack section.
+
+**`/deploy` skill** — pre-deploy checklist, platform detection, post-deploy verification, and rollback procedures. Works with Vercel, Railway, Fly.io, Netlify, and Docker.
+
+**`/wrap-up` skill** — end-of-session ritual. Creates a handoff note with what was done, decisions made, and next steps. Start every session with full context.
+
+**Hooks examples** — patterns for SessionStart, PostToolUse guardrails, and auto-test runners. Copy the ones that fit your workflow.
+
+**MCP recommendations** — the servers worth installing, with exact install commands. context7, Playwright, GitHub, Tavily.
+
+<EmailGate tag="starter-pack" downloadUrl="/downloads/claude-code-starter-pack.zip" resourceName="Claude Code Starter Pack" />
+
+## How to install the skills
+
+```bash
+mkdir -p ~/.claude/skills
+cp wrap-up.md ~/.claude/skills/
+cp deploy.md ~/.claude/skills/
+```
+
+Then in Claude Code: `/wrap-up` or `/deploy`.
+
+## More resources
+
+- [Tools I actually use](/resources/tools) — full stack breakdown
+- [Stack](/resources/stack) — infrastructure and services
