@@ -6,6 +6,7 @@ import {
   getFolderItems,
   getFolderGroups,
   getFolderGroup,
+  splitGate,
   type ContentItem,
 } from "@/lib/content";
 import { MdxContent } from "@/components/mdx-content";
@@ -136,8 +137,13 @@ export default async function ResourcePage({ params }: Props) {
     }
   }
 
+  // Gated resources: render only the public teaser. The body after the gate
+  // marker is withheld from the page and served by /api/unlock after the
+  // visitor's email is captured, so it never ships in the page payload.
+  const { teaser } = splitGate(item.content);
+
   return (
-    <MdxContent source={item.content} title={item.title} date={item.date}>
+    <MdxContent source={teaser} title={item.title} date={item.date}>
       {nav && <GuideNav prev={nav.prev} next={nav.next} />}
     </MdxContent>
   );

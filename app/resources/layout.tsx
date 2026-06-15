@@ -1,11 +1,13 @@
 import { FinderSidebar } from "@/components/finder-sidebar";
-import { getTree } from "@/lib/content";
+import { getTreeLite } from "@/lib/content";
 import type { ReactNode } from "react";
 
 const SUGGESTIONS = ["agents", "hooks", "MCP", "memory", "skills", "settings"];
 
 export default function ResourcesLayout({ children }: { children: ReactNode }) {
-  const tree = getTree("resources");
+  // Lite tree: titles/links only, no MDX bodies (keeps gated content out of
+  // the client payload — the sidebar never renders article content anyway).
+  const tree = getTreeLite("resources");
   return (
     <>
       <aside className="flex-none md:w-64 md:border-r border-[#DCDCDC] bg-[#F6F6F6] md:overflow-y-auto">

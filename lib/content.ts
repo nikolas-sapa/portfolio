@@ -106,9 +106,35 @@ export function getTree(section: string): ContentTree {
   return { files: sortItems(files), folders };
 }
 
+// Marker separating the public teaser from gated content within an MDX body.
+// Everything before it is rendered on the page; everything after is served
+// only by /api/unlock after an email is captured — never in the page payload.
+export const GATE_MARKER = "<!--gate-->";
+
+export function splitGate(content: string): { teaser: string; gated: string | null } {
+  const i = content.indexOf(GATE_MARKER);
+  if (i < 0) return { teaser: content, gated: null };
+  return {
+    teaser: content.slice(0, i),
+    gated: content.slice(i + GATE_MARKER.length),
+  };
+}
+
 export function getItems(section: string): ContentItem[] {
   const tree = getTree(section);
   return [...tree.files, ...tree.folders.flatMap((f) => f.items)];
+}
+
+// Tree for client components (e.g. the sidebar) that only need titles/links.
+// Strips the MDX body so article content — including gated bodies — is never
+// serialized into the page payload via a client component's props.
+export function getTreeLite(section: string): ContentTree {
+  const strip = (i: ContentItem): ContentItem => ({ ...i, content: "" });
+  const tree = getTree(section);
+  return {
+    files: tree.files.map(strip),
+    folders: tree.folders.map((f) => ({ ...f, items: f.items.map(strip) })),
+  };
 }
 
 export function getItem(

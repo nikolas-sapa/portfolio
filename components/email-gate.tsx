@@ -1,18 +1,22 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
+import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
 type Props = {
   tag: string;
   resourceName: string;
+  /** For download-style resources: the file served after subscribing. */
   downloadUrl?: string;
-  children?: ReactNode;
+  /** For gated articles: the resource slug whose body is fetched from /api/unlock. */
+  slug?: string;
 };
 
-export function EmailGate({ tag, downloadUrl, resourceName, children }: Props) {
+export function EmailGate({ tag, downloadUrl, resourceName, slug }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [unlocked, setUnlocked] = useState<MDXRemoteSerializeResult | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -20,14 +24,26 @@ export function EmailGate({ tag, downloadUrl, resourceName, children }: Props) {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, tag }),
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Something went wrong");
+      if (slug) {
+        // Gated article: capture email + retrieve the protected body in one call.
+        const res = await fetch("/api/unlock", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, tag, slug }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error ?? "Something went wrong");
+        setUnlocked(data.mdx as MDXRemoteSerializeResult);
+      } else {
+        // Download-style resource: subscribe, then reveal the download link.
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, tag }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error ?? "Something went wrong");
+      }
       setStatus("success");
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
@@ -57,7 +73,7 @@ export function EmailGate({ tag, downloadUrl, resourceName, children }: Props) {
             </a>
           )}
         </div>
-        {children}
+        {unlocked && <MDXRemote {...unlocked} />}
       </>
     );
   }
