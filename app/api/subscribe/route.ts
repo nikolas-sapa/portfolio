@@ -10,33 +10,43 @@ export async function POST(req: NextRequest) {
 
   const { email, tag } = await req.json();
 
-  if (!email || typeof email !== "string") {
+  if (!email || typeof email !== "string" || !email.includes("@")) {
     return NextResponse.json({ error: "Valid email required" }, { status: 400 });
   }
 
   const res = await fetch(
-    `https://emailoctopus.com/api/1.6/lists/${EO_LIST_ID}/contacts`,
+    `https://api.emailoctopus.com/lists/${EO_LIST_ID}/contacts`,
     {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${EO_API_KEY}`,
+      },
       body: JSON.stringify({
-        api_key: EO_API_KEY,
         email_address: email,
-        status: "SUBSCRIBED",
+        status: "subscribed",
         tags: tag ? [tag] : [],
       }),
     }
   );
 
-  const data = await res.json();
-
-  if (!res.ok) {
-    const msg = data?.error?.message ?? "Failed to subscribe";
-    if (msg.toLowerCase().includes("already subscribed")) {
-      return NextResponse.json({ ok: true });
-    }
-    return NextResponse.json({ error: msg }, { status: 500 });
+  if (res.ok) {
+    return NextResponse.json({ ok: true });
   }
 
-  return NextResponse.json({ ok: true });
+  // Existing contact → treat as success (re-download is fine).
+  // v2 returns 409 CONFLICT for a member that already exists.
+  if (res.status === 409) {
+    return NextResponse.json({ ok: true });
+  }
+
+  let msg = "Failed to subscribe";
+  try {
+    const data = await res.json();
+    msg = data?.detail ?? data?.title ?? msg;
+  } catch {
+    /* non-JSON error body */
+  }
+
+  return NextResponse.json({ error: msg }, { status: 500 });
 }
