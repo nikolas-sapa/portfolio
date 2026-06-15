@@ -4,8 +4,8 @@ import { useState } from "react";
 
 type Props = {
   tag: string;
-  downloadUrl: string;
   resourceName: string;
+  downloadUrl?: string;
 };
 
 export function EmailGate({ tag, downloadUrl, resourceName }: Props) {
@@ -41,15 +41,19 @@ export function EmailGate({ tag, downloadUrl, resourceName }: Props) {
           You&apos;re in
         </p>
         <p className="text-sm text-[#1d1d1f] mb-4">
-          Download starts below. Check your inbox — you&apos;ll also get the weekly build log.
+          {downloadUrl
+            ? "Download starts below. Check your inbox — you'll also get the weekly build log."
+            : "The full breakdown is below. Check your inbox — you'll also get the weekly build log."}
         </p>
-        <a
-          href={downloadUrl}
-          download
-          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 bg-[#1d1d1f] text-white rounded-md hover:bg-[#333] transition-colors"
-        >
-          Download {resourceName} ↓
-        </a>
+        {downloadUrl && (
+          <a
+            href={downloadUrl}
+            download
+            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 bg-[#1d1d1f] text-white rounded-md hover:bg-[#333] transition-colors"
+          >
+            Download {resourceName} ↓
+          </a>
+        )}
       </div>
     );
   }
@@ -57,10 +61,10 @@ export function EmailGate({ tag, downloadUrl, resourceName }: Props) {
   return (
     <div className="my-8 p-6 border border-[#EBEBEB] rounded-lg">
       <p className="text-[11px] font-mono uppercase tracking-widest text-[#86868b] mb-3">
-        Free download
+        {downloadUrl ? "Free download" : "Read the full breakdown"}
       </p>
       <p className="text-sm text-[#1d1d1f] mb-4">
-        Enter your email to get instant access. You&apos;ll also receive the weekly build log — unsubscribe anytime.
+        Enter your email to {downloadUrl ? "get instant access" : "unlock the rest"}. You&apos;ll also receive the weekly build log — unsubscribe anytime.
       </p>
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input

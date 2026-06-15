@@ -19,6 +19,8 @@
 
 # internal working docs (contains private names / audit data — repo is public)
 /AUDIT_FINDINGS.md
+/.superpowers/
+/docs/superpowers/
 
 # production
 /build
