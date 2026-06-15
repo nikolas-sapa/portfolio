@@ -95,6 +95,39 @@ export default function MePage() {
               <li>→ Always open to interesting problems</li>
             </ul>
           </div>
+
+          <div className="pt-5 border-t border-[#EBEBEB] grid grid-cols-2 gap-3">
+            <a
+              href="https://cal.com/nikolas-sapalidis/blueprint"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-4 border border-[#EBEBEB] rounded-lg hover:border-[#1d1d1f] transition-colors"
+            >
+              <p className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] mb-1.5">
+                Build something
+              </p>
+              <p className="text-sm font-medium text-[#1d1d1f]">
+                Free AI System Blueprint Call
+              </p>
+              <p className="text-xs text-[#86868b] mt-1">
+                30 min. No pitch. Just a blueprint.
+              </p>
+            </a>
+            <a
+              href="/resources/starter-pack"
+              className="block p-4 border border-[#EBEBEB] rounded-lg hover:border-[#1d1d1f] transition-colors"
+            >
+              <p className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] mb-1.5">
+                Here for the content
+              </p>
+              <p className="text-sm font-medium text-[#1d1d1f]">
+                Claude Code Starter Pack
+              </p>
+              <p className="text-xs text-[#86868b] mt-1">
+                Skills, hooks, CLAUDE.md template. Free.
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </main>
