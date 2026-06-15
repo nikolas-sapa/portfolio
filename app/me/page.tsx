@@ -104,7 +104,6 @@ export default function MePage() {
               <li>→ MarketMyApp — deploying</li>
               <li>→ AutomateSphere AI — client automations</li>
               <li>→ Client dev work — web, iOS, automations</li>
-              <li>→ 1–2 client slots open</li>
             </ul>
           </div>
 
@@ -120,20 +119,24 @@ export default function MePage() {
             <p className="text-xs text-[#86868b] mt-2">Projects typically start at €800.</p>
           </div>
 
-          <div className="pt-5 border-t border-[#EBEBEB] grid grid-cols-2 gap-3">
+          <div className="pt-5 border-t border-[#EBEBEB]">
+            <p className="text-xs font-mono text-[#E55A1C]">Taking 1–2 clients this month — slots fill fast.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a
               href="https://cal.com/nikolas-sapa/blueprint"
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 border border-[#EBEBEB] rounded-lg hover:border-[#1d1d1f] transition-colors"
+              className="block p-4 bg-[#1d1d1f] border border-[#1d1d1f] rounded-lg hover:bg-[#333] transition-colors"
             >
-              <p className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] mb-1.5">
+              <p className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-1.5">
                 Build something
               </p>
-              <p className="text-sm font-medium text-[#1d1d1f]">
+              <p className="text-sm font-medium text-white">
                 Free AI System Blueprint Call
               </p>
-              <p className="text-xs text-[#86868b] mt-1">
+              <p className="text-xs text-white/60 mt-1">
                 30 min. No pitch. Just a blueprint.
               </p>
             </a>
@@ -154,7 +157,7 @@ export default function MePage() {
           </div>
 
           <div className="pt-4">
-            <p className="text-xs text-[#86868b] mb-2">Not ready yet? Get the weekly build log.</p>
+            <p className="text-xs text-[#86868b] mb-2">Not ready yet? Get the build log — weekly notes on what I&apos;m shipping, patterns that work, things that didn&apos;t.</p>
             <EmailCapture tag="newsletter" placeholder="your@email.com" buttonText="Subscribe" />
           </div>
         </div>

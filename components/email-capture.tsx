@@ -32,23 +32,25 @@ export function EmailCapture({ tag, placeholder = "your@email.com", buttonText =
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder={placeholder}
-        required
-        className="flex-1 text-xs border border-[#EBEBEB] rounded px-3 py-2 text-[#1d1d1f] placeholder:text-[#86868b] focus:outline-none focus:border-[#1d1d1f] min-w-0"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="text-xs px-3 py-2 bg-[#1d1d1f] text-white rounded hover:bg-[#333] transition-colors disabled:opacity-50 whitespace-nowrap"
-      >
-        {status === "loading" ? "..." : buttonText}
-      </button>
+    <>
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={placeholder}
+          required
+          className="flex-1 text-xs border border-[#EBEBEB] rounded px-3 py-2 text-[#1d1d1f] placeholder:text-[#86868b] focus:outline-none focus:border-[#1d1d1f] min-w-0"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="text-xs px-3 py-2 bg-[#1d1d1f] text-white rounded hover:bg-[#333] transition-colors disabled:opacity-50 whitespace-nowrap"
+        >
+          {status === "loading" ? "..." : buttonText}
+        </button>
+      </form>
       {status === "error" && <p className="text-xs text-red-500 mt-1">Something went wrong.</p>}
-    </form>
+    </>
   );
 }

@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Nikolas Sapalidis",
-  description: "Building things. Writing notes. Sharing resources.",
+  description: "16-year-old developer in Athens. Custom websites, apps, and AI systems, built from scratch. Projects from €800. Book a free blueprint call.",
 };
 
 export default function RootLayout({
