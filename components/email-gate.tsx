@@ -101,7 +101,7 @@ export function EmailGate({ tag, downloadUrl, resourceName, slug }: Props) {
           disabled={status === "loading"}
           className="text-sm font-medium px-4 py-2 bg-[#1d1d1f] text-white rounded-md hover:bg-[#333] transition-colors disabled:opacity-50"
         >
-          {status === "loading" ? "..." : "Get it"}
+          {status === "loading" ? "..." : "Download free"}
         </button>
       </form>
       {status === "error" && (
