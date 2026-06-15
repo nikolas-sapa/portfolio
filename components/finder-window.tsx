@@ -460,6 +460,15 @@ const ROOT: FolderNode = {
           preview:
             "Daily Car Greece — Car Rental, Athens\n\nDelivered: bilingual (EN/GR) car rental site. Fleet showcase, WhatsApp booking, strong local SEO, structured data.\n\nResult: went from zero online presence to ranking for Athens car rental searches within weeks of launch.",
         },
+        {
+          id: "t-sean-lee",
+          name: "simplicity-in-motion",
+          type: "file",
+          kind: "Client Reference",
+          modified: "Jun 2026",
+          preview:
+            "Sean Lee — Simplicity in Motion\n\n\"Before working with Nik I had no website at all — just an idea and no clue where to start. What surprised me most was how available he was — basically on call the whole time, which meant no waiting around to schedule things. Questions got answered fast, tweaks happened quickly, and nothing ever got lost in back-and-forth. Even for someone like me who had to be walked through a lot of it, the process never felt overwhelming. He let me pick elements from across his templates and then pulled it all together into something that felt uniquely mine. What came out the other side is something I'm genuinely proud of. Clean, sharp, and it actually feels like the brand. I'd recommend him without hesitation.\"\n\n— Sean Lee · @SeanLeeOnline",
+        },
       ],
     },
     {

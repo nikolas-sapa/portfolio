@@ -96,44 +96,6 @@ export default function MePage() {
             </ul>
           </div>
 
-          <div className="pt-5 border-t border-[#EBEBEB]">
-            <p className="text-[11px] font-mono uppercase tracking-widest text-[#86868b] mb-4">
-              From clients
-            </p>
-            <blockquote className="p-5 border border-[#EBEBEB] rounded-lg">
-              <p className="text-sm text-[#1d1d1f] leading-relaxed">
-                &ldquo;Before working with Nik I had no website at all — just an
-                idea and no clue where to start. What surprised me most was how
-                available he was — basically on call the whole time, which meant
-                no waiting around to schedule things. Questions got answered
-                fast, tweaks happened quickly, and nothing ever got lost in
-                back-and-forth. Even for someone like me who had to be walked
-                through a lot of it, the process never felt overwhelming. He let
-                me pick elements from across his templates and then pulled it
-                all together into something that felt uniquely mine. What came
-                out the other side is something I&apos;m genuinely proud of.
-                Clean, sharp, and it actually feels like the brand. I&apos;d
-                recommend him without hesitation.&rdquo;
-              </p>
-              <footer className="mt-4 flex items-start gap-3">
-                <div>
-                  <p className="text-xs font-medium text-[#1d1d1f]">Sean Lee</p>
-                  <p className="text-[11px] font-mono text-[#86868b]">
-                    Simplicity in Motion ·{" "}
-                    <a
-                      href="https://x.com/SeanLeeOnline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-[#1d1d1f] transition-colors"
-                    >
-                      @SeanLeeOnline
-                    </a>
-                  </p>
-                </div>
-              </footer>
-            </blockquote>
-          </div>
-
           <div className="pt-5 border-t border-[#EBEBEB] grid grid-cols-2 gap-3">
             <a
               href="https://cal.com/nikolas-sapa/blueprint"
