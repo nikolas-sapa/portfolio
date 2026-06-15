@@ -80,7 +80,7 @@ export default function MePage() {
             building custom AI automation for businesses.
           </p>
 
-          <div className="p-4 border-l-2 border-[#E55A1C] bg-[#fafafa] rounded-r-lg">
+          <div className="p-4 border-l-2 border-[#1d1d1f] rounded-r-lg">
             <p className="text-sm text-[#1d1d1f] leading-relaxed italic">
               "No existing brief. Needed something premium without feeling generic. Four days later: live, custom, exactly what I asked for."
             </p>
@@ -120,7 +120,7 @@ export default function MePage() {
           </div>
 
           <div className="pt-5 border-t border-[#EBEBEB]">
-            <p className="text-xs font-mono text-[#E55A1C]">Taking 1–2 clients this month — slots fill fast.</p>
+            <p className="text-xs font-mono text-[#1d1d1f]">Taking 1–2 clients this month — slots fill fast.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
