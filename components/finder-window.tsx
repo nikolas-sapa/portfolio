@@ -397,7 +397,7 @@ const ROOT: FolderNode = {
           modified: "Mar 2026",
           url: "https://nr40athens.com",
           preview:
-            "NR40 Urban Arts — Tattoo Studio, Athens\n\nDelivered: full custom site, bilingual EN/GR, dark atmospheric design, booking flow, local SEO.\n\n\"Site looks exactly like the studio feels. Inbound inquiries started coming through within the first week of going live.\"\n\nResult: strong ranking for Athens tattoo studio searches. Consistent inbound from the site.",
+            "NR40 Urban Arts — Tattoo Studio, Athens\n\nDelivered: full custom site, bilingual EN/GR, dark atmospheric design, booking flow, local SEO.\n\n\"Site looks exactly like the studio feels. Inbound inquiries started coming through within the first week of going live.\"\n\nResult: strong ranking for Athens tattoo studio searches. Consistent inbound from the site.\n\n\"Είμαστε απόλυτα ικανοποιημένοι από τη συνεργασία μας με τον Νίκο για την κατασκευή της ιστοσελίδας μας. Από την πρώτη στιγμή έδειξε επαγγελματισμό, συνέπεια και άριστη τεχνική κατάρτιση. Κατανόησε πλήρως τις ανάγκες μας και υλοποίησε ένα σύγχρονο, λειτουργικό και αισθητικά άρτιο website, δίνοντας μεγάλη προσοχή στη λεπτομέρεια.\n\nΗ επικοινωνία μας ήταν άμεση και αποτελεσματική σε όλη τη διάρκεια του έργου, ενώ ανταποκρινόταν γρήγορα σε κάθε απορία ή αίτημά μας. Το τελικό αποτέλεσμα ξεπέρασε τις προσδοκίες μας και συνέβαλε σημαντικά στην επαγγελματική εικόνα της επιχείρησής μας.\n\nΤον συστήνουμε ανεπιφύλακτα σε όποιον αναζητά έναν αξιόπιστο και ικανό επαγγελματία για την κατασκευή ή αναβάθμιση μιας ιστοσελίδας.\"",
         },
         {
           id: "t-allcity",
@@ -407,7 +407,7 @@ const ROOT: FolderNode = {
           modified: "Mar 2026",
           url: "https://allcity-clothing.vercel.app/",
           preview:
-            "All City Clothing — Streetwear Brand\n\nDelivered: full custom e-commerce store. Product pages, cart, checkout, order management. Replaced Shopify.\n\n\"No more platform fees, no more fighting the theme editor. We own it now and it does exactly what we need.\"\n\nResult: client owns the codebase outright, full control over the checkout experience.",
+            "All City Clothing — Streetwear Brand\n\nDelivered: full custom e-commerce store. Product pages, cart, checkout, order management. Replaced Shopify.\n\n\"No more platform fees, no more fighting the theme editor. We own it now and it does exactly what we need.\"\n\nResult: client owns the codebase outright, full control over the checkout experience.\n\n\"Είμαστε απόλυτα ικανοποιημένοι από τη συνεργασία μας με τον Νίκο για την κατασκευή της ιστοσελίδας μας. Από την πρώτη στιγμή έδειξε επαγγελματισμό, συνέπεια και άριστη τεχνική κατάρτιση. Κατανόησε πλήρως τις ανάγκες μας και υλοποίησε ένα σύγχρονο, λειτουργικό και αισθητικά άρτιο website, δίνοντας μεγάλη προσοχή στη λεπτομέρεια.\n\nΗ επικοινωνία μας ήταν άμεση και αποτελεσματική σε όλη τη διάρκεια του έργου, ενώ ανταποκρινόταν γρήγορα σε κάθε απορία ή αίτημά μας. Το τελικό αποτέλεσμα ξεπέρασε τις προσδοκίες μας και συνέβαλε σημαντικά στην επαγγελματική εικόνα της επιχείρησής μας.\n\nΤον συστήνουμε ανεπιφύλακτα σε όποιον αναζητά έναν αξιόπιστο και ικανό επαγγελματία για την κατασκευή ή αναβάθμιση μιας ιστοσελίδας.\"",
         },
         {
           id: "t-tsvc",
