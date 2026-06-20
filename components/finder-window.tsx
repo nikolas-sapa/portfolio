@@ -395,10 +395,11 @@ const ROOT: FolderNode = {
           id: "helm",
           name: "Helm",
           type: "file",
-          kind: "Internal Agent Platform · MVP",
+          kind: "Internal Agent Platform · Live",
           modified: "Jun 2026",
+          url: "https://landing-gamma-black.vercel.app",
           preview:
-            "Vercel for internal agents.\n\nAn employee writes an AI agent, runs one command, gets hosting plus an auto-provisioned per-agent database. IT scopes what each agent can touch, watches every execution, and caps token spend per agent with a kill switch.\n\nTypeScript monorepo, Convex, Vercel Sandbox, pluggable LLM backend (keyless Codex CLI default). MVP built and verified end-to-end against real Codex + Convex.",
+            "Vercel for internal agents.\n\nAn employee writes an AI agent, runs one command, gets hosting plus an auto-provisioned per-agent database. IT scopes what each agent can touch, watches every execution, and caps token spend per agent with a kill switch.\n\nTypeScript monorepo, Convex, Vercel Sandbox, pluggable LLM backend (keyless Codex CLI default). MVP built and verified end-to-end against real Codex + Convex. Marketing landing page live.",
         },
         {
           id: "command-center",
