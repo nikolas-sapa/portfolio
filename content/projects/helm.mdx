@@ -1,0 +1,27 @@
+---
+title: Helm
+date: "2026-06-16"
+description: Vercel for internal agents. One-command deploy, an auto-provisioned per-agent database, and IT governance over what each agent can touch.
+status: active
+tags: [startup, ai, agents, dev-infra]
+---
+
+## What it is
+
+An employee writes an AI agent, runs one command, and gets hosting plus an auto-provisioned per-agent database. IT scopes what each agent can touch, watches every execution, and tracks token spend per agent — with a hard kill switch.
+
+## Architecture
+
+- `@helm/core` — cost metering, policy engine (tools/domains/budget), bundle hashing
+- `@helm/agent` — `defineAgent` contract, domain-gated fetch
+- `@helm/runtime` — Codex runner, pluggable provider layer (Codex/Anthropic/OpenAI), isolated bundle execution with parent-proxied metering, Convex provisioner
+- `@helm/cli` — `init / deploy / auth / whoami`
+- Dashboard — Convex schema + Hono ingress
+
+## Current status
+
+MVP built end-to-end and verified live against real Codex + Convex. 42 commits, 58 tests, security review on every commit. Untrusted multi-tenant execution is gated behind a container backend (not yet built).
+
+## Stack
+
+TypeScript monorepo (npm workspaces), Convex, Hono, Vercel Sandbox, keyless Codex CLI default with pluggable LLM backend.

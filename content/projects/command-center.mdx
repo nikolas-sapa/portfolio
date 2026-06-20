@@ -1,0 +1,25 @@
+---
+title: Command Center
+date: "2026-06-16"
+description: Local-first agent org dashboard. Run side projects as a company of role-based AI agents you can see, manage, and watch work in real time.
+status: active
+tags: [tools, ai, agents, local-first]
+---
+
+## What it is
+
+A local-first agent org dashboard — hire AI agents, assign them tasks, watch them work in real time on an org-chart canvas, stop them mid-run. Agent-to-agent delegation lets a manager agent hand work to its reports through an in-process MCP tool.
+
+No API keys, no cloud. Runs entirely on the Claude subscription via the Claude Agent SDK.
+
+## Architecture
+
+Three-layer local topology: React UI ↔ Fastify + WebSocket server ↔ Agent SDK workers running in real repos on your machine.
+
+## Current status
+
+Shipped v1.5: org canvas + connectors, live streaming, Stop control, heartbeat scheduling, hire/fire, activity log, per-agent skills/tools, agent-to-agent delegation, run counts. 41 commits, 32/32 tests passing. Two live end-to-end verifications against the real Agent SDK on subscription.
+
+## Stack
+
+React, Fastify, WebSocket, Claude Agent SDK.

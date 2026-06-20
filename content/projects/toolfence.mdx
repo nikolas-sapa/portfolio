@@ -1,0 +1,26 @@
+---
+title: Toolfence
+date: "2026-06-16"
+description: Security scanner for MCP servers. Flags tool poisoning, prompt injection, drift, scope and cost issues before your AI agents connect.
+status: active
+tags: [startup, ai, security, mcp, open-source]
+---
+
+## What it is
+
+Toolfence is the security and governance layer above OAuth, between AI agents and the MCP servers they call. It ships as two products:
+
+- **Scanner** (`toolfence`, open source, Apache 2.0) — `npx toolfence <url>` flags tool poisoning, prompt injection, behavioral drift, and scope/cost issues in an MCP server before your agents connect to it.
+- **Gateway** (proprietary, hosted) — a runtime proxy that sanitizes tool responses, enforces allow-lists and rate/cost ceilings, and audits every call between agents and MCP servers.
+
+## Why now
+
+MCP standardized the substrate for agent tool calls (7,300+ servers and growing). OWASP named tool poisoning and prompt injection via tools in the Top 10 for LLMs. There's no managed security layer between agents and their tools — just raw connections, no audit trail, no sanitization, no scope control.
+
+## Current status
+
+Scanner live on npm. Gateway prototype built. Landing page live.
+
+## Stack
+
+TypeScript, npm.

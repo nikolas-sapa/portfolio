@@ -381,6 +381,34 @@ const ROOT: FolderNode = {
           preview:
             "Marketing score for indie founders.\n\nMost apps fail at marketing, not at building. MarketMyApp surfaces exactly what's broken in your marketing before your launch does — positioning, copy, channels, conversion. Outputs a scored breakdown and a weekly action plan.\n\nBuilt for founders who build well and market poorly.",
         },
+        {
+          id: "toolfence",
+          name: "Toolfence",
+          type: "file",
+          kind: "OSS Scanner · npm + Live",
+          modified: "Jun 2026",
+          url: "https://mcpguard-site.vercel.app",
+          preview:
+            "Security scanner for MCP servers.\n\nFlags tool poisoning, prompt injection, drift, and scope/cost issues before your AI agents connect to an MCP server. Open-source scanner (Apache 2.0) is the free wedge; a proprietary hosted gateway sits behind it for teams that need a runtime enforcement layer — allow-lists, rate/cost ceilings, audit logging.\n\nnpx toolfence <url>",
+        },
+        {
+          id: "helm",
+          name: "Helm",
+          type: "file",
+          kind: "Internal Agent Platform · MVP",
+          modified: "Jun 2026",
+          preview:
+            "Vercel for internal agents.\n\nAn employee writes an AI agent, runs one command, gets hosting plus an auto-provisioned per-agent database. IT scopes what each agent can touch, watches every execution, and caps token spend per agent with a kill switch.\n\nTypeScript monorepo, Convex, Vercel Sandbox, pluggable LLM backend (keyless Codex CLI default). MVP built and verified end-to-end against real Codex + Convex.",
+        },
+        {
+          id: "command-center",
+          name: "Command Center",
+          type: "file",
+          kind: "Local-First Dashboard · v1.5",
+          modified: "Jun 2026",
+          preview:
+            "Run side projects as a company of AI agents you can see and manage.\n\nOrg-chart canvas — hire agents, assign tasks, watch them work in real time, stop them mid-run. Agent-to-agent delegation lets a manager agent hand work to reports. No API keys, no cloud — runs on the Claude subscription via the Agent SDK.\n\nLocal-first by design: React UI, Fastify + WebSocket server, Agent SDK workers in real repos on your machine.",
+        },
       ],
     },
     {
