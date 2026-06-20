@@ -406,6 +406,7 @@ const ROOT: FolderNode = {
           type: "file",
           kind: "Local-First Dashboard · v1.5",
           modified: "Jun 2026",
+          url: "https://landing-gamma-black.vercel.app",
           preview:
             "Run side projects as a company of AI agents you can see and manage.\n\nOrg-chart canvas — hire agents, assign tasks, watch them work in real time, stop them mid-run. Agent-to-agent delegation lets a manager agent hand work to reports. No API keys, no cloud — runs on the Claude subscription via the Agent SDK.\n\nLocal-first by design: React UI, Fastify + WebSocket server, Agent SDK workers in real repos on your machine.",
         },
