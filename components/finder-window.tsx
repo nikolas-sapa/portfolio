@@ -202,16 +202,6 @@ const ROOT: FolderNode = {
             "Car rental — Athens, Greece.\n\nBilingual (EN/GR) car rental site for a local fleet operator. Fleet showcase, quick-book strip, transparent pricing, WhatsApp booking integration.\n\nStrong local SEO setup, structured data for rental schema, mobile-first layout. Client went from zero online presence to ranking in Athens car rental searches.",
         },
         {
-          id: "trypadelup",
-          name: "trypadelup.com",
-          type: "file",
-          kind: "URL",
-          modified: "Jun 2026",
-          url: "https://www.trypadelup.com",
-          preview:
-            "Padel AI coach — iOS app marketing site.\n\nMarketing site for Padel Up, an AI-powered padel coaching iOS app. Handles onboarding, feature explanation, and App Store conversion.\n\nClean, sport-forward design. Bilingual EN/GR. Mobile-optimised — most visitors come from phones. Built to support App Store submission and pre-launch email capture.",
-        },
-        {
           id: "demos",
           name: "Demos",
           type: "folder",
@@ -288,14 +278,13 @@ const ROOT: FolderNode = {
       modified: "Jun 2026",
       children: [
         {
-          id: "padelup",
-          name: "PadelUp",
+          id: "stealth-ios",
+          name: "Stealth — iOS App",
           type: "file",
           kind: "iOS App · In Review",
           modified: "Jun 2026",
-          url: "https://www.trypadelup.com",
           preview:
-            "AI padel coaching app for iOS.\n\nPersonalized training plans, AI video technique analysis, an in-app AI coach, court finder, and progression stats. Built for players who take their game seriously — not a generic fitness tracker with a padel skin.\n\nNative SwiftUI, Supabase backend, Superwall for subscriptions. Currently in TestFlight review.\n\ntrypadelup.com",
+            "AI coaching app for iOS, sports niche.\n\nPersonalized plans, AI video technique analysis, an in-app AI coach, progress tracking. Native SwiftUI, Supabase backend. Currently in TestFlight review.\n\nDetails under wraps until launch.",
         },
         {
           id: "branch-ai",

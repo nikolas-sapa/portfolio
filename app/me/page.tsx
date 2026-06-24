@@ -47,16 +47,8 @@ export default function MePage() {
               Helpmarq
             </a>{" "}
             — a feedback marketplace for structured, expert feedback on real
-            projects. Since then:{" "}
-            <a
-              href="https://www.trypadelup.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-2"
-            >
-              Padel Up
-            </a>{" "}
-            (iOS AI padel coach),{" "}
+            projects. Since then: a stealth iOS AI coaching app (sports
+            niche, in TestFlight review),{" "}
             <span className="font-medium">MarketMyApp</span>,{" "}
             <span className="font-medium">Creator Roast</span>,{" "}
             <a
@@ -99,7 +91,7 @@ export default function MePage() {
               Currently
             </p>
             <ul className="space-y-1.5 font-mono text-xs text-[#86868b]">
-              <li>→ Padel Up — in TestFlight review</li>
+              <li>→ Stealth iOS app — in TestFlight review</li>
               <li>→ Noctiq — building (iOS sleep app)</li>
               <li>→ MarketMyApp — deploying</li>
               <li>→ AutomateSphere AI — client automations</li>
