@@ -48,7 +48,7 @@ export default function MePage() {
             </a>{" "}
             — a feedback marketplace for structured, expert feedback on real
             projects. Since then: a stealth iOS AI coaching app (sports
-            niche, in TestFlight review),{" "}
+            niche, in App Store review),{" "}
             <span className="font-medium">MarketMyApp</span>,{" "}
             <span className="font-medium">Creator Roast</span>,{" "}
             <a
@@ -91,7 +91,7 @@ export default function MePage() {
               Currently
             </p>
             <ul className="space-y-1.5 font-mono text-xs text-[#86868b]">
-              <li>→ Stealth iOS app — in TestFlight review</li>
+              <li>→ Stealth iOS app — in App Store review</li>
               <li>→ Noctiq — building (iOS sleep app)</li>
               <li>→ MarketMyApp — deploying</li>
               <li>→ AutomateSphere AI — client automations</li>

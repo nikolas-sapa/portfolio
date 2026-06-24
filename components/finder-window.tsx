@@ -284,7 +284,7 @@ const ROOT: FolderNode = {
           kind: "iOS App · In Review",
           modified: "Jun 2026",
           preview:
-            "AI coaching app for iOS, sports niche.\n\nPersonalized plans, AI video technique analysis, an in-app AI coach, progress tracking. Native SwiftUI, Supabase backend. Currently in TestFlight review.\n\nDetails under wraps until launch.",
+            "AI coaching app for iOS, sports niche.\n\nPersonalized plans, AI video technique analysis, an in-app AI coach, progress tracking. Native SwiftUI, Supabase backend. Currently in App Store review.\n\nDetails under wraps until launch.",
         },
         {
           id: "branch-ai",
