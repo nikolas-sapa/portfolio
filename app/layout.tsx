@@ -21,6 +21,63 @@ export const metadata: Metadata = {
   description: "16-year-old developer in Athens. Custom websites, apps, and AI systems, built from scratch. Projects from €800. Book a free blueprint call.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nikolas.helpmarq.com/#person",
+      "name": "Nikolas Sapalidis",
+      "url": "https://nikolas.helpmarq.com",
+      "description": "Software engineer and entrepreneur based in Athens, Greece. Builds custom websites, iOS apps, and AI systems from scratch.",
+      "jobTitle": "Software Engineer",
+      "birthDate": "2009",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Athens, Greece"
+      },
+      "sameAs": [
+        "https://x.com/nikolassapa",
+        "https://www.linkedin.com/in/nik-sapa/",
+        "https://github.com/nikolas-sapa",
+        "https://www.instagram.com/nikolas.sapa/",
+        "https://www.npmjs.com/~nikolas-sapa"
+      ],
+      "knowsAbout": ["Software Engineering", "iOS Development", "AI Systems", "Web Development"],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Engineer"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nikolas.helpmarq.com/#website",
+      "url": "https://nikolas.helpmarq.com",
+      "name": "Nikolas Sapalidis",
+      "description": "Personal site of Nikolas Sapalidis — software engineer and entrepreneur in Athens.",
+      "publisher": { "@id": "https://nikolas.helpmarq.com/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://helpmarq.com/#app",
+      "name": "Helpmarq",
+      "url": "https://helpmarq.com",
+      "description": "A feedback marketplace for structured, expert feedback on real projects.",
+      "applicationCategory": "BusinessApplication",
+      "author": { "@id": "https://nikolas.helpmarq.com/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.npmjs.com/package/branch-ai/#app",
+      "name": "Branch AI",
+      "url": "https://www.npmjs.com/package/branch-ai",
+      "description": "AI-powered npm package with 500+ downloads.",
+      "applicationCategory": "DeveloperApplication",
+      "author": { "@id": "https://nikolas.helpmarq.com/#person" }
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -31,6 +88,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full bg-[#E5E5EA]">
         <div className="min-h-screen flex items-start justify-center p-2 sm:p-6 md:p-12">
           <div

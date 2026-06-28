@@ -1,0 +1,24 @@
+# Nikolas Sapalidis
+
+> Software engineer and entrepreneur based in Athens, Greece. 16 years old. Builds custom websites, iOS apps, and AI systems from scratch.
+
+## About
+
+Nikolas Sapalidis is a software engineer and founder based in Athens, Greece. He builds custom software — websites, web apps, iOS apps, AI automations, and internal tools — for clients and as independent products. First paying client in February 2026.
+
+He also builds and ships products independently:
+- Helpmarq (helpmarq.com) — feedback marketplace for expert feedback on real projects
+- Branch AI (npmjs.com/package/branch-ai) — AI-powered npm package, 500+ downloads
+- MarketMyApp — app marketing automation
+- Creator Roast — creator feedback tool
+- Noctiq — iOS sleep app (in development)
+
+## Links
+
+- Website: https://nikolas.helpmarq.com
+- X / Twitter: https://x.com/nikolassapa
+- LinkedIn: https://www.linkedin.com/in/nik-sapa/
+- GitHub: https://github.com/nikolas-sapa
+- Instagram: https://www.instagram.com/nikolas.sapa/
+- npm: https://www.npmjs.com/~nikolas-sapa
+- Book a call: https://cal.com/nikolas-sapa/blueprint
