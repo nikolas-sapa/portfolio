@@ -37,6 +37,7 @@ const jsonLd = {
         "name": "Athens, Greece"
       },
       "sameAs": [
+        "https://www.wikidata.org/wiki/Q140372365",
         "https://x.com/nikolassapa",
         "https://www.linkedin.com/in/nik-sapa/",
         "https://github.com/nikolas-sapa",
